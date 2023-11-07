@@ -15,3 +15,8 @@ body {
   background: #bbb;
   border-radius: 1rem
 }
+
+.react-icons {
+  vertical-align: middle;
+  display: inline
+}

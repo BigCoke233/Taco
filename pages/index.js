@@ -13,10 +13,13 @@
 
 /* Imports - 引用 */
 
+//nextjs 内置
 import Image from 'next/image'
 import Link from 'next/link'
-
+//自制函数
 import { parseBlogPost } from '@/lib/parseBlogPost.js'
+//图标 react icons
+import { TbBrandGithubFilled, TbBrandBilibili, TbBrandDouban, TbBrandZhihu, TbBrandSteam, TbBrandTwitter, TbMail } from 'react-icons/tb'
 
 /**
  * 获取博客文章列表
@@ -93,11 +96,11 @@ function BlogList({ posts, className }) {
 function Header() {
   return (
     <header className="relative">
-      <section id="banner" className="py-12 md:px-12">
+      <section id="banner" className="py-16 md:px-16">
         <Image src="https://eltrac.s3.bitiful.net/20231107-banner.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=J8LAwCEW7bKh3rIKprdQYmyf%2F20231107%2F%2Fs3%2Faws4_request&X-Amz-Date=20231107T044121Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=1e75fd4187904cc0bfed14e355ef4d8d1a141835d59a4394768214a04a2e4dc6" 
         width={1200} height={400} className="object-cover object-bottom h-80" />
       </section>
-      <section id="title" className="absolute bottom-0 right-0 bg-lime-800 text-white p-5">
+      <section id="title" className="absolute bottom-5 right-5 bg-lime-800 text-white p-5">
         <h1 className="text-4xl font-bold tracking-wider drop-shadow-md">你好世界。</h1>
         <p className="mt-2">Hello World.</p>
       </section>
@@ -112,14 +115,81 @@ function Header() {
  */
 
 function Media() {
+  //展示的社交媒体信息
+  const media = [
+    {
+      "link": "https://github.com/BigCoke233",
+      "child": (<span><TbBrandGithubFilled /> GitHub</span>)
+    },
+    {
+      "link": "https://space.bilibili.com/384247770",
+      "child": (<span><TbBrandBilibili /> Bilibili</span>)
+    },
+    {
+      "link": "https://www.douban.com/people/eltrac/",
+      "child": (<span><TbBrandDouban /> 豆瓣</span>)
+    },
+    {
+      "link": "https://www.zhihu.com/people/eltrac-6/",
+      "child": (<span><TbBrandZhihu /> 知乎</span>)
+    },
+    {
+      "link": "https://steamcommunity.com/profiles/76561198812226260/",
+      "child": (<span><TbBrandSteam /> Steam</span>)
+    },
+    {
+      "link": "https://twitter.com/Eltrac233",
+      "child": (<span><TbBrandTwitter /> Twitter (X)</span>)
+    },
+    {
+      "link": "mailto:hi@guhub.cn",
+      "child": (<span><TbMail /> Email</span>)
+    }
+  ]
+  //样式
   return (
-    <section id="media" className="py-12 md:px-12 flex">
+    <section id="media" className="py-16 md:px-16 flex">
+      <style>{`
+        #media-list li a span { display: flex; justify-content: center; align-items: center; gap: 0.5rem }
+      `}</style>
       <h2 style={{writingMode: 'vertical-rl'}} className="text-4xl font-extrabold tracking-widest
-      border-r-4 pr-5">捕风捉影</h2>
-      <div className="px-10">
-        <a href="https://github.com/BigCoke233">GitHub</a>
+      border-r-4 pr-5">我的踪迹</h2>
+      <div className="mx-10">
+        <ul id="media-list" className="flex gap-5 items-start flex-wrap content-start">
+          {media.map((item) => {
+            return (
+              <li className="border border-gray-200 transition
+              hover:border-lime-700 hover:text-lime-700">
+                <a href={item.link} className="text-lg py-2 px-5 inline-block">{item.child}</a>
+              </li>
+            )
+          })}
+        </ul>
+        <p className="text-lg my-6 font-semibold">尝试在其他地方找到我。</p>
       </div>
     </section>
+  )
+}
+
+/**
+ * 页脚
+ * 
+ * @returns jsx
+ */
+
+function Footer() {
+  return (
+    <footer id="footer" className="text-center text-gray-500 text-sm md:flex md:justify-between">
+      <section id="copyright">
+        <p>&copy; 2019-2023 Eltrac</p>
+      </section>
+      <section id="icp">
+        <p>ICP渝备XXXXXXX</p>
+      </section>
+      <section id="info">
+        <p>Powered by Taco</p>
+      </section>
+    </footer>
   )
 }
 
@@ -133,11 +203,12 @@ export default function Home({ posts }) {
   return (
     <>
       <Header />
-      <section id="blog" className="md:flex md:gap-10">
+      <section id="blog" className="md:flex md:gap-10 p-5">
         <BlogLatest posts={posts} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />
       </section>
       <Media />
+      <Footer />
     </>
   )
 }
