@@ -14,6 +14,9 @@
 /* Imports - 引用 */
 
 import Image from 'next/image'
+import Link from 'next/link'
+
+import { parseBlogPost } from '@/lib/parseBlogPost.js'
 
 /**
  * 获取博客文章列表
@@ -31,29 +34,23 @@ export async function getStaticProps() {
 /**
  * 最新博文展示
  *
- * @returns 
+ * @returns jsx
  */
 
 function BlogLatest({ posts, className }) {
-  //获取第一篇博文
-  var post = posts.data.dataSet[0]
+  var post = parseBlogPost(posts.data.dataSet[0])
 
-  //在文章内容中寻找 <!--more--> 标签
-  // 若存在，则截取 <!--more--> 之前的内容
-  // 若不存在，则截取前 150 个字符
-  var moreTag = post.digest.search(/<!--more-->/);
-  var sliceEnd = (moreTag!=-1) ? moreTag- 3 : 150
-  
-  //删除 html 标签，只保留文字内容，然后执行截取操作
-  var digest = post.digest.replace(/<\/?[^>]+(>|$)/g, "").slice(0,sliceEnd);
-
-  //样式
   return (
     <article id="blog-latest" className={className}>
       <h2 className="text-5xl font-extrabold">
-        <a href={"/blog/"+post.slug}>{post.title}</a>
+        <a href={"/blog/"+post.slug}
+        className="hover:text-lime-700 transition">{post.title}</a>
       </h2>
-      <p className="text-lg my-5">{digest}</p>
+      <p className="text-lg my-5">{post.digest}</p>
+      <div className="text-gray-500 flex justify-between">
+        <p>{post.date}</p>
+        <p>{post.category}</p>
+      </div>
     </article>
   )
 }
@@ -61,7 +58,7 @@ function BlogLatest({ posts, className }) {
 /**
  * 往期博文列表
  *
- * @returns 
+ * @returns jsx
  */
 
 function BlogList({ posts, className }) {
@@ -69,18 +66,42 @@ function BlogList({ posts, className }) {
   var list = posts.data.dataSet
 
   return (
-    <div id="blog-list" className={className}>
+    <div id="blog-list" className={`my-10 ${className}`}>
+        <h2 className="text-lime-700">Previous Posts</h2>
+        <ul className="text-xl font-semibold">
         {list.map((post) => {
           return (
-            <article>
-              <h2><a href={"/blog/"+post.slug}>{post.title}</a></h2>
-            </article>
-          )
-        })}
+            <li key={post.slug} className="list-square list-inside md:m-5">
+              <a href={"/blog/"+post.slug}
+              className="hover:text-lime-700 transition">{post.title}</a>
+            </li>
+        )})}
+        </ul>
+        <p><Link href="/blog/" className="text-lime-700">查看更多</Link></p>
     </div>
   )
 }
 
+/**
+ * 页眉
+ * 
+ * @returns jsx
+ */
+
+function Header() {
+  return (
+    <header className="relative">
+      <section id="banner" className="py-12 md:px-12">
+        <Image src="https://eltrac.s3.bitiful.net/20231107-banner.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=J8LAwCEW7bKh3rIKprdQYmyf%2F20231107%2F%2Fs3%2Faws4_request&X-Amz-Date=20231107T044121Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=1e75fd4187904cc0bfed14e355ef4d8d1a141835d59a4394768214a04a2e4dc6" 
+        width={1200} height={400} className="object-cover object-bottom h-80" />
+      </section>
+      <section id="title" className="absolute bottom-0 right-0 bg-lime-800 text-white p-5">
+        <h1 className="text-4xl font-bold tracking-wider drop-shadow-md">你好世界。</h1>
+        <p className="mt-2">Hello World.</p>
+      </section>
+    </header>
+  )
+}
 
 /**
  * 页面主要内容
@@ -91,6 +112,7 @@ function BlogList({ posts, className }) {
 export default function Home({ posts }) {
   return (
     <>
+      <Header />
       <section id="blog" className="md:flex md:gap-10">
         <BlogLatest posts={posts} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />

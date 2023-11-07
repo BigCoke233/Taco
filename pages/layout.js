@@ -10,10 +10,10 @@
 
 export default function Layout({ children }) {
     return (
-        <div id="app" 
-        className="max-w-4xl mx-auto my-20 p-5 md:p-0">
+        <main id="app" 
+        className="max-w-5xl mx-auto my-20 p-5 md:p-0">
             <style jsx>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&display=swap');`}</style>
             {children}
-        </div>
+        </main>
     )
 }
