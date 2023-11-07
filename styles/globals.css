@@ -6,7 +6,3 @@ body {
   font-family: 'Noto Serif SC', serif;
   background-color: #fafafa
 }
-
-#blog-list ul li:first-child {
-  display: none
-}

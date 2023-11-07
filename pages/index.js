@@ -62,14 +62,16 @@ function BlogLatest({ posts, className }) {
  */
 
 function BlogList({ posts, className }) {
-  
-  var list = posts.data.dataSet
+  //将文章列表信息转为数组，并切割，取除去最新文章之后的前三篇
+  var list = Object.entries(posts.data.dataSet)
+  var list = list.slice(1,4)
 
   return (
     <div id="blog-list" className={`my-10 ${className}`}>
         <h2 className="text-lime-700">Previous Posts</h2>
         <ul className="text-xl font-semibold">
-        {list.map((post) => {
+        {list.map((data) => {
+          var post = data[1]
           return (
             <li key={post.slug} className="list-square list-inside md:m-5">
               <a href={"/blog/"+post.slug}
@@ -104,6 +106,24 @@ function Header() {
 }
 
 /**
+ * 社交媒体
+ * 
+ * @returns jsx
+ */
+
+function Media() {
+  return (
+    <section id="media" className="py-12 md:px-12 flex">
+      <h2 style={{writingMode: 'vertical-rl'}} className="text-4xl font-extrabold tracking-widest
+      border-r-4 pr-5">捕风捉影</h2>
+      <div className="px-10">
+        <a href="https://github.com/BigCoke233">GitHub</a>
+      </div>
+    </section>
+  )
+}
+
+/**
  * 页面主要内容
  * 
  * @returns page
@@ -117,7 +137,7 @@ export default function Home({ posts }) {
         <BlogLatest posts={posts} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />
       </section>
-      
+      <Media />
     </>
   )
 }
