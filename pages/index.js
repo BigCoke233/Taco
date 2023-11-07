@@ -1,5 +1,5 @@
 /**
- * index.js - 博客首页
+ * index.js - 首页
  * 
  *  - 页面头部
  *  - 导航
@@ -16,8 +16,11 @@
 //nextjs 内置
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 //自制函数
 import { parseBlogPost } from '@/lib/parseBlogPost.js'
+//页面组成部分
+import Header from '@/components/Header.js'
 //图标 react icons
 import { TbBrandGithubFilled, TbBrandBilibili, TbBrandDouban, TbBrandZhihu, TbBrandSteam, TbBrandTwitter, TbMail } from 'react-icons/tb'
 
@@ -45,7 +48,7 @@ function BlogLatest({ posts, className }) {
 
   return (
     <article id="blog-latest" className={className}>
-      <h2 className="text-5xl font-extrabold">
+      <h2 className="text-3xl md:text-5xl font-extrabold">
         <a href={"/blog/"+post.slug}
         className="hover:text-lime-700 transition">{post.title}</a>
       </h2>
@@ -76,7 +79,7 @@ function BlogList({ posts, className }) {
         {list.map((data) => {
           var post = data[1]
           return (
-            <li key={post.slug} className="list-square list-inside md:m-5">
+            <li key={post.slug} className="list-square list-inside my-5 md:mx-5">
               <a href={"/blog/"+post.slug}
               className="hover:text-lime-700 transition">{post.title}</a>
             </li>
@@ -84,27 +87,6 @@ function BlogList({ posts, className }) {
         </ul>
         <p><Link href="/blog/" className="text-lime-700">查看更多</Link></p>
     </div>
-  )
-}
-
-/**
- * 页眉
- * 
- * @returns jsx
- */
-
-function Header() {
-  return (
-    <header className="relative">
-      <section id="banner" className="py-12 md:px-16">
-        <Image src="https://eltrac.s3.bitiful.net/20231107-banner.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=J8LAwCEW7bKh3rIKprdQYmyf%2F20231107%2F%2Fs3%2Faws4_request&X-Amz-Date=20231107T044121Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=1e75fd4187904cc0bfed14e355ef4d8d1a141835d59a4394768214a04a2e4dc6" 
-        width={1200} height={400} className="object-cover object-bottom h-80" />
-      </section>
-      <section id="title" className="absolute bottom-5 right-5 bg-lime-800 text-white p-5">
-        <h1 className="text-4xl font-bold tracking-wider drop-shadow-md">你好世界。</h1>
-        <p className="mt-2">Hello World.</p>
-      </section>
-    </header>
   )
 }
 
@@ -172,24 +154,23 @@ function Media() {
 }
 
 /**
- * 页脚
+ * 自述
  * 
- * @returns jsx
+ * @return jsx
  */
 
-function Footer() {
+function AboutMe() {
   return (
-    <footer id="footer" className="text-center text-gray-500 text-sm md:flex md:justify-between">
-      <section id="copyright">
-        <p>&copy; 2019-2023 Eltrac</p>
-      </section>
-      <section id="icp">
-        <p>ICP渝备XXXXXXX</p>
-      </section>
-      <section id="info">
-        <p>Powered by Taco</p>
-      </section>
-    </footer>
+    <section id="about" className="p-12 pt-0 md:flex md:gap-10 md:items-center">
+      <Image src="https://eltrac.s3.bitiful.net/isla.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=J8LAwCEW7bKh3rIKprdQYmyf%2F20231107%2F%2Fs3%2Faws4_request&X-Amz-Date=20231107T135551Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=51bbfc3bc1b8896b5f73ed4d2414a5a361612f5c466e05dd7bee3c0fd9adea17"
+      height={200} width={200} style={{width: 300}} className="block mx-auto md:inline flex-shrink-0" />
+      <article id="about-content" className="text-lg">
+        <p class="text-gray-700">Eltrac / Lychnus / 以歌 / 帆迹</p>
+        <p className="text-xl my-5 font-semibold">不尊重文字的独立博主，胡言乱语的小说家，兴趣使然的神秘学研究者，爱走弯路的半吊子程序员，
+        不务正业的学生，品味小众的游戏爱好者，需要靠早晨一杯咖啡维持生命体征的废物。</p>
+        <p>太阳双子月升处女、生命灵数 9、INFP</p>
+      </article>
+    </section>
   )
 }
 
@@ -202,13 +183,16 @@ function Footer() {
 export default function Home({ posts }) {
   return (
     <>
+      <Head>
+        <title>Eltrac's</title>
+      </Head>
       <Header />
       <section id="blog" className="md:flex md:gap-14 md:items-center px-5">
         <BlogLatest posts={posts} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />
       </section>
       <Media />
-      <Footer />
+      <AboutMe />
     </>
   )
 }
