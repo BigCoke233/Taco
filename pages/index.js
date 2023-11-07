@@ -70,7 +70,7 @@ function BlogList({ posts, className }) {
   var list = list.slice(1,4)
 
   return (
-    <div id="blog-list" className={`my-10 ${className}`}>
+    <div id="blog-list" className={`mt-16 mb-10 ${className}`}>
         <h2 className="text-lime-700">Previous Posts</h2>
         <ul className="text-xl font-semibold">
         {list.map((data) => {
@@ -96,7 +96,7 @@ function BlogList({ posts, className }) {
 function Header() {
   return (
     <header className="relative">
-      <section id="banner" className="py-16 md:px-16">
+      <section id="banner" className="py-12 md:px-16">
         <Image src="https://eltrac.s3.bitiful.net/20231107-banner.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=J8LAwCEW7bKh3rIKprdQYmyf%2F20231107%2F%2Fs3%2Faws4_request&X-Amz-Date=20231107T044121Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=1e75fd4187904cc0bfed14e355ef4d8d1a141835d59a4394768214a04a2e4dc6" 
         width={1200} height={400} className="object-cover object-bottom h-80" />
       </section>
@@ -203,7 +203,7 @@ export default function Home({ posts }) {
   return (
     <>
       <Header />
-      <section id="blog" className="md:flex md:gap-10 p-5">
+      <section id="blog" className="md:flex md:gap-14 md:items-center px-5">
         <BlogLatest posts={posts} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />
       </section>
