@@ -6,3 +6,12 @@ body {
   font-family: 'Noto Serif SC', serif;
   background-color: #fafafa
 }
+
+::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 1rem
+}
