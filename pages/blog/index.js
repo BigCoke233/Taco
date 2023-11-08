@@ -41,7 +41,7 @@ export default function Blog({ posts }) {
                 <ul class="list-square list-inside my-10 md:mx-16">
                     {posts.data.dataSet.map((post) => {
                         return (
-                            <li className="text-xl my-5">
+                            <li className="text-xl my-5" key={post.slug}>
                                 <a href={`/blog/${post.slug}`}>{post.title}</a>
                             </li>
                         )
