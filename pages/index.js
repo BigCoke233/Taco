@@ -185,7 +185,7 @@ export default function Home({ posts }) {
   return (
     <>
       <Head>
-        <title>Eltrac's</title>
+        <title>Eltrac&apos;s</title>
       </Head>
       <Header />
       <section id="blog" className="md:flex md:gap-14 md:items-center px-5">

@@ -32,7 +32,7 @@ export default function Blog({ posts }) {
     return (
         <>
             <Head>
-                <title>博客 - Eltrac's</title>
+                <title>博客 - Eltrac&apos;s</title>
             </Head>
             <Header title="部落格。" subtitle="Blog Library"
             banner="https://eltrac.s3.bitiful.net/blog.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=J8LAwCEW7bKh3rIKprdQYmyf%2F20231107%2F%2Fs3%2Faws4_request&X-Amz-Date=20231107T150044Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=47c3e59399b68721a50206d9a2b5ccbd92592d72f6d0d80c77db023cef6d05b4" />
