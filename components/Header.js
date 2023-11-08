@@ -10,7 +10,7 @@ export default function Header({ title = "你好世界。", subtitle = "Hello Wo
     return (
       <header className="relative">
         <section id="banner" className={`py-12 ${process.env.pagePadding}`}>
-          <Image src={banner} width={1200} height={400} 
+          <Image src={banner} width={1200} height={400} alt="Banner of the page"
           className="object-cover object-bottom h-80" />
         </section>
         <section id="title" className="absolute bottom-5 right-5 bg-lime-800 text-white p-5">
