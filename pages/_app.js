@@ -6,7 +6,7 @@ import Layout from './layout.js'
 export default function App({ Component, pageProps }) {
   return (
     <Layout>
-      <div id="tailwindClassInitializer" className={process.env.pagePadding} />
+      <div id="tailwindClassInitializer" className="md:px-16" />
       <Component {...pageProps} />
     </Layout>
   )
