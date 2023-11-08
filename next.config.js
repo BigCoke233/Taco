@@ -11,6 +11,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    pagePadding: 'md:px-16',
+  },
 }
 
 module.exports = nextConfig

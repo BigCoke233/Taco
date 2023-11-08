@@ -21,6 +21,7 @@ import Head from 'next/head'
 import { parseBlogPost } from '@/lib/parseBlogPost.js'
 //页面组成部分
 import Header from '@/components/Header.js'
+import Heading from '@/components/Heading.js'
 //图标 react icons
 import { TbBrandGithubFilled, TbBrandBilibili, TbBrandDouban, TbBrandZhihu, TbBrandSteam, TbBrandTwitter, TbMail } from 'react-icons/tb'
 
@@ -48,10 +49,10 @@ function BlogLatest({ posts, className }) {
 
   return (
     <article id="blog-latest" className={className}>
-      <h2 className="text-3xl md:text-5xl font-extrabold">
+      <Heading>
         <a href={"/blog/"+post.slug}
         className="hover:text-lime-700 transition">{post.title}</a>
-      </h2>
+      </Heading>
       <p className="text-lg my-5">{post.digest}</p>
       <div className="text-gray-500 flex justify-between">
         <p>{post.date}</p>
@@ -130,7 +131,7 @@ function Media() {
   ]
   //样式
   return (
-    <section id="media" className="py-16 md:px-16 flex">
+    <section id="media" className={`py-16 ${process.env.pagePadding} flex`}>
       <style>{`
         #media-list li a span { display: flex; justify-content: center; align-items: center; gap: 0.5rem }
       `}</style>
@@ -141,7 +142,7 @@ function Media() {
           {media.map((item) => {
             return (
               <li className="border border-gray-200 transition
-              hover:border-lime-700 hover:text-lime-700">
+              hover:border-lime-700 hover:text-lime-700" key={item.link}>
                 <a href={item.link} className="text-lg py-2 px-5 inline-block">{item.child}</a>
               </li>
             )

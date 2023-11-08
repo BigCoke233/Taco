@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/yue.css'
 
 import Layout from './layout.js'
 
