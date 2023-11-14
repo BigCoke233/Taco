@@ -74,7 +74,7 @@ function BlogList({ posts, className }) {
   var list = list.slice(1,4)
 
   return (
-    <div id="blog-list" className={`mt-16 mb-10 ${className}`}>
+    <div id="blog-list" className={`my-10 ${className}`}>
         <h2 className="text-lime-700">Previous Posts</h2>
         <ul className="text-xl font-semibold">
         {list.map((data) => {
