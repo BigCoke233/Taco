@@ -70,7 +70,7 @@ export default function Page({ posts }) {
                     </Head>
                     <Header />
                     <article>
-                        <header>
+                        <header className="px-5">
                             <Heading>{post.title}</Heading>
                             <p className="my-3">{post.date} · {post.category}</p>
                         </header>

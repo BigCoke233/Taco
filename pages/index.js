@@ -188,7 +188,7 @@ export default function Home({ posts }) {
         <title>Eltrac&apos;s</title>
       </Head>
       <Header />
-      <section id="blog" className="md:flex md:gap-14 md:items-center px-5">
+      <section id="blog" className="md:flex md:gap-14 px-5">
         <BlogLatest posts={posts} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />
       </section>

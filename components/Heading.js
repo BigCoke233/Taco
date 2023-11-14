@@ -4,8 +4,8 @@
  * @return jsx
  */
 
-export default function Heading({ children }) {
+export default function Heading({ children, className }) {
     return (
-        <h1 className="text-3xl md:text-5xl font-extrabold">{children}</h1>
+        <h1 className={`text-3xl md:text-5xl font-extrabold ${className}`}>{children}</h1>
     )
 }
