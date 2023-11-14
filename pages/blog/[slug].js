@@ -62,7 +62,6 @@ export default function Page({ posts }) {
         //输出内容
         if (post) {
             post = parseBlogPost(post);
-            console.log(post)
             return (
                 <>
                     <Header />
