@@ -7,6 +7,7 @@
 
 import { useRouter } from 'next/router'
 import { parseBlogPost } from "@/lib/parseBlogPost";
+import Head from 'next/head'
 //页面组成部分
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
@@ -64,6 +65,9 @@ export default function Page({ posts }) {
             post = parseBlogPost(post);
             return (
                 <>
+                    <Head>
+                        <title>{post.title} - Eltrac's</title>
+                    </Head>
                     <Header />
                     <article>
                         <header>

@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <link rel="icon" href="favicon.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div id="tailwindClassInitializer" className="md:px-16" />
       <Transition>

@@ -9,6 +9,8 @@ import Head from 'next/head'
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
 
+import Link from 'next/link'
+
 /**
  * 获取博客文章列表
  * 
@@ -42,7 +44,7 @@ export default function Blog({ posts }) {
                     {posts.data.dataSet.map((post) => {
                         return (
                             <li className="text-xl my-5" key={post.slug}>
-                                <a href={`/blog/${post.slug}`}>{post.title}</a>
+                                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                             </li>
                         )
                     })}

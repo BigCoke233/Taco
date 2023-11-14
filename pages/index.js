@@ -50,8 +50,8 @@ function BlogLatest({ posts, className }) {
   return (
     <article id="blog-latest" className={className}>
       <Heading>
-        <a href={"/blog/"+post.slug}
-        className="hover:text-lime-700 transition">{post.title}</a>
+        <Link href={"/blog/"+post.slug}
+        className="hover:text-lime-700 transition">{post.title}</Link>
       </Heading>
       <p className="text-lg my-5">{post.digest}</p>
       <div className="text-gray-500 flex justify-between">
@@ -81,8 +81,8 @@ function BlogList({ posts, className }) {
           var post = data[1]
           return (
             <li key={post.slug} className="list-square list-inside my-5 md:mx-5">
-              <a href={"/blog/"+post.slug}
-              className="hover:text-lime-700 transition">{post.title}</a>
+              <Link href={"/blog/"+post.slug}
+              className="hover:text-lime-700 transition">{post.title}</Link>
             </li>
         )})}
         </ul>
