@@ -169,7 +169,7 @@ function AboutMe() {
         alt="Cabin on an island."
        />
       <article id="about-content" className="text-lg">
-        <p class="text-gray-700">Eltrac / Lychnus / 以歌 / 帆迹</p>
+        <p className="text-gray-700">Eltrac / Lychnus / 以歌 / 帆迹</p>
         <p className="text-xl my-5 font-semibold">不尊重文字的独立博主，胡言乱语的小说家，兴趣使然的神秘学研究者，爱走弯路的半吊子程序员，
         不务正业的学生，品味小众的游戏爱好者，需要靠早晨一杯咖啡维持生命体征的废物。</p>
         <p>太阳双子月升处女、生命灵数 9、INFP</p>
