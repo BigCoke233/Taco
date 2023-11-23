@@ -163,7 +163,7 @@ function Media() {
 function AboutMe() {
   return (
     <section id="about" className="p-12 pt-0 md:flex md:gap-10 md:items-center">
-      <Image src="https://eltrac.s3.bitiful.net/isla.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=J8LAwCEW7bKh3rIKprdQYmyf%2F20231107%2F%2Fs3%2Faws4_request&X-Amz-Date=20231107T135551Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=51bbfc3bc1b8896b5f73ed4d2414a5a361612f5c466e05dd7bee3c0fd9adea17"
+      <Image src="/isla.webp"
         height={200} width={200} style={{width: 300}} 
         className="block mx-auto md:inline flex-shrink-0"
         alt="Cabin on an island."
