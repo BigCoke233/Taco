@@ -66,7 +66,7 @@ export default function Page({ posts }) {
             return (
                 <>
                     <Head>
-                        <title>{post.title} - Eltrac's</title>
+                        <title>{post.title} - Eltrac&apos;s</title>
                     </Head>
                     <Header />
                     <article>
