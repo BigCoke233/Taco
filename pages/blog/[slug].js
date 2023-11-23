@@ -11,6 +11,7 @@ import Head from 'next/head'
 //页面组成部分
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
+import Comment from '@/components/Comment.js'
 
 /**
  * 动态路由
@@ -77,6 +78,7 @@ export default function Page({ posts }) {
                         <div id="post-content" dangerouslySetInnerHTML={{__html: post.content}} 
                         className={`yue py-10 ${process.env.pagePadding}`} />
                     </article>
+                    <Comment />
                 </>
             )
         }
