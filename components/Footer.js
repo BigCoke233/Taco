@@ -11,7 +11,7 @@ export default function Footer() {
           <p>&copy; 2019-2023 Eltrac</p>
         </section>
         <section id="icp">
-          <p>ICP渝备XXXXXXX</p>
+          <p>渝ICP备2023014837号</p>
         </section>
         <section id="info">
           <p>Powered by Taco</p>
