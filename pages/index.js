@@ -121,10 +121,6 @@ function Media() {
       "child": (<span><TbBrandSteam /> Steam</span>)
     },
     {
-      "link": "https://twitter.com/Eltrac233",
-      "child": (<span><TbBrandTwitter /> Twitter (X)</span>)
-    },
-    {
       "link": "mailto:hi@guhub.cn",
       "child": (<span><TbMail /> Email</span>)
     }
@@ -143,7 +139,7 @@ function Media() {
             return (
               <li className="border border-gray-200 transition
               hover:border-lime-700 hover:text-lime-700" key={item.link}>
-                <a href={item.link} className="text-lg py-2 px-5 inline-block">{item.child}</a>
+                <a href={item.link} target="_blank" className="text-lg py-2 px-5 inline-block">{item.child}</a>
               </li>
             )
           })}
