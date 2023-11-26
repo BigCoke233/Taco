@@ -24,6 +24,7 @@ import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
 //图标 react icons
 import { TbBrandGithubFilled, TbBrandBilibili, TbBrandDouban, TbBrandZhihu, TbBrandSteam, TbBrandTwitter, TbMail } from 'react-icons/tb'
+import { SiGitee } from "react-icons/si";
 
 /**
  * 获取博客文章列表
@@ -120,6 +121,10 @@ function Media() {
       "link": "https://steamcommunity.com/profiles/76561198812226260/",
       "child": (<span><TbBrandSteam /> Steam</span>)
     },
+    {
+      "link": "https://gitee.com/Eltrac",
+      "child": (<span><SiGitee /> Gitee</span>)
+    }
     {
       "link": "mailto:hi@guhub.cn",
       "child": (<span><TbMail /> Email</span>)
