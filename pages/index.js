@@ -124,7 +124,7 @@ function Media() {
     {
       "link": "https://gitee.com/Eltrac",
       "child": (<span><SiGitee /> Gitee</span>)
-    }
+    },
     {
       "link": "mailto:hi@guhub.cn",
       "child": (<span><TbMail /> Email</span>)
