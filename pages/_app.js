@@ -5,6 +5,9 @@ import '@/styles/yue.css'
 import Transition from '../components/Transition';
 import '../styles/transition.css'; 
 
+//nprogress
+import { PagesProgressBar as ProgressBar } from 'next-nprogress-bar';
+
 import Head from 'next/head'
 import Layout from './layout.js'
 
@@ -17,6 +20,11 @@ export default function App({ Component, pageProps }) {
       <div id="tailwindClassInitializer" className="md:px-16" />
       <Transition>
         <Component {...pageProps} />
+        <ProgressBar
+          height="4px"
+          color="#444"
+          shallowRouting
+        />
       </Transition>
     </Layout>
   )
