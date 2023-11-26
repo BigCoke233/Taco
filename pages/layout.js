@@ -8,7 +8,8 @@
  * @date 2023/11/6
  */
 
-import Footer from '@/components/Footer.js'
+import Footer from '@/components/Footer'
+import Helpbar from '@/components/Helpbar'
 
 export default function Layout({ children }) {
     return (
@@ -16,6 +17,7 @@ export default function Layout({ children }) {
         className="max-w-5xl mx-auto my-0 md:my-20 p-5 md:p-0">
             <style jsx>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&display=swap');`}</style>
             {children}
+            <Helpbar />
             <Footer />
         </main>
     )
