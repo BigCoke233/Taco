@@ -11,7 +11,7 @@ export default function Header({ title = "你好世界。", subtitle = "Hello Wo
     return (
         <header className="relative">
           <section id="banner" className={`py-12 ${process.env.pagePadding}`}>
-            <Image src={banner} width={1200} height={400} alt="Banner of the page" loading="lazy"
+            <img src={banner} width={1200} height={400} alt="Banner of the page" loading="lazy"
             className="object-cover object-bottom h-80" />
           </section>
           <Link href="/">

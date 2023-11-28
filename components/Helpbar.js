@@ -10,9 +10,23 @@ import Link from 'next/link'
 import { LuHome } from "react-icons/lu";
 
 export default function Helpbar() {
+    const links = [
+        {
+            "type": "link",
+            "link": "/",
+            "content": (<LuHome />)
+        }
+    ]
     return(
         <div className="fixed top-5 right-5 flex flex-wrap">
-            <Link href="/"><LuHome /></Link>
+        {links.map((item) => {
+            if ("link" == item.type)
+            {
+                return (
+                    <Link href={item.link}>{item.content}</Link>
+                )
+            }
+        })}
         </div>
     )
 }
