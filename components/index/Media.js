@@ -51,7 +51,7 @@ export default function Media({ text }) {
           <ul id="media-list" className="flex gap-5 items-start flex-wrap content-start">
             {media.map((item) => {
               return (
-                <li className="border border-gray-200 transition
+                <li className="border border-gray-200 transition bg-gray-50
                 hover:border-lime-700 hover:text-lime-700" key={item.link}>
                   <a href={item.link} target="_blank" className="text-lg py-2 px-5 inline-block">{item.child}</a>
                 </li>

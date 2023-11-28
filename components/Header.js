@@ -7,11 +7,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Header({ title = "你好世界。", subtitle = "Hello World.", banner = "https://i.imgur.com/ubPmC3Z.jpg" }) {
+export default function Header({ title = "你好世界。", subtitle = "Hello World.", banner = "https://image.guhub.cn/banner.jpg" }) {
     return (
         <header className="relative">
           <section id="banner" className={`py-12 ${process.env.pagePadding}`}>
-            <Image src={banner} width={1200} height={400} alt="Banner of the page"
+            <Image src={banner} width={1200} height={400} alt="Banner of the page" loading="lazy"
             className="object-cover object-bottom h-80" />
           </section>
           <Link href="/">

@@ -12,4 +12,4 @@ export default function Comment() {
             <p></p>
         </section>
     )
-  }
+}
