@@ -22,7 +22,7 @@ import Comment from '@/components/Comment.js'
 export async function getStaticPaths() {
     return {
         paths: [
-            { params: { slug: 'oops' } },
+            { params: { slug: 'the-suitcase' } },
           ],
       fallback: true
     }
