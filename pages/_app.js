@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }) {
           height="4px"
           color="#444"
           shallowRouting
+          options={{ showSpinner: false }}
         />
       </Transition>
     </Layout>
