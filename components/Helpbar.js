@@ -14,7 +14,8 @@ export default function Helpbar() {
         {
             "type": "link",
             "link": "/",
-            "content": (<LuHome />)
+            "content": (<LuHome />),
+            "key": "home"
         }
     ]
     return(
@@ -23,7 +24,7 @@ export default function Helpbar() {
             if ("link" == item.type)
             {
                 return (
-                    <Link href={item.link}>{item.content}</Link>
+                    <Link href={item.link} key={item.key}>{item.content}</Link>
                 )
             }
         })}
