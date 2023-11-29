@@ -18,7 +18,7 @@ import Link from 'next/link'
  */
 
 export async function getStaticProps() {
-    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=99999')
+    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
     const posts = await res.json()
   
     return { props: { posts } }
