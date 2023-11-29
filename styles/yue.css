@@ -70,6 +70,7 @@
     margin-bottom: 1.46em;
   }
   
+/*
   .yue a {
     color: #111;
     word-wrap: break-word;
@@ -82,7 +83,8 @@
     -moz-text-decoration-color: rgba(0, 0, 0, 0.6);
     text-decoration-color: rgba(0, 0, 0, 0.6);
   }
-  
+*/
+
   .yue h1 a,
   .yue h2 a,
   .yue h3 a {
@@ -152,7 +154,7 @@
     border-top: 3px solid #dededc;
   }
   
-  .yue blockquote {
+  /*.yue blockquote {
     margin: 0 0 1.64em 0;
     border-left: 3px solid #dadada;
     padding-left: 12px;
@@ -161,7 +163,7 @@
   
   .yue blockquote a {
     color: #666664;
-  }
+  }*/
   
   .yue ul,
   .yue ol {
@@ -282,6 +284,7 @@
     background: none;
   }
   
+  /*
   @media (min-width: 1100px) {
     .yue blockquote {
       margin-left: -24px;
@@ -292,4 +295,56 @@
     .yue blockquote blockquote {
       margin-left: 0;
     }
-  }
+  }*/
+
+/* addition | made by Eltrac */
+
+.yue img {
+  display: block;
+  box-shadow: 0 0.3rem .6rem rgba(0,0,0,0.25);
+  margin: 0 auto;
+  max-width: 95%
+}
+
+.yue h2 {
+  font-weight: 700;
+  position: relative;
+  left: -1.25em;
+}
+.yue h2::before {
+  content: "#";
+  display: inline-block;
+  width: 1.25em;
+  color: #3f6212;
+}
+
+.yue h3 {
+  font-weight: 600
+}
+
+.yue a {
+  color: #3f6212;
+  opacity: 0.9;
+  word-wrap: break-word;
+  transition: opacity .3s;
+  text-decoration: underline;
+  text-underline-offset: 0.325rem;
+  text-decoration-thickness: 1px;
+}
+.yue a:hover {
+  opacity: 0.75;
+}
+
+.yue blockquote {
+  padding: 1em 1.75em;
+  color:#888;
+  position: relative
+}
+.yue blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -.25em;
+  left: -.5em;
+  font-size: 300%;
+  color: #3f6212
+}
