@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 export default function AboutMe({ text }) {
     return (
-      <section id="about" className="p-12 pt-0 md:flex md:gap-10 md:items-center">
+      <section id="about" className="p-6 md:p-12 pt-0 md:flex md:gap-10 md:items-center">
         <img src="https://image.guhub.cn/isla.webp"
           height={200} width={200} style={{width: 300}} 
           className="block mx-auto md:inline flex-shrink-0"

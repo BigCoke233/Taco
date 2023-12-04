@@ -6,6 +6,49 @@
 
 import Link from 'next/link'
 
+/**
+ * 辅助元素 线
+ * @returns jsx
+ */
+function Line() {
+  return <div className="md:hidden h-0.5 bg-gray-200 flex-grow" />
+}
+
+/**
+ * 列表标题
+ * @returns jsx
+ */
+
+function Title() {
+  return (
+    <h2 className="text-lime-700 text-center text-lg flex justify-between items-center gap-3
+    md:text-left md:text-md md:block">
+      <Line />
+      <span>Previous Posts</span>
+      <Line />
+    </h2>
+  )
+}
+
+/**
+ * 查看更多 链接
+ * @returns 
+ */
+function More() {
+  return (
+    <p className="text-right flex justify-between items-center gap-3
+    md:text-left md:block">
+      <Line />
+      <Link href="/blog/" className="text-lime-700">查看更多</Link>
+    </p>
+  )
+}
+
+/**
+ * 页面主要内容
+ * 文章列表
+ * @returns 
+ */
 export default function BlogList({ posts, className }) {
     //将文章列表信息转为数组，并切割，取除去最新文章之后的前三篇
     var list = Object.entries(posts.data.dataSet)
@@ -13,7 +56,7 @@ export default function BlogList({ posts, className }) {
   
     return (
       <div id="blog-list" className={`my-10 ${className}`}>
-          <h2 className="text-lime-700">Previous Posts</h2>
+          <Title />
           <ul className="text-xl font-semibold">
           {list.map((data) => {
             var post = data[1]
@@ -24,7 +67,7 @@ export default function BlogList({ posts, className }) {
               </li>
           )})}
           </ul>
-          <p><Link href="/blog/" className="text-lime-700">查看更多</Link></p>
+          <More />
       </div>
     )
 }

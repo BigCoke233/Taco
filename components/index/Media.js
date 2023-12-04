@@ -39,15 +39,22 @@ export default function Media({ text }) {
         "child": (<span><TbMail /> Email</span>)
       }
     ]
-    //样式
+
     return (
-      <section id="media" className={`py-16 ${process.env.pagePadding} flex`}>
+      <section id="media" className={`py-16 ${process.env.pagePadding} md:flex`}>
+
         <style>{`
           #media-list li a span { display: flex; justify-content: center; align-items: center; gap: 0.5rem }
         `}</style>
-        <h2 style={{writingMode: 'vertical-rl'}} className="text-4xl font-extrabold tracking-widest
-        border-r-4 pr-5">{text.title}</h2>
-        <div className="mx-10">
+
+        <section>
+          <h2 id="desktop-title-media" style={{writingMode: 'vertical-rl'}} className="text-4xl font-extrabold tracking-widest
+          border-r-4 pr-5 hidden md:block">{text.title}</h2>
+          <h2 id="mobile-title-media" class="md:hidden text-center mb-5
+          text-3xl font-extrabold">{text.title}</h2>
+        </section>
+
+        <div className="mx-5 md:mx-10">
           <ul id="media-list" className="flex gap-5 items-start flex-wrap content-start">
             {media.map((item) => {
               return (
@@ -58,7 +65,7 @@ export default function Media({ text }) {
               )
             })}
           </ul>
-          <p className="text-lg my-6 font-semibold">{text.text}</p>
+          <p className="text-lg my-6 font-semibold hidden md:block">{text.text}</p>
         </div>
       </section>
     )

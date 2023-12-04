@@ -18,7 +18,7 @@ export default function BlogLatest({ posts, className }) {
           className="hover:text-lime-700 transition">{post.title}</Link>
         </Heading>
         <p className="text-lg my-5">{post.digest}</p>
-        <div className="text-gray-500 flex justify-between">
+        <div className="text-gray-500 flex justify-between text-justify">
           <p>{post.date}</p>
           <p>{post.category}</p>
         </div>
