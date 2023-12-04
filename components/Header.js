@@ -4,10 +4,10 @@
  * @returns jsx
  */
 
-import Image from 'next/image'
+//import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Header({ title = "你好世界。", subtitle = "Hello World.", banner = "https://image.guhub.cn/banner.jpg" }) {
+export default function Header({ title = "烟云树海。", subtitle = "C'est la vie, mon chéri.", banner = "https://image.guhub.cn/banner.jpg" }) {
     return (
         <header className="relative">
           <section id="banner" className={`py-12 px-5 ${process.env.pagePadding}`}>

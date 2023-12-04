@@ -41,7 +41,7 @@ export default function Media({ text }) {
     ]
 
     return (
-      <section id="media" className={`py-16 ${process.env.pagePadding} md:flex`}>
+      <section id="media" className={`pt-16 ${process.env.pagePadding} md:flex`}>
 
         <style>{`
           #media-list li a span { display: flex; justify-content: center; align-items: center; gap: 0.5rem }
