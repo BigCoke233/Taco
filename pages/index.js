@@ -24,6 +24,8 @@ import BlogLatest from '@/components/index/BlogLatest'
 import BlogList from '@/components/index/BlogList'
 import Media from '@/components/index/Media'
 
+import generateRssFeed from '@/lib/rssGenerator';
+
 /**
  * 获取数据
  * 
@@ -32,11 +34,13 @@ import Media from '@/components/index/Media'
 
 export async function getStaticProps() {
   //获取博客文章列表
-  const res = await fetch('https://blog.guhub.cn/api/posts')
+  const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
   const posts = await res.json()
   //获取页面设置
   const config_data = await fs.readFile(process.cwd() + '/lib/config.json', 'utf8');
   const config = JSON.parse(config_data)
+  //生成 rss 订阅源
+  await generateRssFeed({ posts: posts.data.dataSet });
 
   return { props: { posts, config } }
 }
