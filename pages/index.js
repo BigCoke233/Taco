@@ -23,7 +23,9 @@ import AboutMe from '@/components/index/AboutMe'
 import BlogLatest from '@/components/index/BlogLatest'
 import BlogList from '@/components/index/BlogList'
 import Media from '@/components/index/Media'
+import Nav from '@/components/index/Nav';
 
+//RSS
 import generateRssFeed from '@/lib/rssGenerator';
 
 /**
@@ -62,6 +64,7 @@ export default function Home({ posts, config }) {
         <BlogLatest posts={posts} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />
       </section>
+      <Nav links={config.nav} />
       <Media text={config.media} />
       <AboutMe text={config.about} />
     </>
