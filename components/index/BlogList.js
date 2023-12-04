@@ -11,7 +11,7 @@ import Link from 'next/link'
  * @returns jsx
  */
 function Line() {
-  return <div className="md:hidden h-0.5 bg-gray-200 flex-grow" />
+  return <span className="md:hidden block h-0.5 bg-gray-200 flex-grow" />
 }
 
 /**
