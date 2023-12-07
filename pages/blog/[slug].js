@@ -76,7 +76,7 @@ export default function Page({ posts }) {
                             <p className="my-3">{post.date} · {post.category}</p>
                         </header>
                         <div id="post-content" dangerouslySetInnerHTML={{__html: post.content}} 
-                        className={`yue py-10 ${process.env.pagePadding}`} />
+                        className={`yue pt-10 pb-5 ${process.env.pagePadding}`} />
                     </article>
                     <Comment />
                 </>

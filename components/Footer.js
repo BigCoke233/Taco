@@ -12,7 +12,7 @@ import beian from '@/public/beian.png'
 export default function Footer() {
     return (
       <footer id="footer" className="text-center text-gray-500 text-sm
-      p-5 md:p-0 flex justify-between items-center">
+      mt-10 p-5 md:p-0 flex justify-between items-center">
         <section id="copyright">
           <p>&copy; 2019-2023 Eltrac</p>
         </section>

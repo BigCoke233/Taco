@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^2.3.0",
     "framer-motion": "^10.16.5",
+    "giscus": "^1.3.0",
     "next": "14.0.1",
     "next-nprogress-bar": "^2.1.2",
     "react": "^18",
