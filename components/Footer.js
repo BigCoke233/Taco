@@ -16,7 +16,7 @@ export default function Footer() {
         <section id="copyright">
           <p>&copy; 2019-2023 Eltrac</p>
         </section>
-        <section id="icp">
+        <section id="icp" className="text-right md:text-center">
           <p><Link href="https://beian.miit.gov.cn/" target="_blank">渝 ICP 备 2023014837 号</Link></p>
           <p className="align-middle">
             <Image src={beian} alt="备案图标" width={14} height={14} className="inline mr-1" /> 

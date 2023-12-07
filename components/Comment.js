@@ -9,7 +9,7 @@ import Giscus from '@giscus/react'
 
 export default function Comment() {
     return (
-        <section id="comment" className={`${process.env.pagePadding}`}>
+        <section id="comment" className={`${process.env.pagePadding} px-5`}>
             <Giscus
                 id="comments"
                 repo="BigCoke233/isla-giscus"
