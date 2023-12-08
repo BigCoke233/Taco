@@ -21,7 +21,7 @@ export default function Footer() {
           </p>
         </section>
         <section id="info" className="hidden md:block">
-          <p>Powered by Taco</p>
+          <p>Powered by <Link href="/blog/bizzare-practice-of-indie-blog">Taco</Link></p>
         </section>
       </footer>
     )
