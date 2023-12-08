@@ -8,6 +8,15 @@
 import { useRouter } from 'next/router'
 import { parseBlogPost } from "@/lib/parseBlogPost";
 import Head from 'next/head'
+
+//use prism
+import { useEffect, useState } from 'react'
+import Prism from 'prismjs'
+
+require('prismjs/components/prism-javascript')
+require('prismjs/components/prism-css')
+require('prismjs/components/prism-jsx')
+
 //页面组成部分
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
@@ -64,6 +73,12 @@ export default function Page({ posts }) {
         //输出内容
         if (post) {
             post = parseBlogPost(post);
+
+            //use prism
+            useEffect(() => {
+                return () => Prism.highlightAll()
+            }, [])
+
             return (
                 <>
                     <Head>

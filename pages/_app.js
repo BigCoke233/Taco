@@ -1,5 +1,6 @@
-import '@/styles/globals.css'
 import '@/styles/yue.css'
+import '@/styles/prism.css'
+import '@/styles/globals.css'
 
 //use framer motion to do page transition
 import Transition from '../components/Transition';
