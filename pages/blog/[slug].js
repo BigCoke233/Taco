@@ -71,12 +71,12 @@ export default function Page({ posts }) {
                     </Head>
                     <Header />
                     <article>
-                        <header className="px-5">
+                        <header className="px-2 md:px-5">
                             <Heading>{post.title}</Heading>
                             <p className="my-3">{post.date} · {post.category}</p>
                         </header>
                         <div id="post-content" dangerouslySetInnerHTML={{__html: post.content}} 
-                        className={`yue pt-10 pb-5 px-5 ${process.env.pagePadding}`} />
+                        className={`md:text-xl yue pt-10 pb-5 px-2 md:px-5 ${process.env.pagePadding}`} />
                     </article>
                     <Comment />
                 </>

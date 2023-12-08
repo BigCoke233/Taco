@@ -7,7 +7,10 @@
  */
 
  .yue {
-    font: 400 20px/1.62 'Noto Serif SC', serif; /*"Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;*/
+    /* font: 400 20px/1.62 'Noto Serif SC', serif; /*"Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;*/
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 400;
+    line-height: 1.62;
     color: #444443;
   }
   
@@ -307,19 +310,24 @@
 }
 
 .yue h2 {
-  font-weight: 700;
-  position: relative;
-  left: -1.25em;
+  font-weight: 800
 }
-.yue h2::before {
-  content: "#";
-  display: inline-block;
-  width: 1.25em;
-  color: #3f6212;
+
+@media screen and (min-width: 786px) {
+  .yue h2 {
+    position: relative;
+    left: -1.25em;
+  }
+  .yue h2::before {
+    content: "#";
+    display: inline-block;
+    width: 1.25em;
+    color: #3f6212;
+  }
 }
 
 .yue h3 {
-  font-weight: 600
+  font-weight: 700
 }
 
 .yue a {
