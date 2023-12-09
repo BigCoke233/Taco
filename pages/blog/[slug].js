@@ -69,15 +69,16 @@ export default function Page({ posts }) {
                 if (item.slug == slug) post = item
             })
         }
+
+        //use prism
+        useEffect(() => {
+            const timeout = setTimeout(() => Prism.highlightAll(), 1000);
+            return () => clearTimeout(timeout);
+        }, [])
         
         //输出内容
         if (post) {
             post = parseBlogPost(post);
-
-            //use prism
-            useEffect(() => {
-                return () => Prism.highlightAll()
-            }, [])
 
             return (
                 <>
