@@ -56,7 +56,7 @@ export async function getStaticProps(context) {
 
 export default function Page({ categories, posts, slug }) {
     var category, description;
-    categories.data.map((item) => {
+    if(categories) categories.data.map((item) => {
         if (item.slug == slug) {
             category = item.name
             description = item.description
