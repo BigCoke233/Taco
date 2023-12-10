@@ -9,7 +9,7 @@
             <link>https://www.guhub.cn</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 08 Dec 2023 16:22:05 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Dec 2023 04:20:13 GMT</lastBuildDate>
         <atom:link href="https://www.guhub.cn/rss.xml" rel="self" type="application/rss+xml"/>
         <pubDate>Tue, 01 Aug 2023 13:52:00 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2023, Eltrac]]></copyright>
@@ -20,58 +20,7 @@
   const posts = await res.json()
 
   return { props: { posts } }
-}</code></pre><p>完成之后将文章列表数据作为 <code>Props</code> 返回给主函数即可。</p><p>不过，在这里我遇到了一个后端的问题，代码这样正常跑了数十次之后我才发现前端只展示了前五篇文章，原因是插件给 API 提供了分页功能，每页默认五篇，需要在 URL Query 中用 <code>?page=</code> 标明正在查看第几页。不过我目前的设计并不需要分页功能，所以我用 API 提供的另一个方法增加了每页显示的文章数量，算是一个比较蠢的解决方案。</p><pre><code class="lang-javascript">const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')</code></pre><h3>展示文章</h3><p>从后端得到的数据大概是这样的：</p><pre><code class="lang-json">{<p>&quot;status&quot;: &quot;success&quot;,<br>  &quot;message&quot;: &quot;&quot;,<br>  &quot;data&quot;: {</p><pre><code>&amp;quot;page&amp;quot;: 1,
-&amp;quot;pageSize&amp;quot;: 5,
-&amp;quot;pages&amp;quot;: 2,
-&amp;quot;count&amp;quot;: 7,
-&amp;quot;dataSet&amp;quot;: [
-  {
-    &amp;quot;cid&amp;quot;: &amp;quot;11&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;只是一段无面的梦境&amp;quot;,
-    &amp;quot;created&amp;quot;: &amp;quot;1690897920&amp;quot;,
-    &amp;quot;modified&amp;quot;: &amp;quot;1699365190&amp;quot;,
-    &amp;quot;slug&amp;quot;: &amp;quot;just-a-faceless-dream&amp;quot;,
-    &amp;quot;commentsNum&amp;quot;: &amp;quot;0&amp;quot;,
-    &amp;quot;type&amp;quot;: &amp;quot;post&amp;quot;,
-    &amp;quot;digest&amp;quot;: &amp;quot;......&amp;quot;,
-    &amp;quot;password&amp;quot;: &amp;quot;&amp;quot;,
-    &amp;quot;categories&amp;quot;: [
-      {
-        &amp;quot;mid&amp;quot;: &amp;quot;2&amp;quot;,
-        &amp;quot;name&amp;quot;: &amp;quot;小说&amp;quot;,
-        &amp;quot;slug&amp;quot;: &amp;quot;fiction&amp;quot;,
-        &amp;quot;type&amp;quot;: &amp;quot;category&amp;quot;,
-        &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
-        &amp;quot;count&amp;quot;: &amp;quot;4&amp;quot;,
-        &amp;quot;order&amp;quot;: &amp;quot;1&amp;quot;,
-        &amp;quot;parent&amp;quot;: &amp;quot;0&amp;quot;,
-        &amp;quot;cid&amp;quot;: &amp;quot;11&amp;quot;,
-        &amp;quot;directory&amp;quot;: [
-          &amp;quot;fiction&amp;quot;
-        ],
-        &amp;quot;permalink&amp;quot;: &amp;quot;https://blog.guhub.cn/category/fiction/&amp;quot;,
-        ...
-      }
-    ],
-    &amp;quot;category&amp;quot;: &amp;quot;fiction&amp;quot;,
-    &amp;quot;directory&amp;quot;: [
-      &amp;quot;fiction&amp;quot;
-    ],
-    ...
-    &amp;quot;fields&amp;quot;: {
-      &amp;quot;showTOC&amp;quot;: {
-        &amp;quot;name&amp;quot;: &amp;quot;showTOC&amp;quot;,
-        &amp;quot;type&amp;quot;: &amp;quot;str&amp;quot;,
-        &amp;quot;value&amp;quot;: &amp;quot;0&amp;quot;
-      },
-      &amp;quot;thumbnail&amp;quot;: {
-        &amp;quot;name&amp;quot;: &amp;quot;thumbnail&amp;quot;,
-        &amp;quot;type&amp;quot;: &amp;quot;str&amp;quot;,
-        &amp;quot;value&amp;quot;: &amp;quot;&amp;quot;
-      }
-    }
-  }
-]</code></pre><p>}<br>}</code></pre><p>重要的数据在 data.dataSet 下，里面包含了文章的标题、创建时间戳、CID、分类、Slug 等。值得一提的名为 <code>digest</code> 的属性，这个和 Typecho 的设置挂钩，如果设置了在首页展示完整的 <code>$this-&gt;content()</code>，<code>digest</code> 就会包含全文内容的 HTML 字符串而不只是摘要。这个插件在文章列表的 API 中没有专门输出全文内容的属性，如果在 <code>digest</code> 只输出摘要的情况下需要获取全文，就要用 slug 或者 cid 等唯一的属性到另一个路径中获取更详细的文章信息。</p><p>这显然有些太麻烦了，于是我决定不更改 Typecho 的设置，把 <code>digest</code> 当作全文内容使用。不过，我仍然有在文章列表输出真正的摘要的需求，这就意味着我需要在前端截取一段摘要。</p><p>我是这样实现的：</p><pre><code class="lang-javascript"><br>function stripDigest(digest) {</p><pre><code>//删除空行和空格
+}</code></pre><p>完成之后将文章列表数据作为 <code>Props</code> 返回给主函数即可。</p><p>不过，在这里我遇到了一个后端的问题，代码这样正常跑了数十次之后我才发现前端只展示了前五篇文章，原因是插件给 API 提供了分页功能，每页默认五篇，需要在 URL Query 中用 <code>?page=</code> 标明正在查看第几页。不过我目前的设计并不需要分页功能，所以我用 API 提供的另一个方法增加了每页显示的文章数量，算是一个比较蠢的解决方案。</p><pre><code class="lang-javascript">const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')</code></pre><h3>展示文章</h3><p>从后端得到的数据中，重要的数据在 data.dataSet 下，里面包含了文章的标题、创建时间戳、CID、分类、Slug 等。值得一提的名为 <code>digest</code> 的属性，这个和 Typecho 的设置挂钩，如果设置了在首页展示完整的 <code>$this-&gt;content()</code>，<code>digest</code> 就会包含全文内容的 HTML 字符串而不只是摘要。这个插件在文章列表的 API 中没有专门输出全文内容的属性，如果在 <code>digest</code> 只输出摘要的情况下需要获取全文，就要用 slug 或者 cid 等唯一的属性到另一个路径中获取更详细的文章信息。</p><p>这显然有些太麻烦了，于是我决定不更改 Typecho 的设置，把 <code>digest</code> 当作全文内容使用。不过，我仍然有在文章列表输出真正的摘要的需求，这就意味着我需要在前端截取一段摘要。</p><p>我是这样实现的：</p><pre><code class="lang-javascript"><p>function stripDigest(digest) {</p><pre><code>//删除空行和空格
 digest = digest.replace(/\ +/g,&amp;quot;&amp;quot;).replace(/[ ]/g,&amp;quot;&amp;quot;).replace(/[\r\n]/g,&amp;quot;&amp;quot;)
 
 //删除标题
