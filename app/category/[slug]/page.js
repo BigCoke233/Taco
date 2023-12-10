@@ -38,7 +38,6 @@ async function FetchPosts(slug) {
 
 export async function generateMetadata({ params }) {
     const category = await FetchCategoryInfo(params.slug)
-    console.log(category)
    
     return {
       title: `${category.name} - Eltrac's`
