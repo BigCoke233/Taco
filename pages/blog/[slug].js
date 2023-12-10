@@ -8,6 +8,8 @@
 import { useRouter } from 'next/router'
 import { parseBlogPost } from "@/lib/parseBlogPost";
 
+import Link from 'next/link';
+
 //use prism
 import { useEffect, useState } from 'react'
 import Prism from 'prismjs'
@@ -87,10 +89,17 @@ export default function Page({ posts }) {
                     <article>
                         <header className="px-2 md:px-5">
                             <Heading>{post.title}</Heading>
-                            <p className="my-3">{post.date} · {post.category}</p>
+                            <p className="my-3 text-lg text-gray-600">
+                                <span>{post.date}</span>
+                                <span> · </span>
+                                <Link href={`/category/${post.categorySlug}`}
+                                      className="hover:text-lime-700 transition">
+                                    {post.category}
+                                </Link>
+                            </p>
                         </header>
                         <div id="post-content" dangerouslySetInnerHTML={{__html: post.content}} 
-                        className={`md:text-xl yue pt-10 pb-5 px-2 md:px-5 ${process.env.pagePadding}`} />
+                        className={`md:text-xl yue py-5 px-2 md:px-5 ${process.env.pagePadding}`} />
                     </article>
                     <Comment />
                 </>

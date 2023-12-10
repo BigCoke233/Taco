@@ -17,6 +17,10 @@ body {
   border-radius: 1rem
 }
 
+.font-mono {
+  font-family: 'Courier Prime', monospace;
+}
+
 .react-icons {
   vertical-align: middle;
   display: inline
@@ -91,6 +95,7 @@ pre[class*="language-"] {
   border-radius: 0.325rem;
   box-shadow: 0 0.1rem .2rem rgba(0,0,0,0.25);
   margin: 0 0 1.5em 0;
+  font-family: 'Courier Prime', monospace;
 }
 
 pre[class*="language-"],

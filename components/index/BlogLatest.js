@@ -20,7 +20,12 @@ export default function BlogLatest({ posts, className }) {
         <p className="text-lg my-5">{post.digest}</p>
         <div className="text-gray-500 flex justify-between text-justify">
           <p>{post.date}</p>
-          <p>{post.category}</p>
+          <p>
+            <Link href={`/category/${post.categorySlug}`} 
+                  className="hover:text-lime-700 transition">
+              {post.category}
+            </Link>
+          </p>
         </div>
       </article>
     )
