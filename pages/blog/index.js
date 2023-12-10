@@ -8,6 +8,7 @@
 import Head from 'next/head'
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
+import PageTitle from '@/components/PageTitle'
 
 import Link from 'next/link'
 import { parseBlogPost } from '@/lib/parseBlogPost'
@@ -34,9 +35,7 @@ export async function getStaticProps() {
 export default function Blog({ posts }) {
     return (
         <>
-            <Head>
-                <title>博客 - Eltrac&apos;s</title>
-            </Head>
+            <PageTitle>博客</PageTitle>
             <Header className="mx-5" title="无人图书馆" subtitle="Bizzare Library" />
             <article className="px-5 pb-20 pt-0">
                 <Heading>文章列表</Heading>

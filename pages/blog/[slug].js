@@ -7,7 +7,6 @@
 
 import { useRouter } from 'next/router'
 import { parseBlogPost } from "@/lib/parseBlogPost";
-import Head from 'next/head'
 
 //use prism
 import { useEffect, useState } from 'react'
@@ -18,6 +17,7 @@ require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
 
 //页面组成部分
+import PageTitle from '@/components/PageTitle';
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
 import Comment from '@/components/Comment.js'
@@ -82,9 +82,7 @@ export default function Page({ posts }) {
 
             return (
                 <>
-                    <Head>
-                        <title>{post.title} - Eltrac&apos;s</title>
-                    </Head>
+                    <PageTitle>{post.title}</PageTitle>
                     <Header />
                     <article>
                         <header className="px-2 md:px-5">
