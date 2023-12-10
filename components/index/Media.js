@@ -50,7 +50,7 @@ export default function Media({ text }) {
         <section>
           <h2 id="desktop-title-media" style={{writingMode: 'vertical-rl'}} className="text-4xl font-extrabold tracking-widest
           border-r-4 pr-5 hidden md:block">{text.title}</h2>
-          <h2 id="mobile-title-media" class="md:hidden text-center mb-5
+          <h2 id="mobile-title-media" className="md:hidden text-center mb-5
           text-3xl font-extrabold">{text.title}</h2>
         </section>
 
