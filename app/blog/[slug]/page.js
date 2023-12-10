@@ -20,7 +20,7 @@ import BlogContent from "@/components/BlogContent";
 /* === 调用 API === */
 
 async function CallAPI(slug) {
-    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
+    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999', { next: { tags: ['blog'] } })
     const posts = await res.json()
         
     //遍历查找并获取对应文章
@@ -50,15 +50,24 @@ export async function generateMetadata({ params }) {
 /* === 主函数 === */
 
 export default async function Page({ params }) {
+    //获取文章信息
     const slug = params.slug
     let post = await CallAPI(slug)
-        
-    //输出内容
+  
+    //如果获取成功
     if (post) {
-        post = parseBlogPost(post);
+        //读取文章字段
+        let fields = post.fields
+
+        //获取文章头图
+        let banner = (fields.thumbnail.value) ? fields.thumbnail.value : null
+
+        //解析文章信息
+        post = await parseBlogPost(post);
+
         return (
             <>
-                <Header />
+                <Header banner={banner} />
                 <article>
                     <header className="px-2 md:px-5">
                         <Heading className="w-4/5">{post.title}</Heading>

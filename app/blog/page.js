@@ -22,6 +22,8 @@ export const metadata = {
 export default async function Blog() {
     const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
     const posts = await res.json()
+
+    //revalidateTag('blog')
     
     return (
         <>
