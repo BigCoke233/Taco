@@ -1,9 +1,11 @@
 /**
- * [slug].js - 博客文章内页
+ * 博客文章内页
  * 
- *  - 文章内容
- *  - 评论
+ * @file blog/[slug]/page.js
+ * @returns jsx
  */
+
+/* === 引入 === */
 
 import { parseBlogPost } from "@/lib/parseBlogPost";
 
@@ -15,17 +17,11 @@ import Heading from '@/components/Heading.js'
 import Comment from '@/components/Comment.js'
 import BlogContent from "@/components/BlogContent";
 
-/*
- * 页面主体
- *  
- * @returns jsx
- */
-export default async function Page({ params }) {
-    const slug = params.slug
+/* === 调用 API === */
 
+async function CallAPI(slug) {
     const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
     const posts = await res.json()
-
         
     //遍历查找并获取对应文章
     var post;
@@ -36,6 +32,26 @@ export default async function Page({ params }) {
             if (item.slug == slug) post = item
         })
     }
+
+    return post
+}
+
+/* === 元信息 === */
+
+export async function generateMetadata({ params }) {
+    const slug = params.slug
+    let post = await parseBlogPost(await CallAPI(slug))
+   
+    return {
+      title: `${post.title} - Eltrac's`
+    }
+}
+
+/* === 主函数 === */
+
+export default async function Page({ params }) {
+    const slug = params.slug
+    let post = await CallAPI(slug)
         
     //输出内容
     if (post) {

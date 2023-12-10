@@ -1,44 +1,61 @@
 /**
- * [slug].js - 分类页面
+ * 博客分类页面
  * 
- * 根据分类展示文章
+ * @file category/[slug]/page.js
+ * @returns jsx
  */
+
+/* === 引入 === */
 
 import Link from "next/link"
 
 import Header from "@/components/Header"
 import Heading from "@/components/Heading"
 
-/**
- * 页面主体
- *  
- * @returns jsx
- */
+/* === 调用 API === */
 
-export default async function Page({ params }) {
-    const slug = params.slug
-
-    //获取分类数据
+async function FetchCategoryInfo(slug) {
     const res1 = await fetch('https://blog.guhub.cn/api/categories');
     const categories = await res1.json()
 
-    //获取文章列表
+    //遍历获取对应分类的名字和描述
+    let data
+    if(categories) categories.data.map((item) => {
+        if (item.slug == slug) data = item;
+    })
+
+    return data
+}
+
+async function FetchPosts(slug) {
     const res2 = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999&filterType=category&filterSlug='+slug)
     const posts = await res2.json()
 
-    var category, description;
-    if(categories) categories.data.map((item) => {
-        if (item.slug == slug) {
-            category = item.name
-            description = item.description
-        }
-    })
+    return posts
+}
+
+/* === 元信息 === */
+
+export async function generateMetadata({ params }) {
+    const category = await FetchCategoryInfo(params.slug)
+    console.log(category)
+   
+    return {
+      title: `${category.name} - Eltrac's`
+    }
+}
+
+/* === 主函数 === */
+
+export default async function Page({ params }) {
+    const category = await FetchCategoryInfo(params.slug)
+    const posts = await FetchPosts(params.slug)
 
     return (
         <>
             <Header />
             <article className="px-2 md:px-5 pb-20 pt-0">
-                <Heading sub={description}>{category}</Heading>
+                <Heading sub={category.description}>{category.name}</Heading>
                 <ul className="my-10 md:mx-16">
                 {posts.data.dataSet.map((post) => {
                     return (

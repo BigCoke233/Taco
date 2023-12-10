@@ -1,6 +1,7 @@
 /**
  * 根布局
  * 
+ * @file layout.js
  * @returns jsx
  */
 
@@ -24,7 +25,9 @@ export default function RootLayout({ children }) {
     <html lang="zh-cn">
     <body>
       <main id="app" className={MainAppClassName}>
-        {children}
+        <section id="page">
+          {children}
+        </section>
         <Helpbar />
         <Footer />
       </main>
