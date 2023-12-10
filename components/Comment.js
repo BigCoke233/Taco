@@ -1,15 +1,16 @@
+"use client";
+
 /**
  * 评论
  * 
  * @returns jsx
  */
 
-import Link from 'next/link'
 import Giscus from '@giscus/react'
 
 export default function Comment() {
     return (
-        <section id="comment" className={`${process.env.pagePadding} px-5`}>
+        <section id="comment" className={`px-5 md:px-16`}>
             <Giscus
                 id="comments"
                 repo="BigCoke233/isla-giscus"

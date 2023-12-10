@@ -14,7 +14,6 @@
 /* Imports - 引用 */
 
 //nextjs 内置
-import Head from 'next/head'
 import { promises as fs } from 'fs';
 
 //页面组成部分
@@ -28,23 +27,9 @@ import Nav from '@/components/index/Nav';
 //RSS
 import generateRssFeed from '@/lib/rssGenerator';
 
-/**
- * 获取数据
- * 
- * @returns object
- */
-
-export async function getStaticProps() {
-  //获取博客文章列表
-  const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
-  const posts = await res.json()
-  //获取页面设置
-  const config_data = await fs.readFile(process.cwd() + '/lib/config.json', 'utf8');
-  const config = JSON.parse(config_data)
-  //生成 rss 订阅源
-  await generateRssFeed({ posts: posts.data.dataSet });
-
-  return { props: { posts, config } }
+export const metadata = {
+  title: "Eltrac's",
+  favicon: "favicon.png"
 }
 
 /**
@@ -53,12 +38,21 @@ export async function getStaticProps() {
  * @returns page
  */
 
-export default function Home({ posts, config }) {
+export default async function Home() {
+
+  //获取博客文章列表
+  const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
+  const posts = await res.json()
+
+  //获取页面设置
+  const config_data = await fs.readFile(process.cwd() + '/lib/config.json', 'utf8');
+  const config = JSON.parse(config_data)
+
+  //生成 rss 订阅源
+  await generateRssFeed({ posts: posts.data.dataSet });
+
   return (
     <>
-      <Head>
-        <title>Eltrac&apos;s</title>
-      </Head>
       <Header />
       <section id="blog" className="md:flex md:gap-14 px-5">
         <BlogLatest posts={posts} className="md:w-2/3" />

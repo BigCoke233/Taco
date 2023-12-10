@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@300;400;500;600;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,10 +97,14 @@ pre[class*="language-"] {
   border-radius: 0.325rem;
   box-shadow: 0 0.1rem .2rem rgba(0,0,0,0.25);
   margin: 0 0 1.5em 0;
-  font-family: 'Courier Prime', monospace;
+  background-color: rgb(28, 48, 1)
 }
 
 pre[class*="language-"],
 code[class*="language-"] {
-  font-size: 16px
+  font-size: 0.85em
+}
+
+pre, code {
+  font-family: 'Courier Prime', monospace!important;
 }

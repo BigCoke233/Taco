@@ -10,7 +10,7 @@ import Link from 'next/link'
 export default function Header({ title = "烟云树海。", subtitle = "C'est la vie, mon chéri.", banner = "https://image.guhub.cn/banner.jpg" }) {
     return (
         <header className="relative">
-          <section id="banner" className={`py-12 px-2 ${process.env.pagePadding}`}>
+          <section id="banner" className={`py-12 px-2 md:px-16`}>
             <img src={banner} width={1200} height={400} alt="Banner of the page" loading="lazy"
             className="object-cover object-bottom h-80" />
           </section>

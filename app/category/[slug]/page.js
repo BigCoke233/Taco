@@ -8,34 +8,15 @@ import Link from "next/link"
 
 import Header from "@/components/Header"
 import Heading from "@/components/Heading"
-import PageTitle from "@/components/PageTitle"
 
 /**
- * 动态路由
- * 
- * @returns object
+ * 页面主体
+ *  
+ * @returns jsx
  */
 
-export async function getStaticPaths() {
-    return {
-        paths: [
-            { params: { slug: 'poetry' } },
-            { params: { slug: 'essays' } },
-            { params: { slug: 'fiction' } }
-          ],
-      fallback: true
-    }
-}
-
-/**
- * 根据分类获取文章列表
- * 
- * @returns object
- */
-
-export async function getStaticProps(context) {
-    //获取分类 slug
-    let slug = context.params.slug
+export default async function Page({ params }) {
+    const slug = params.slug
 
     //获取分类数据
     const res1 = await fetch('https://blog.guhub.cn/api/categories');
@@ -45,16 +26,6 @@ export async function getStaticProps(context) {
     const res2 = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999&filterType=category&filterSlug='+slug)
     const posts = await res2.json()
 
-    return { props: { categories, posts, slug } }
-}
-
-/**
- * 页面主体
- *  
- * @returns jsx
- */
-
-export default function Page({ categories=null, posts=null, slug=null }) {
     var category, description;
     if(categories) categories.data.map((item) => {
         if (item.slug == slug) {
@@ -65,7 +36,6 @@ export default function Page({ categories=null, posts=null, slug=null }) {
 
     return (
         <>
-            <PageTitle>{category}</PageTitle>
             <Header />
             <article className="px-2 md:px-5 pb-20 pt-0">
                 <Heading sub={description}>{category}</Heading>
