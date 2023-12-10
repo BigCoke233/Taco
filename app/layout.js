@@ -16,6 +16,9 @@ import '@/styles/globals.css'
 import Footer from '@/components/Footer'
 import Helpbar from '@/components/Helpbar'
 
+import { Suspense } from 'react'
+import Loading from '@/components/Loading'
+
 /* === 主函数 === */
 
 export default function RootLayout({ children }) {
@@ -25,9 +28,9 @@ export default function RootLayout({ children }) {
     <html lang="zh-cn">
     <body>
       <main id="app" className={MainAppClassName}>
-        <section id="page">
+        <Suspense fallback={<Loading />}>
           {children}
-        </section>
+        </Suspense>
         <Helpbar />
         <Footer />
       </main>
