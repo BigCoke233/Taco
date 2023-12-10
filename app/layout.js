@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * 根布局
  * 
@@ -16,8 +18,7 @@ import '@/styles/globals.css'
 import Footer from '@/components/Footer'
 import Helpbar from '@/components/Helpbar'
 
-import { Suspense } from 'react'
-import Loading from '@/components/Loading'
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 /* === 主函数 === */
 
@@ -28,9 +29,14 @@ export default function RootLayout({ children }) {
     <html lang="zh-cn">
     <body>
       <main id="app" className={MainAppClassName}>
-        <Suspense fallback={<Loading />}>
+        <section id="page">
           {children}
-        </Suspense>
+          <ProgressBar
+            color="#4d7c0f"
+            options={{ showSpinner: false }}
+            shallowRouting
+          />
+        </section>
         <Helpbar />
         <Footer />
       </main>
