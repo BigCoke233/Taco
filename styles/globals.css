@@ -93,18 +93,34 @@ body {
 /* prism.css */
 
 pre[class*="language-"] {
-	padding: 1.5em;
-  border-radius: 0.325rem;
+	padding: 1em 1.25em;
+  border-radius: 0.215rem;
   box-shadow: 0 0.1rem .2rem rgba(0,0,0,0.25);
   margin: 0 0 1.5em 0;
-  background-color: rgb(28, 48, 1)
+  background-color: rgb(18, 31, 1)
 }
 
 pre[class*="language-"],
 code[class*="language-"] {
-  font-size: 0.85em
+  font-size: 0.875em
+}
+
+pre[class*="language-"]::-webkit-scrollbar {
+  height: 0.25rem;
+  width: 0.25rem;
+  background-color: rgba(255,255,255,.025)
 }
 
 pre, code {
   font-family: 'Courier Prime', monospace!important;
+}
+
+:not(pre) code {
+  background-color: rgba(0,0,0,0.075);
+  vertical-align: middle;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.15rem;
+  text-shadow: 0.05rem 0.05rem 0 rgba(0,0,0,0.075);
+  color: #444;
+  font-size: 85%
 }
