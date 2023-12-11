@@ -5,7 +5,7 @@
  */
 
 //import Image from 'next/image'
-import Link from 'next/link'
+import Link from "next/link"
 
 export default function Header({ title = "烟云树海。", subtitle = "C'est la vie, mon chéri.", banner = "https://image.guhub.cn/banner.jpg" }) {
   if (banner===null) banner = "https://image.guhub.cn/banner.jpg"

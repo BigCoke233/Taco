@@ -18,6 +18,8 @@ import '@/styles/globals.css'
 import Footer from '@/components/Footer'
 import Helpbar from '@/components/Helpbar'
 
+import Transition from '@/components/Transition';
+
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 /* === 主函数 === */
@@ -30,7 +32,10 @@ export default function RootLayout({ children }) {
     <body>
       <main id="app" className={MainAppClassName}>
         <section id="page">
-          {children}
+          <Transition>
+            {children}
+            <Footer />
+          </Transition>
           <ProgressBar
             color="#4d7c0f"
             options={{ showSpinner: false }}
@@ -38,7 +43,6 @@ export default function RootLayout({ children }) {
           />
         </section>
         <Helpbar />
-        <Footer />
       </main>
       </body>
     </html>
