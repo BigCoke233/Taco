@@ -70,7 +70,7 @@ export default async function Page({ params }) {
                 <Header banner={banner} />
                 <article>
                     <header className="px-2 md:px-5">
-                        <Heading className="w-4/5">{post.title}</Heading>
+                        <Heading className="md:w-4/5">{post.title}</Heading>
                         <p className="my-3 text-lg text-gray-600">
                             <span>{post.date}</span>
                             <span> · </span>
