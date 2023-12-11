@@ -19,20 +19,20 @@ export default function Transition({ children }) {
 
     //监听 Route Change
     useEffect(() => {
+        //before route change
+        //by listen to link clicking
+        const links = document.querySelectorAll(`a:not([target="_blank"]):not([href="${pathname}"])`)
+        links.forEach((e) => {
+            e.addEventListener('click', () => {
+                container.classList.toggle('opacity-100')
+                container.classList.toggle('opacity-0')
+            })
+        })
+
         //after route change
         const container = document.getElementById('transition-container')
         container.classList.remove('opacity-0')
         container.classList.add('opacity-100')
-
-        //before route change
-        //by listen to link clicking
-        const links = document.querySelectorAll('a:not([target="_blank"])')
-        links.forEach((e) => {
-            e.addEventListener('click', () => {
-                container.classList.remove('opacity-100')
-                container.classList.add('opacity-0')
-            })
-        })
     }, [pathname])
 
     return (
