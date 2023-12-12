@@ -41,21 +41,25 @@ export default function Media({ text }) {
     ]
 
     return (
-      <section id="media" className={`pt-16 ${process.env.pagePadding} md:flex`}>
+      <section id="media" className='pt-16 md:px-16 md:flex gap-10'>
 
         <style>{`
           #media-list li a span { display: flex; justify-content: center; align-items: center; gap: 0.5rem }
         `}</style>
 
+        {/* 标题 */}
         <section>
-          <h2 id="desktop-title-media" style={{writingMode: 'vertical-rl'}} className="text-4xl font-extrabold tracking-widest
+          <h2 id="desktop-title-media" style={{writingMode: 'vertical-rl'}} 
+          className="text-4xl font-extrabold tracking-widest
           border-r-4 pr-5 hidden md:block">{text.title}</h2>
           <h2 id="mobile-title-media" className="md:hidden text-center mb-5
           text-3xl font-extrabold">{text.title}</h2>
         </section>
 
-        <div className="mx-5 md:mx-10">
-          <ul id="media-list" className="flex gap-5 items-start flex-wrap content-start">
+        {/* 列表内容 */}
+        <div>
+          <ul id="media-list" className="flex gap-5 items-start flex-wrap 
+          content-start">
             {media.map((item) => {
               return (
                 <li className="border border-gray-200 transition bg-gray-50
