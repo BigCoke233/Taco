@@ -28,12 +28,12 @@ export default function Helpbar() {
         }
     ]
 
-    const buttonStyle = "border rounded-full bg-gray-50 shadow transition " + 
+    const buttonStyle = "inline-block border rounded-full bg-gray-50 shadow transition " + 
     "p-2 md:p-3 text-lg " +
     "hover:border-lime-700 hover:text-white hover:bg-lime-700";
 
     return(
-        <div className="fixed top-5 right-5 
+        <ul className="fixed top-5 right-5 
         md:top-auto md:bottom-7 md:right-7
         flex flex-wrap flex-col gap-3">
         {links.map((item) => {
@@ -61,6 +61,6 @@ export default function Helpbar() {
                 )
             }
         })}
-        </div>
+        </ul>
     )
 }
