@@ -25,7 +25,7 @@ import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 /* === 主函数 === */
 
 export default function RootLayout({ children }) {
-  const MainAppClassName = 'max-w-5xl mx-auto my-0 md:my-12 p-3 md:p-0'
+  const MainAppClassName = 'max-w-5xl mx-auto my-0 md:my-6 p-3 md:p-0'
 
   return (
     <html lang="zh-cn">
