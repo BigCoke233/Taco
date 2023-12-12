@@ -40,20 +40,24 @@ export default function Helpbar() {
             if ("link" == item.type)
             {
                 return (
-                    <Tooltip content={item.tooltip} placement="left" offset={15}>
-                        <Link 
-                            href={item.link} key={item.key}
+                    <li key={item.key}>
+                        <Tooltip content={item.tooltip} placement="left" offset={15}>
+                            <Link 
+                            href={item.link}
                             className={buttonStyle}
-                        >{item.content}</Link>
-                    </Tooltip>
+                            >{item.content}</Link>
+                        </Tooltip>
+                    </li>
                 )
             }
             else if ("action" == item.type) {
                 return (
-                    <Tooltip content={item.tooltip} placement="left" offset={15}>
-                        <button className={buttonStyle} key={item.key}
-                        onClick={item.action}>{item.content}</button>
-                    </Tooltip>
+                    <li key={item.key}>
+                        <Tooltip content={item.tooltip} placement="left" offset={15}>
+                            <button className={buttonStyle} key={item.key}
+                            onClick={item.action}>{item.content}</button>
+                        </Tooltip>
+                    </li>
                 )
             }
         })}
