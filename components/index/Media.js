@@ -41,7 +41,7 @@ export default function Media({ text }) {
     ]
 
     return (
-      <section id="media" className='pt-16 md:px-16 md:flex gap-10'>
+      <section id="media" className='pt-16 md:px-16 md:flex gap-12'>
 
         <style>{`
           #media-list li a span { display: flex; justify-content: center; align-items: center; gap: 0.5rem }
