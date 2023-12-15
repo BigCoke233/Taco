@@ -13,8 +13,10 @@ import Link from 'next/link'
 import { useEffect } from 'react';
 
 //UI-related
-import { Tooltip } from "@nextui-org/tooltip";
-import { LuHome, LuPointer, LuSunMoon } from "react-icons/lu";
+import { Tooltip } from "@nextui-org/tooltip"
+import { LuHome, LuPointer, LuSunMoon } from "react-icons/lu"
+
+import Toast from '@/lib/Toast';
 
 /* === 数据 === */
 
@@ -44,7 +46,7 @@ const links = [
 
 const buttonStyle = `inline-block rounded-full shadow transition 
 p-2 md:p-3 text-lg bg-gray-50 dark:bg-zinc-800
-border dark:border-zinc-700
+border dark:border-zinc-700 outline-none
 hover:border-lime-700 hover:text-white hover:bg-lime-700
 dark:hover:border-lime-700 dark:hover:bg-lime-700`
 
@@ -80,6 +82,10 @@ function ToggleTopButton(TopBtn, offset) {
     }
 }
 
+function GoTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+}
+
 /**
  * Switch Theme
  * 
@@ -87,8 +93,13 @@ function ToggleTopButton(TopBtn, offset) {
  */
 
 function SwitchTheme() {
+    //完成切换操作
     const Html = document.getElementsByTagName('html')[0]
     Html.classList.toggle('dark')
+
+    //发送 toast 提示操作完成
+    if (Html.classList.contains('dark')) Toast('已切换为深色模式')
+    else Toast('已切换为浅色模式')
 }
 
 /* === 主函数 === */
@@ -97,34 +108,32 @@ export default function Helpbar() {
     AddTopButtonEvent()
     //结构和样式
     return(
-        <ul className="fixed top-5 right-5 
-        md:top-auto md:bottom-7 md:right-7
-        flex flex-wrap flex-col gap-3">
-        {links.map((item) => {
-            if ("link" == item.type)
-            {
-                return (
-                    <li key={item.key}>
-                        <Tooltip content={item.tooltip} placement="left" offset={15}>
-                            <Link 
-                            href={item.link}
-                            className={buttonStyle}
-                            >{item.content}</Link>
-                        </Tooltip>
-                    </li>
-                )
-            }
-            else if ("action" == item.type) {
-                return (
-                    <li key={item.key}>
-                        <Tooltip content={item.tooltip} placement="left" offset={15}>
-                            <button className={buttonStyle} key={item.key} id={item.key}
-                            onClick={item.action}>{item.content}</button>
-                        </Tooltip>
-                    </li>
-                )
-            }
-        })}
-        </ul>
+        <section id="helpbar">
+            <ul className="fixed top-5 right-5 
+            md:top-auto md:bottom-7 md:right-7
+            flex flex-wrap flex-col gap-3">
+
+                <li key="home">
+                    <Tooltip content="返回首页" placement="left" offset={15}>
+                        <Link href='/' className={buttonStyle}><LuHome /></Link>
+                    </Tooltip>
+                </li>
+
+                <li key="themeSwitch">
+                    <Tooltip content="切换主题" placement="left" offset={15}>
+                        <button className={buttonStyle} id="themeSwitch"
+                        onClick={SwitchTheme}><LuSunMoon /></button>
+                    </Tooltip>
+                </li>
+
+                <li key="goTop">
+                    <Tooltip content="返回顶部" placement="left" offset={15}>
+                        <button className={buttonStyle} id="goTop"
+                        onClick={GoTop}><LuPointer /></button>
+                    </Tooltip>
+                </li>
+
+            </ul>
+        </section>
     )
 }

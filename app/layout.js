@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="zh-cn">
-    <body class={BodyClassName}>
+    <body className={BodyClassName}>
       <main id="app" className={MainAppClassName}>
         <section id="page">
           <Transition>
