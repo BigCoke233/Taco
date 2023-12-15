@@ -10,9 +10,10 @@
 /* === 引入 === */
 
 //全局 CSS
+import '@/styles/init.css'
 import '@/styles/yue.css'
 import '@/styles/prism.css'
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 
 //页面组成部分
 import Footer from '@/components/Footer'
@@ -25,11 +26,13 @@ import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 /* === 主函数 === */
 
 export default function RootLayout({ children }) {
+  const BodyClassName = 'bg-gray-50 dark:bg-zinc-900 ' +
+                        'text-zinc-800 dark:text-zinc-200'
   const MainAppClassName = 'max-w-5xl mx-auto my-0 md:my-6 p-3 md:p-0'
 
   return (
     <html lang="zh-cn">
-    <body>
+    <body class={BodyClassName}>
       <main id="app" className={MainAppClassName}>
         <section id="page">
           <Transition>

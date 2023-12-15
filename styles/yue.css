@@ -11,7 +11,7 @@
     font-family: 'Noto Serif SC', serif;
     font-weight: 400;
     line-height: 1.62;
-    color: #444443;
+    /*color: #444443;*/
   }
   
   .windows .yue {
@@ -27,15 +27,15 @@
     background-color: rgba(0,0,0,0.2);
   }
   
-  .yue h1,
+  /*.yue h1,
   .yue h2,
   .yue h3,
   .yue h4,
   .yue h5,
   .yue h6 {
-    /* font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;*/
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
     color: #222223;
-  }
+  }*/
   
   .yue h1 {
     font-size: 1.8em;

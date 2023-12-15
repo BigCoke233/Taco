@@ -35,9 +35,11 @@ const links = [
     }
 ]
 
-const buttonStyle = "inline-block border rounded-full bg-gray-50 shadow transition " + 
-"p-2 md:p-3 text-lg " +
-"hover:border-lime-700 hover:text-white hover:bg-lime-700";
+const buttonStyle = `inline-block rounded-full shadow transition 
+p-2 md:p-3 text-lg bg-gray-50 dark:bg-zinc-800
+border dark:border-zinc-700
+hover:border-lime-700 hover:text-white hover:bg-lime-700
+dark:hover:border-lime-700 dark:hover:bg-lime-700`
 
 /* === useEffect === */
 
