@@ -42,6 +42,8 @@ const buttonStyle = "inline-block border rounded-full bg-gray-50 shadow transiti
 /* === useEffect === */
 
 /**
+ * GoTop
+ * 
  * 返回顶部按钮的动画效果
  * 下滑显示 上移消失
  */
@@ -60,7 +62,7 @@ function AddTopButtonEvent() {
 }
 
 function ToggleTopButton(TopBtn, offset) {
-    if(offset<=450) {
+    if(offset<=600) {
         TopBtn.classList.add("hide")
         TopBtn.classList.remove("inline-block")
     } else {
