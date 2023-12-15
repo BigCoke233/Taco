@@ -12,9 +12,9 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { parseBlogPost } from '@/lib/parseBlogPost'
 
-/* === 主函数 === */
+/* === 工具函数 === */
 
-export default function BlogArchive({ posts }) {
+function RemoveExtraYearTitles() {
     useEffect(() => {
         const yearTitles = document.getElementsByClassName("year-title");
         for (let j=0; j<3; j++) {
@@ -23,28 +23,37 @@ export default function BlogArchive({ posts }) {
             }
         }
     })
-    
+}
+
+
+/* === CSS === */
+
+const titleStyle = `
+.year-title > span::before {
+    background-color: rgba(63, 98, 18, 0.25);
+
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 60%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-2deg);
+    border-radius: 20% 30%
+}`
+
+/* === 主函数 === */
+
+export default function BlogArchive({ posts }) {
+    RemoveExtraYearTitles()
     return (
         <ul className="my-5 md:mx-16">
             {posts.data.dataSet.map((post) => {
                 post = parseBlogPost(post);
                 return (
                     <>
-                        <style jsx>{`
-                        .year-title > span::before {
-                            background-color: rgba(63, 98, 18, 0.25);
-
-                            content: "";
-                            position: absolute;
-                            width: calc(100% + 4px);
-                            height: 60%;
-                            left: -2px;
-                            bottom: 0;
-                            z-index: -1;
-                            transform: rotate(-2deg);
-                            border-radius: 20% 30%
-                        }
-                        `}</style>
+                        <style jsx>{titleStyle}</style>
                         <li className="year-title font-mono md:text-right
                         text-gray-500 text-2xl -my-2" key={`${post.year}-${post.slug}`}>
                             <span className="relative">{post.year}</span>
