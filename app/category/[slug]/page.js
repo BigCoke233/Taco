@@ -20,9 +20,7 @@ async function FetchCategoryInfo(slug) {
 
     //遍历获取对应分类的名字和描述
     let data
-    if(categories) categories.data.map((item) => {
-        if (item.slug == slug) data = item;
-    })
+    if(categories) categories.data.map((item) => { if (item.slug == slug) data = item })
 
     return data
 }

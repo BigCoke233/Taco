@@ -28,9 +28,7 @@ async function CallAPI(slug) {
     var data = (posts && posts.data.dataSet) ? posts.data.dataSet : false;
 
     if (data) { //确保 data 读取到的是页面加载后的正确值，而不是页面加载完成前返回的 undefined
-        data.map((item) => {
-            if (item.slug == slug) post = item
-        })
+        data.map((item) => { if (item.slug == slug) post = item })
     }
 
     return post
