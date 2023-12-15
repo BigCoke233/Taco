@@ -6,9 +6,13 @@
  * 文章列表页面组件
  */
 
+/* === 引用 === */
+
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { parseBlogPost } from '@/lib/parseBlogPost'
+
+/* === 主函数 === */
 
 export default function BlogArchive({ posts }) {
     useEffect(() => {
@@ -42,7 +46,7 @@ export default function BlogArchive({ posts }) {
                         }
                         `}</style>
                         <li className="year-title font-mono md:text-right
-                        text-gray-500 text-2xl -my-2" key={post.year}>
+                        text-gray-500 text-2xl -my-2" key={`${post.year}-${post.slug}`}>
                             <span className="relative">{post.year}</span>
                         </li>
 
