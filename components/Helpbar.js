@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 
 //UI-related
 import { Tooltip } from "@nextui-org/tooltip";
-import { LuHome, LuPointer } from "react-icons/lu";
+import { LuHome, LuPointer, LuSunMoon } from "react-icons/lu";
 
 /* === 数据 === */
 
@@ -25,6 +25,13 @@ const links = [
         "content": (<LuHome />),
         "key": "home",
         "tooltip": "首页"
+    },
+    {
+        "type": "action",
+        "action": () => SwitchTheme(),
+        "content": (<LuSunMoon />),
+        "key": "themeSwitch",
+        "tooltip": "切换主题"
     },
     {
         "type": "action",
@@ -41,7 +48,7 @@ border dark:border-zinc-700
 hover:border-lime-700 hover:text-white hover:bg-lime-700
 dark:hover:border-lime-700 dark:hover:bg-lime-700`
 
-/* === useEffect === */
+/* === 工具函数 === */
 
 /**
  * GoTop
@@ -71,6 +78,17 @@ function ToggleTopButton(TopBtn, offset) {
         TopBtn.classList.remove("hide")
         TopBtn.classList.add("inline-block")
     }
+}
+
+/**
+ * Switch Theme
+ * 
+ * @returns void
+ */
+
+function SwitchTheme() {
+    const Html = document.getElementsByTagName('html')[0]
+    Html.classList.toggle('dark')
 }
 
 /* === 主函数 === */
