@@ -41,19 +41,38 @@ const buttonStyle = "inline-block border rounded-full bg-gray-50 shadow transiti
 
 /* === useEffect === */
 
-function ToggleTopButton() {
+/**
+ * 返回顶部按钮的动画效果
+ * 下滑显示 上移消失
+ */
+
+function AddTopButtonEvent() {
     useEffect(() => {
         const TopBtn = document.getElementById("goTop")
-        TopBtn.addEventListener("scroll", () => {
-            //....
-        })
+        TopBtn.classList.add("hide")
+        TopBtn.classList.remove("inline-block")
+
+        window.onscroll = function() {
+            let offset = document.documentElement.scrollTop;
+            ToggleTopButton(TopBtn, offset);
+        }
     })
+}
+
+function ToggleTopButton(TopBtn, offset) {
+    if(offset<=450) {
+        TopBtn.classList.add("hide")
+        TopBtn.classList.remove("inline-block")
+    } else {
+        TopBtn.classList.remove("hide")
+        TopBtn.classList.add("inline-block")
+    }
 }
 
 /* === 主函数 === */
 
 export default function Helpbar() {
-
+    AddTopButtonEvent()
     //结构和样式
     return(
         <ul className="fixed top-5 right-5 
@@ -77,7 +96,7 @@ export default function Helpbar() {
                 return (
                     <li key={item.key}>
                         <Tooltip content={item.tooltip} placement="left" offset={15}>
-                            <button className={buttonStyle} key={item.key} id={item.keya}
+                            <button className={buttonStyle} key={item.key} id={item.key}
                             onClick={item.action}>{item.content}</button>
                         </Tooltip>
                     </li>

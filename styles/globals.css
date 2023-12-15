@@ -19,6 +19,8 @@ body {
   border-radius: 1rem
 }
 
+.hide { display: none }
+
 .font-mono {
   font-family: 'Courier Prime', monospace;
 }
