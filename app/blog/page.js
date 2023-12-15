@@ -9,7 +9,7 @@
 
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
-import BlogArchive from '@/components/BlogArchive'
+import BlogArchive from '@/components/blog/BlogArchive'
 
 /* === 元信息 === */
 

@@ -14,8 +14,8 @@ import Link from 'next/link';
 //页面组成部分
 import Header from '@/components/Header.js'
 import Heading from '@/components/Heading.js'
-import Comment from '@/components/Comment.js'
-import BlogContent from "@/components/BlogContent";
+import Comment from '@/components/blog/Comment.js'
+import BlogContent from "@/components/blog/BlogContent";
 
 /* === 调用 API === */
 
