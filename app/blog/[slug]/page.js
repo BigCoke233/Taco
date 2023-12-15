@@ -20,7 +20,7 @@ import BlogContent from "@/components/BlogContent";
 /* === 调用 API === */
 
 async function CallAPI(slug) {
-    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999', { next: { tags: ['blog'] } })
+    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999', { next: { revalidate: 3600 } })
     const posts = await res.json()
         
     //遍历查找并获取对应文章

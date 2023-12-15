@@ -20,10 +20,8 @@ export const metadata = {
 /* === 主函数 === */
 
 export default async function Blog() {
-    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
+    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999', { next: { revalidate: 3600 } })
     const posts = await res.json()
-
-    //revalidateTag('blog')
     
     return (
         <>

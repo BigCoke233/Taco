@@ -41,7 +41,7 @@ export const metadata = {
 export default async function Home() {
 
   //获取博客文章列表
-  const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999')
+  const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999', { next: { revalidate: 3600 } })
   const posts = await res.json()
 
   //获取页面设置
