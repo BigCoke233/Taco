@@ -20,7 +20,7 @@ export default function HomeButton({ className }) {
     return (
         <li key="home">
             <Tooltip content="返回首页" placement="left" offset={15}>
-                <Link href='/' className={className}><LuHome /></Link>
+                <Link href='/' className={`${className} `}><LuHome /></Link>
             </Tooltip>
         </li>
     )
