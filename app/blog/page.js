@@ -32,7 +32,8 @@ export default async function Blog() {
     
     return (
         <>
-            <Header className="mx-5" title="无人图书馆" subtitle="Bizzare Library" />
+            <Header className="mx-5" banner="https://image.guhub.cn/page-banner/blog-banner.jpg"
+            title="清楚洞悉。" subtitle="The opportune moment" />
             <article className="px-5 pb-20 pt-0">
                 <Heading sub="就这样存在于此。">被陈列的想法</Heading>
                 <BlogCategories className={sharedClass} data={categories.data} />
