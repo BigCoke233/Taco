@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function Footer() {
     return (
-      <footer id="footer" className="md:text-center text-gray-500 text-sm
+      <footer id="footer" className="md:text-center text-gray-500 text-sm gap-2
       mt-10 p-5 md:p-0 flex justify-between items-end md:items-center">
 
         <section id="copyright">

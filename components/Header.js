@@ -26,11 +26,13 @@ export default function Header({
             <Link href="/">
               <div className="md:absolute md:bottom-5 md:right-5 z-10
                 md:bg-lime-800 md:text-white md:p-5 md:m-0
-                mb-5 max-md:grid max-md:grid-cols-2 max-md:gap-3 max-md:items-end">
-                  <h1 className="text-4xl font-bold tracking-wider drop-shadow-md 
-                  max-md:font-extrabold max-md:drop-shadow-lg">{title}</h1>
-                  <p className="max-md:text-right max-md:italic">{subtitle}</p>
-                  <div class="md:hidden max-md:col-span-2"><Line /></div>
+                mb-5 max-md:grid max-md:flex max-md:gap-3 max-md:items-end">
+
+                  <h1 className="text-2xl md:text-4xl font-bold tracking-wider drop-shadow-md 
+                  max-md:font-extrabold max-md:drop-shadow max-md:flex-shrink-0">{title}</h1>
+                  <p className="max-md:text-sm max-md:text-right max-md:italic">{subtitle}</p>
+
+                  <div class="md:hidden max-md:col-span-2 max-md:flex-grow"><Line /></div>
               </div>
             </Link>
           </section>
