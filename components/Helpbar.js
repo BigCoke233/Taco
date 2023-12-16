@@ -11,6 +11,8 @@ import ThemeSwitch from './helpbar/ThemeSwitch'
 import GoTopButton from './helpbar/GoTop'
 import HomeButton from './helpbar/Home'
 
+import { LuMenu } from "react-icons/lu"
+
 /* === 数据 === */
 
 const buttonStyle = `inline-block rounded-full shadow transition 
@@ -19,14 +21,17 @@ border dark:border-zinc-700 outline-none
 hover:border-lime-700 hover:text-white hover:bg-lime-700
 dark:hover:border-lime-700 dark:hover:bg-lime-700`
 
+/* === CSS === */
+//移动端帮助栏代码
+
 /* === 主函数 === */
 
 export default function Helpbar() {
     return(
-        <section id="helpbar">
-            <ul className="fixed top-5 right-5 
-            md:top-auto md:bottom-7 md:right-7
-            flex flex-wrap flex-col gap-3">  
+        <section id="helpbar" className="fixed top-5 right-5 
+        md:top-auto md:bottom-7 md:right-7">
+            <button className={`md:hidden ${buttonStyle}`}><LuMenu /></button>
+            <ul id="helpbar-content" className="flex flex-wrap flex-col gap-3">  
                 <HomeButton className={buttonStyle} />
                 <ThemeSwitch className={buttonStyle} />
                 <GoTopButton className={buttonStyle} />
