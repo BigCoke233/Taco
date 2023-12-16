@@ -5,14 +5,7 @@
 */
 
 import Link from 'next/link'
-
-/**
- * 辅助元素 线
- * @returns jsx
- */
-function Line() {
-  return <span className="md:hidden block h-0.5 bg-gray-200 dark:bg-zinc-700 flex-grow" />
-}
+import Line from '../utils/Line'
 
 /**
  * 列表标题

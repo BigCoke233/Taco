@@ -70,8 +70,10 @@ html {
     }
 
     /* 强调色背景颜色调低 */
-    [class*=bg-lime] {
-      filter: brightness(0.75);
+    @media screen and (min-width: 768px) {
+      [class*=bg-lime] {
+        filter: brightness(0.75);
+      }
     }
   }
   
