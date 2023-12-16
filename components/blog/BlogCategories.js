@@ -15,12 +15,15 @@ import Link from 'next/link'
 
 export default function BlogCategories({ data, className }) {
     return (
-        <section id="blogCategoryList">
-            <ul className={className}>
+        <section id="blogCategoryList" className={`${className} mt-6 md:mt-8 md:flex md:gap-4`}>
+            <h2 className="text-gray-500">Categories: </h2>
+            <ul className="flex-grow flex gap-2">
                 {data.map((item) => {
                     return (
-                        <Link href={`/category/${item.slug}`}>
-                            <p>{item.name}</p>
+                        <Link href={`/category/${item.slug}`}
+                        className="text-center px-2 bg-gray-200 dark:bg-zinc-800 rounded-sm
+                        hover:bg-lime-700 dark:hover:bg-lime-700 transition hover:text-white">
+                            {item.name}
                         </Link>
                     )
                 })}

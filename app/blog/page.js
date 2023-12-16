@@ -34,7 +34,7 @@ export default async function Blog() {
         <>
             <Header className="mx-5" title="无人图书馆" subtitle="Bizzare Library" />
             <article className="px-5 pb-20 pt-0">
-                <Heading>文章列表</Heading>
+                <Heading sub="就这样存在于此。">被陈列的想法</Heading>
                 <BlogCategories className={sharedClass} data={categories.data} />
                 <BlogArchive className={sharedClass} posts={posts} />
             </article>
