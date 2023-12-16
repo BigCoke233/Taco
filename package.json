@@ -16,6 +16,7 @@
     "@portabletext/react": "^3.0.11",
     "framer-motion": "^10.16.16",
     "giscus": "^1.3.0",
+    "marked": "^11.1.0",
     "next": "14.0.1",
     "next-nprogress-bar": "^2.1.2",
     "prismjs": "^1.29.0",

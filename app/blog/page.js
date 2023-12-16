@@ -13,6 +13,8 @@ import Heading from '@/components/Heading.js'
 import BlogArchive from '@/components/blog/BlogArchive'
 import BlogCategories from '@/components/blog/BlogCategories'
 
+import Padding from '@/components/utils/Padding'
+
 /* === 元信息 === */
 
 export const metadata = {
@@ -27,17 +29,17 @@ export default async function Blog() {
 
     const res2 = await fetch('https://blog.guhub.cn/api/categories', { next: { revalidate: 3600 } })
     const categories = await res2.json()
-
-    const sharedClass = 'my-5 md:mx-16'
     
     return (
         <>
-            <Header className="mx-5" banner="https://image.guhub.cn/page-banner/blog-banner.jpg"
+            <Header banner="https://image.guhub.cn/page-banner/blog-banner.jpg"
             title="清楚洞悉。" subtitle="The opportune moment" />
-            <article className="px-5 pb-20 pt-0">
+            <article>
                 <Heading sub="就这样存在于此。">被陈列的想法</Heading>
-                <BlogCategories className={sharedClass} data={categories.data} />
-                <BlogArchive className={sharedClass} posts={posts} />
+                <Padding>
+                    <BlogCategories data={categories.data} />
+                    <BlogArchive posts={posts} />
+                </Padding>
             </article>
         </>
     )

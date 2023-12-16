@@ -6,6 +6,8 @@
  * 处理博客文章内容
  */
 
+import Padding from '../utils/Padding';
+
 import { useEffect } from 'react'
 import Prism from 'prismjs'
 
@@ -21,7 +23,7 @@ export default function BlogContent({ content }) {
     }, [])
 
     return (
-        <div id="post-content" dangerouslySetInnerHTML={{__html: content}} 
-        className={`md:text-xl yue py-5 px-2 md:px-16`} />
+        <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16"
+        dangerouslySetInnerHTML={{__html: content}} />
     )
 }

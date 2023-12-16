@@ -13,17 +13,20 @@
             {
                 "link": "/feed",
                 "title": "订阅",
-                "des": "使用 RSS 订阅我的博客。"
+                "des": "使用 RSS 订阅我的博客。",
+                "target": "_blank"
             },
             {
                 "link": "https://bi.guhub.cn/",
                 "title": "怪奇灵感生成器",
-                "des": "基于「无色的绿色想法愤怒地睡觉」原理的词组生成器"
+                "des": "基于「无色的绿色想法愤怒地睡觉」原理的词组生成器",
+                "target": "_blank"
             },
             {
-                "link": "http://backrooms-wiki-cn.wikidot.com/",
-                "title": "后室中文维基",
-                "des": "怪谈作品系列"
+                "link": "/links",
+                "title": "友情链接",
+                "des": "我的互联网交际圈",
+                "target": "_self"
             }
         ]
     }

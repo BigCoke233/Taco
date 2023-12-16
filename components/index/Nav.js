@@ -16,7 +16,7 @@ export default function Nav({ links }) {
         md:mx-10 mt-16 mb-8 gap-8 items-center">
             {links.list.map((item) => {
                 return (
-                    <Link href={item.link} target="_blank" key={item.title}>
+                    <Link href={item.link} target={item.target} key={item.title}>
                         <div className="p-5 md:p-7 relative transition
                         shadow hover:shadow-lg hover:-translate-y-2
                         bg-gray-50 dark:bg-zinc-900
