@@ -29,7 +29,7 @@ export default function Header({
                 mb-5 max-md:grid max-md:flex max-md:gap-3 max-md:items-end">
 
                   <h1 className="text-2xl md:text-4xl font-bold tracking-wider drop-shadow-md 
-                  max-md:font-extrabold max-md:drop-shadow max-md:flex-shrink-0">{title}</h1>
+                  max-md:font-extrabold max-md:flex-shrink-0">{title}</h1>
                   <p className="max-md:text-sm max-md:text-right max-md:italic">{subtitle}</p>
 
                   <div class="md:hidden max-md:col-span-2 max-md:flex-grow"><Line /></div>
