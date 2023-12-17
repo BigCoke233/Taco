@@ -73,7 +73,7 @@ export default function Footer() {
                   alt="The site's content is written by human, not by AI." />
               </Link>
             </Tooltip>
-            <Tooltip showArrow={true} content="未经特别声明，本站内容以 CC BY-SA 4.0 协议授权">
+            <Tooltip showArrow={true} content="未经特别声明，本站内容以 CC BY-NC-SA 4.0 协议授权">
               <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
                 <img src="/by-nc-sa.svg" style={{width: '5rem'}} 
                   alt="Under CC BY NC-SA License." />
