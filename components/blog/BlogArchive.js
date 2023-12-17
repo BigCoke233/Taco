@@ -13,6 +13,8 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { parseBlogPost } from '@/lib/parseBlogPost'
 
+import Highlighter from '../utils/Highlighter';
+
 /* === 工具函数 === */
 
 function RemoveExtraYearTitles() {
@@ -26,23 +28,6 @@ function RemoveExtraYearTitles() {
     })
 }
 
-/* === CSS === */
-
-const titleStyle = `
-.year-title > span::before {
-    background-color: rgba(63, 98, 18, 0.25);
-
-    content: "";
-    position: absolute;
-    width: calc(100% + 4px);
-    height: 60%;
-    left: -2px;
-    bottom: 0;
-    z-index: -1;
-    transform: rotate(-2deg);
-    border-radius: 20% 30%
-}`
-
 /* === 主函数 === */
 
 export default function BlogArchive({ posts, className }) {
@@ -54,10 +39,9 @@ export default function BlogArchive({ posts, className }) {
                     post = parseBlogPost(post);
                     return (
                         <>
-                            <style jsx>{titleStyle}</style>
                             <li className="year-title font-mono md:text-right
                             text-gray-500 text-xl md:text-2xl -my-2" key={`${post.year}-${post.slug}`}>
-                                <span className="relative">{post.year}</span>
+                                <Highlighter>{post.year}</Highlighter>
                             </li>
 
                             <li className="md:text-xl my-5 mx-2 md:mx-0" key={post.slug}>

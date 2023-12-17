@@ -5,8 +5,14 @@ $dark-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 /* === 基础元素 === */
 
+a:hover {
+  color: #6a8548
+}
+
 html {
   --general-bg: rgb(249, 250, 251);
+
+  --nextui-background: unset!important;
 
   font-family: 'Noto Serif SC', serif;
 
