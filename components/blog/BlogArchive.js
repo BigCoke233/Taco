@@ -56,11 +56,11 @@ export default function BlogArchive({ posts, className }) {
                         <>
                             <style jsx>{titleStyle}</style>
                             <li className="year-title font-mono md:text-right
-                            text-gray-500 text-2xl -my-2" key={`${post.year}-${post.slug}`}>
+                            text-gray-500 text-xl md:text-2xl -my-2" key={`${post.year}-${post.slug}`}>
                                 <span className="relative">{post.year}</span>
                             </li>
 
-                            <li className="text-xl my-5 mx-2 md:mx-0" key={post.slug}>
+                            <li className="md:text-xl my-5 mx-2 md:mx-0" key={post.slug}>
                                 <Link href={`/blog/${post.slug}`} className="flex gap-3 md:gap-8">
                                     <span className="text-gray-600 font-mono">{post.month}.{post.day}</span> 
                                     <span className="font-bold transition hover:text-lime-700">
