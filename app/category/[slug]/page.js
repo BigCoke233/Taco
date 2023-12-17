@@ -10,7 +10,7 @@
 import Link from "next/link"
 
 import Header from "@/components/Header"
-import Heading from "@/components/Heading"
+import Heading from "@/components/utils/Heading"
 
 /* === 调用 API === */
 

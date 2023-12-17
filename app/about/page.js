@@ -8,7 +8,7 @@
 /* === 引入 === */
 
 import Header from '@/components/Header.js'
-import Heading from '@/components/Heading.js'
+import Heading from '@/components/utils/Heading.js'
 
 import BlogContent from '@/components/blog/BlogContent'
 import { marked } from 'marked'

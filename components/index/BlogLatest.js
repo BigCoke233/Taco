@@ -5,7 +5,7 @@
  */
 
 import Link from 'next/link'
-import Heading from '@/components/Heading.js'
+import Heading from '@/components/utils/Heading.js'
 import { parseBlogPost } from '@/lib/parseBlogPost.js'
 
 export default function BlogLatest({ posts, className }) {

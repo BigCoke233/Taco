@@ -8,7 +8,7 @@
 /* === 引入 === */
 
 import Header from '@/components/Header.js'
-import Heading from '@/components/Heading.js'
+import Heading from '@/components/utils/Heading.js'
 
 import Padding from '@/components/utils/Padding'
 

@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 //页面组成部分
 import Header from '@/components/Header.js'
-import Heading from '@/components/Heading.js'
+import Heading from '@/components/utils/Heading.js'
 import Comment from '@/components/blog/Comment.js'
 import BlogContent from "@/components/blog/BlogContent";
 
