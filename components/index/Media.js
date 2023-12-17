@@ -47,7 +47,7 @@ const titleSharingClass = 'font-extrabold text-3xl dark:border-zinc-800'
 const titleDesktopClass = 'tracking-widest border-r-4 pr-5'
 const titleMobileClass = 'text-center mb-5'
 
-const mediaListClass = 'flex gap-5 items-start flex-wrap content-start'
+const mediaListClass = 'flex gap-5 justify-center md:justify-start items-start flex-wrap content-start'
 const mediaListItemClass = `
 border border-gray-200 dark:border-zinc-700
 bg-gray-50 dark:bg-zinc-900

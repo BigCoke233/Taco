@@ -12,9 +12,9 @@ export default function AboutMe({ text }) {
           className="block mx-auto md:inline flex-shrink-0 dark:invert"
           alt="Cabin on an island."
          />
-        <article id="about-content" className="text-lg">
-          <p className="text-gray-700 text-center md:text-left">{text.names}</p>
-          <p className="text-xl my-5 font-semibold">{text.des}</p>
+        <article id="about-content" className="md:text-lg">
+          <p className="text-zinc-500 text-center md:text-left">{text.names}</p>
+          <p className="md:text-xl my-5 font-semibold">{text.des}</p>
           <p className="text-center md:text-left">{text.character}</p>
         </article>
       </section>
