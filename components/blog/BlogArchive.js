@@ -50,7 +50,7 @@ export default function BlogArchive({ posts, className }) {
     return (
         <section id="blogArchiveList">
             <ul className={className}>
-                {posts.data.dataSet.map((post) => {
+                {posts.map((post) => {
                     post = parseBlogPost(post);
                     return (
                         <>

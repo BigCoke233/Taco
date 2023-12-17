@@ -38,7 +38,7 @@ export default async function Blog() {
                 <Heading sub="就这样存在于此。">被陈列的想法</Heading>
                 <Padding>
                     <BlogCategories data={categories.data} />
-                    <BlogArchive posts={posts} />
+                    <BlogArchive posts={posts.data.dataSet} />
                 </Padding>
             </article>
         </>

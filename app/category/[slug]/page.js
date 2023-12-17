@@ -7,7 +7,8 @@
 
 /* === 引入 === */
 
-import Link from "next/link"
+import Padding from "@/components/utils/Padding";
+import BlogArchive from "@/components/blog/BlogArchive";
 
 import Header from "@/components/Header"
 import Heading from "@/components/utils/Heading"
@@ -51,22 +52,11 @@ export default async function Page({ params }) {
     return (
         <>
             <Header />
-            <article className="px-2 md:px-5 pb-20 pt-0">
+            <article>
                 <Heading sub={category.description}>{category.name}</Heading>
-                <ul className="my-10 md:mx-16">
-                {posts.data.dataSet.map((post) => {
-                    return (
-                        <li className="text-xl my-5" key={post.slug}>
-                            <Link href={`/blog/${post.slug}`} className="flex gap-3 md:gap-8">
-                                <span className="text-gray-600 font-mono">{post.month}.{post.day}</span> 
-                                <span className="font-bold transition hover:text-lime-700">
-                                    {post.title}
-                                 </span>
-                            </Link>
-                        </li>
-                    )
-                })}
-                </ul>
+                <Padding>
+                    <BlogArchive posts={posts.data.dataSet} />
+                </Padding>
             </article>
         </>
     )

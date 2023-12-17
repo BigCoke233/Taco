@@ -15,7 +15,7 @@ import Link from 'next/link'
 
 export default function BlogCategories({ data, className }) {
     return (
-        <section id="blogCategoryList" className={`${className} mt-6 md:mt-8 md:flex md:gap-4`}>
+        <section id="blogCategoryList" className={`${className} mb-8 md:mb-0 md:mt-8 md:flex md:gap-4`}>
             <h2 className="text-gray-500">Categories: </h2>
             <ul className="flex-grow flex gap-2">
                 {data.map((item) => {

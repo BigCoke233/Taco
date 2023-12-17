@@ -69,7 +69,7 @@ export default async function Page({ params }) {
                 <article>
                     <header>
                         <Heading className="md:w-3/4">{post.title}</Heading>
-                        <p className="my-3 text-lg text-gray-600 dark:text-zinc-500">
+                        <p className="px-2 my-3 text-lg text-gray-600 dark:text-zinc-500">
                             <span>{post.date}</span>
                             <span> · </span>
                             <Link href={`/category/${post.categorySlug}`}
