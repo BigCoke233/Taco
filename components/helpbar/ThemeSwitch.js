@@ -38,27 +38,31 @@ function SwitchTheme(user=true) {
     //存入 Local Storage
     //发送 toast 提示操作完成
     if (Html.classList.contains('dark')) {
-        if(user) setStore('siteTheme', 'dark')
+        if(user) {
+            setStore('siteTheme', 'dark')
+            Toast('已切换为深色模式')
+        }
         SunIcon.classList.add('hidden')
         MoonIcon.classList.remove('hidden')
-        Toast('已切换为深色模式')
     }
     else {
-        if(user) setStore('siteTheme', 'light')
+        if(user) {
+            setStore('siteTheme', 'light')
+            Toast('已切换为浅色模式')
+        }
         SunIcon.classList.remove('hidden')
         MoonIcon.classList.add('hidden')
-        Toast('已切换为浅色模式')
     }
 }
 
 /**
- * SwitchByMedia()
+ * SwitchBySetting()
  * 
  * 检测系统设置
  * 并自动切换主题
  */
 
-function SwitchByMedia() {
+function SwitchBySetting() {
     const [rendered, setRendered] = useState(false);
 
     useEffect(() => {
@@ -68,8 +72,12 @@ function SwitchByMedia() {
         if (rendered) { //跳过第一次渲染
             let systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches //系统是否为深色主题
             let prefersLight = (theme == 'light') //用户是否偏好浅色主题
+            let prefersDark = (theme == 'dark') //用户是否偏好深色主题
     
-            if(systemDark && !prefersLight) SwitchTheme(false)
+            if (
+                (systemDark && !prefersLight) || 
+                (!systemDark && prefersDark)
+            ) SwitchTheme(false)
         } else setRendered(true)
     })
 }
@@ -77,7 +85,7 @@ function SwitchByMedia() {
 /* === 主函数 === */
 
 export default function ThemeSwitch({ className }) {
-    SwitchByMedia()
+    SwitchBySetting()
     return (
         <li key="themeSwitch">
             <Tooltip content="切换主题" placement="left" offset={15}>
