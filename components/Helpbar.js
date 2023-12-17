@@ -20,7 +20,8 @@ p-4 md:p-3 text-lg bg-gray-50 dark:bg-zinc-800
 border dark:border-zinc-700 outline-none
 hover:border-lime-700 hover:text-white hover:bg-lime-700
 dark:hover:border-lime-700 dark:hover:bg-lime-700
-max-md:bg-white/[0.5] dark:max-md:bg-black/[0.25]`
+max-md:bg-white/[0.325] dark:max-md:bg-black/[0.25]
+max-md:border-none`
 
 /* === 工具函数 === */
 
@@ -50,7 +51,7 @@ export default function Helpbar() {
 
             max-md:justify-center max-md:py-5
             max-md:fixed max-md:inset-x-0 max-md:top-0 max-md-10
-            max-md:bg-gray-100/[.5] dark:max-md:bg-zinc-700/[.5] max-md:backdrop-blur
+            max-md:bg-gray-100/[.75] dark:max-md:bg-zinc-800/[.75] max-md:backdrop-blur
             max-md:shadow
             
             max-md:-translate-y-20 max-md:-scale-90 max-md:opacity-0
