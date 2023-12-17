@@ -50,7 +50,7 @@ export default function GoTopButton({ className }) {
     AddTopButtonEvent()
 
     return (
-        <li key="goTop">
+        <li key="goTop" className="hidden md:block">
             <Tooltip content="返回顶部" placement="left" offset={15}>
                 <button className={className} id="goTop"
                 onClick={GoTop}><LuPointer /></button>
