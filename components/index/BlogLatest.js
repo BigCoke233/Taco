@@ -13,20 +13,25 @@ export default function BlogLatest({ posts, className }) {
   
     return (
       <article id="blog-latest" className={className}>
+
         <Heading>
           <Link href={"/blog/"+post.slug}
           className="hover:text-lime-700 transition">{post.title}</Link>
         </Heading>
+
+        <section id="blog-latest-meta" className='px-2'>
         <p className="text-lg my-5">{post.digest}</p>
-        <div className="text-gray-500 flex justify-between text-justify">
-          <p>{post.date}</p>
-          <p>
-            <Link href={`/category/${post.categorySlug}`} 
-                  className="hover:text-lime-700 transition">
-              {post.category}
-            </Link>
-          </p>
-        </div>
+          <div className="text-gray-500 flex justify-between text-justify">
+            <p>{post.date}</p>
+            <p>
+              <Link href={`/category/${post.categorySlug}`} 
+                    className="hover:text-lime-700 transition">
+                {post.category}
+              </Link>
+            </p>
+          </div>
+        </section>
+        
       </article>
     )
 }

@@ -13,7 +13,7 @@ import Link from "next/link"
 export default function Nav({ links }) {
     return (
         <nav className="grid grid-cols-2 md:grid-cols-3 
-        md:mx-10 mt-16 mb-8 gap-8 items-center">
+        md:mx-10 mt-12 mb-6 gap-8 items-center">
             {links.list.map((item) => {
                 return (
                     <Link href={item.link} target={item.target} key={item.title}>
