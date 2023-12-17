@@ -51,7 +51,9 @@ export default function Footer() {
         </div>
 
         <div id="footer-center" className='self-center'>
-          <p className='hidden md:inline-flex text-zinc-300 text-2xl gap-5'><GiCat /> <GiPeach /> <GiTrophy /></p>
+          <p className='hidden md:inline-flex text-zinc-300 dark:text-zinc-700 text-2xl gap-5'>
+            <GiCat /> <GiPeach /> <GiTrophy />
+          </p>
         </div>
 
         <div id="footer-right" className='w-full md:text-right'>
