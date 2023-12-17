@@ -31,7 +31,6 @@ function toggleBar() {
     const helpbar = document.getElementById('helpbar-content')
 
     helpbar.classList.toggle('max-md:-translate-y-20')
-    helpbar.classList.toggle('max-md:-scale-90')
     helpbar.classList.toggle('max-md:opacity-0')
 }
 
@@ -54,7 +53,7 @@ export default function Helpbar() {
             max-md:bg-gray-100/[.75] dark:max-md:bg-zinc-800/[.75] max-md:backdrop-blur
             max-md:shadow
             
-            max-md:-translate-y-20 max-md:-scale-90 max-md:opacity-0
+            max-md:-translate-y-20 max-md:opacity-0
             transition-transform duration-3000
             `}>  
                 <HomeButton className={buttonStyle} />
