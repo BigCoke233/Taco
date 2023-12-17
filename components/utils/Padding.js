@@ -5,7 +5,12 @@
  * @returns jsx
  */
 
+const paddingClass = "py-5 px-2 md:px-16"
+
 export default function Padding({ children, className, id, dangerouslySetInnerHTML}) {
-    return <div id={id} dangerouslySetInnerHTML={dangerouslySetInnerHTML}
-    className={`py-5 px-2 md:px-16 ${className}`}>{children}</div>
+    if(dangerouslySetInnerHTML==null) 
+        return <div id={id} className={`${paddingClass} ${className}`}>{children}</div>
+
+    else return <div id={id} className={`${paddingClass} ${className}`}
+    dangerouslySetInnerHTML={dangerouslySetInnerHTML} />
 }
