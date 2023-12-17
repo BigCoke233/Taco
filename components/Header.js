@@ -32,7 +32,7 @@ export default function Header({
                   max-md:font-extrabold max-md:flex-shrink-0">{title}</h1>
                   <p className="max-md:text-sm max-md:text-right max-md:italic">{subtitle}</p>
 
-                  <div class="md:hidden max-md:col-span-2 max-md:flex-grow"><Line /></div>
+                  <div className="md:hidden max-md:col-span-2 max-md:flex-grow"><Line /></div>
               </div>
             </Link>
           </section>
