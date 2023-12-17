@@ -67,13 +67,13 @@ export default function Footer() {
           </section>
 
           <section id="license" className="flex justify-center md:justify-end my-2 gap-2">
-            <Tooltip content="若无特别说明，本站内容均为真人撰写，非 AI 生成。">
+            <Tooltip showArrow={true} content="若无特别说明，本站内容均为真人撰写，非 AI 生成。">
               <Link href="https://notbyai.fyi/" target="_blank">
                 <img src="/not-by-ai.svg" style={{width: '5rem'}} 
                   alt="The site's content is written by human, not by AI." />
               </Link>
             </Tooltip>
-            <Tooltip content="未经特别声明，本站内容以 CC BY-SA 4.0 协议授权">
+            <Tooltip showArrow={true} content="未经特别声明，本站内容以 CC BY-SA 4.0 协议授权">
               <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
                 <img src="/by-nc-sa.svg" style={{width: '5rem'}} 
                   alt="Under CC BY NC-SA License." />
