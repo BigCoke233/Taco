@@ -12,6 +12,9 @@ import Heading from '@/components/Heading.js'
 
 import Padding from '@/components/utils/Padding'
 
+import { promises as fs } from 'fs'
+import shuffle from '@/lib/utils/shuffle'
+
 import BlogContent from '@/components/blog/BlogContent'
 import { marked } from 'marked'
 
@@ -21,17 +24,15 @@ export const metadata = {
     title: "友人 - Eltrac's"
 }
 
-/* === 数据 === */
-
-const pageContent = `
-我已经数不清楚这是我的第几个博客了
-`
+const content = `链接随机排序，排名不分先后。
+不再开放申请，若需修改信息请联系 \`hi@guhub.cn\``
 
 /* === 主函数 === */
 
-export default async function About() {
-    const res = await fetch('https://fastly.jsdelivr.net/gh/BigCoke233/guhub/data/friends.json')
-    const data = await res.json()
+export default async function Links() {
+    const config_data = await fs.readFile(process.cwd() + '/lib/links.json', 'utf8');
+    const data = JSON.parse(config_data)
+    shuffle(data)
 
     return (
         <>
@@ -39,14 +40,14 @@ export default async function About() {
             title="赛博友谊。" subtitle="Back and forth." />
             <article>
                 <Heading sub="我的互联网交际圈之一。">友情链接</Heading>
-                <Padding className="my-5 md:my-10">
-                    <ul className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-12">
+                <Padding className="mt-5 md:mt-10">
+                    <ul className="flex flex-wrap gap-5">
                         {data.map((item) => {
                             return (
                                 <li key={item.name}>
                                     <a href={item.link} target="_blank"
-                                    className="block text-center leading-10">
-                                        <img src={item.img} className="w-full rounded-full" />
+                                    className="block flex items-center gap-3">
+                                        <img src={item.img} className="inline-block w-8 rounded-full" />
                                         <span className="font-bold">{item.name}</span>    
                                     </a>
                                 </li>
@@ -54,6 +55,7 @@ export default async function About() {
                         })}
                     </ul>
                 </Padding>
+                <BlogContent content={marked.parse(content)} />
             </article>
         </>
     )
