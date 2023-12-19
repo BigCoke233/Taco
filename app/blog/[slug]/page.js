@@ -16,6 +16,7 @@ import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
 import Comment from '@/components/blog/Comment.js'
 import BlogContent from "@/components/blog/BlogContent";
+import Tocbot from "@/components/blog/Tocbot";
 
 /* === 调用 API === */
 
@@ -78,6 +79,7 @@ export default async function Page({ params }) {
                             </Link>
                         </p>
                     </header>
+                    <Tocbot />
                     <BlogContent content={post.content} />
                 </article>
                 <Comment />

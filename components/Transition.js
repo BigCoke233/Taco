@@ -21,12 +21,14 @@ export default function Transition({ children }) {
     useEffect(() => {
         //before route change
         //by listen to link clicking
-        const links = document.querySelectorAll(`a:not([target="_blank"]):not([href="${pathname}"])`)
-        links.forEach((e) => {
-            e.addEventListener('click', () => {
-                container.classList.toggle('opacity-100')
-                container.classList.toggle('opacity-0')
-            })
+        const links = document.querySelectorAll(`a:not([target="_blank"]):not([href*="${pathname}"])`)
+        links.forEach((link) => {
+            if (!link.href.includes(pathname)) {
+                link.addEventListener('click', () => {
+                    container.classList.toggle('opacity-100')
+                    container.classList.toggle('opacity-0')
+                })
+            }
         })
 
         //after route change
