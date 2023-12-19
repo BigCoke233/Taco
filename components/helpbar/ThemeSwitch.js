@@ -33,21 +33,11 @@ export default function ThemeSwitch({ className }) {
             <Tooltip content="切换主题" placement="left" offset={15}>
                 <button className={className} id="themeSwitch"
                 onClick={() => {
-                    const SunIcon = document.getElementById('themeSwitch-icon-sun')
-                    const MoonIcon = document.getElementById('themeSwitch-icon-moon')
-
-                    if(theme=='dark') {
-                        setTheme('light')
-                        SunIcon.classList.remove('hidden')
-                        MoonIcon.classList.add('hidden')
-                    } else {
-                        setTheme('dark')
-                        SunIcon.classList.add('hidden')
-                        MoonIcon.classList.remove('hidden')
-                    }
+                    if(theme=='dark') setTheme('light')
+                    else setTheme('dark')
                 }}>
                     <span id="themeSwitch-icon-sun"><LuSun /></span>
-                    <span id="themeSwitch-icon-moon" className="hidden"><LuMoon /></span>
+                    <span id="themeSwitch-icon-moon"><LuMoon /></span>
                 </button>
             </Tooltip>
         </li>

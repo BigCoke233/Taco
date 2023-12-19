@@ -53,6 +53,14 @@ html {
 
 /* === 深色模式相关 === */
 
+#themeSwitch-icon-sun {
+  display: block;
+}
+
+#themeSwitch-icon-moon {
+  display: none
+}
+
 .dark {
   --general-bg: rgb(24, 24, 27);
 
@@ -85,6 +93,96 @@ html {
   /* 滚动条的颜色 */
   ::-webkit-scrollbar-thumb {
     background: #4e4e4e;
+  }
+
+  #themeSwitch-icon-sun {
+    display: none;
+  }
+
+  #themeSwitch-icon-moon {
+    display: block
+  }
+
+}
+
+/* === Helpbar === */
+
+@media screen and (max-width: 767px) {
+  #helpbar-content {
+    &:not(.folded) {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    &.folded {
+      transform: translateY(-10rem);
+      opacity: 0;
+    }
+  }
+}
+
+/* === TocBot === */
+
+@media screen and (max-width: 1279px) {
+  #tocbot-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 5.5rem;
+    transition: all .3s;
+
+    a {
+      display: block;
+      padding: 0.25rem 1rem;
+    }
+
+    .toc-list:not(.toc-list *) {
+      padding: 0;
+      overflow-y: scroll;
+
+      & > li > a {
+        &:hover {
+          background-color: $lighter-accent;
+          color: #fff
+        }
+      }
+    } 
+
+    &.folded {
+      transform: scale(0.85) translateY(20rem);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &:not(.folded) {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      z-index: 20;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #tocbot-container {
+    position: fixed;
+    bottom: 5rem;
+    left: 5rem;
+    right: 5rem;
+    border: 1px solid rgba(0,0,0,0.075);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #tocbot-container {
+      position: absolute;
+      left: calc(((100vw - 72rem) / 2) + 72rem - 6rem);
+      bottom: 0;
+      padding-top: 30rem;
+      transition: opacity .3s;
+
+      &:not(.folded) {
+        opacity: 0
+      }
   }
 }
 

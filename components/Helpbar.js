@@ -12,6 +12,7 @@
 import ThemeSwitch from './helpbar/ThemeSwitch'
 import GoTopButton from './helpbar/GoTop'
 import HomeButton from './helpbar/Home'
+import TocButton from './helpbar/TocButton';
 
 import { LuMenu } from "react-icons/lu"
 
@@ -31,9 +32,7 @@ max-md:border-none`
 
 function toggleBar() {
     const helpbar = document.getElementById('helpbar-content')
-
-    helpbar.classList.toggle('max-md:-translate-y-20')
-    helpbar.classList.toggle('max-md:opacity-0')
+    helpbar.classList.toggle('folded')
 }
 
 /* === 主函数 === */
@@ -54,14 +53,14 @@ export default function Helpbar() {
 
             max-md:justify-center max-md:py-5
             max-md:fixed max-md:inset-x-0 max-md:top-0 max-md-10
-            max-md:bg-gray-100/[.75] dark:max-md:bg-zinc-800/[.75] max-md:backdrop-blur
+            max-md:bg-gray-100/[.85] dark:max-md:bg-zinc-900/[.85] max-md:backdrop-blur
             max-md:shadow
-            
-            max-md:-translate-y-20 max-md:opacity-0
-            transition-transform duration-3000
+
+            transition-transform duration-3000 folded
             `}>  
                 <HomeButton className={buttonStyle} />
                 <ThemeSwitch className={buttonStyle} />
+                <TocButton className={buttonStyle} />
                 <GoTopButton className={buttonStyle} />
             </ul>
 

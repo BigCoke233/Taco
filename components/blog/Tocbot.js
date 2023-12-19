@@ -19,7 +19,6 @@ import '@/styles/tocbot.scss'
 /**
  * 为页面中符合要求的标题添加 ID
  * 
- * @params void
  * @returns void
  */
 
@@ -30,22 +29,45 @@ function LinkHeadings() {
     })
 }
 
+/**
+ * 绑定目录链接事件
+ * 实现点击后关闭目录
+ * 
+ * @returns void
+ */
+
+function BindTocLinks() {
+    const tocList = document.querySelectorAll('#tocbot a')
+    const Toc = document.getElementById('tocbot-container')
+    const helpbar = document.getElementById('helpbar-content')
+
+    tocList.forEach((item) => {
+        item.addEventListener('click', () => {
+            Toc.classList.toggle('folded')     //收起目录
+            helpbar.classList.toggle('folded') //收起帮助栏
+        })
+    })
+}
+
 /* === 主函数 === */
 
 export default function Tocbot() {
     useEffect(() => {
         LinkHeadings()
         doTocbot()
+        BindTocLinks()
     })
     return (
         <aside id="tocbot-container" 
-            style={{
-                left: 'calc(((100vw - 72rem) / 2) + 72rem - 6rem)',
-                bottom: '0',
-                paddingTop: '30rem'
-            }}
-            className="absolute h-full hidden xl:block">
-            <article id="tocbot" className="sticky top-12 text-lg" />
+            className={`folded xl:h-full shadow-md
+            max-xl:bg-gray-100/[.85] dark:max-xl:bg-zinc-900/[.85] max-xl:backdrop-blur
+            `}>
+            <header className="border-b dark:border-zinc-700
+            max-xl:px-5 max-xl:py-2 xl:hidden">
+                <h2 className="text-center font-bold">文章目录</h2>
+            </header>
+            <article id="tocbot" className="xl:sticky xl:top-12 xl:text-lg
+            max-xl:py-2" />
         </aside>
     )
 }
