@@ -9,7 +9,7 @@
 
 /* === 引入 === */
 
-import { useTocbot, refreshTocbot, destroyTocbot } from "@/lib/useTocbot"
+import { doTocbot, refreshTocbot, destroyTocbot } from "@/lib/useTocbot"
 import { useEffect } from "react"
 
 import '@/styles/tocbot.scss'
@@ -35,13 +35,17 @@ function LinkHeadings() {
 export default function Tocbot() {
     useEffect(() => {
         LinkHeadings()
-        useTocbot()
+        doTocbot()
     })
     return (
         <aside id="tocbot-container" 
-        style={{left: 'calc(((100vw - 72rem) / 2) + 72rem - 6rem)', top: '32rem'}}
-            className="absolute h-full bottom-0 hidden xl:block">
-            <article id="tocbot" className="sticky top-12" />
+            style={{
+                left: 'calc(((100vw - 72rem) / 2) + 72rem - 6rem)',
+                bottom: '0',
+                paddingTop: '30rem'
+            }}
+            className="absolute h-full hidden xl:block">
+            <article id="tocbot" className="sticky top-12 text-lg" />
         </aside>
     )
 }
