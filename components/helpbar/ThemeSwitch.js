@@ -3,8 +3,8 @@
 /**
  * 主题切换按钮
  * 
- * @file helpbar/ThemeSwitch.js
- * @returns jsx
+ * @file helpbar/ThemeSwitch
+ * @exports ThemeSwitch
  */
 
 /* === 引入 === */

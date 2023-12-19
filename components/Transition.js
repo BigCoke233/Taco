@@ -3,8 +3,8 @@
 /**
  * 页面切换动画
  * 
- * @file Transition.js
- * @returns jsx
+ * @file components/Transition
+ * @exports Transition
  */
 
 /* === 引入 === */

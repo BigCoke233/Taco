@@ -1,7 +1,8 @@
 /**
  * 页脚
  * 
- * @returns jsx
+ * @file components/Footer
+ * @exports Footer
  */
 
 import Link from 'next/link'

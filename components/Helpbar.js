@@ -1,8 +1,10 @@
+'use client';
+
 /**
- * Helpbar.js - 右侧帮助栏
+ * 右侧帮助栏
  * 
- * @authro Eltrac
- * @date 2023/11/26
+ * @file components/Helpbar
+ * @exports Helpbar
  */
 
 /* === 引用 === */

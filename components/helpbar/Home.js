@@ -4,7 +4,7 @@
  * 返回首页
  * 
  * @file helpbar/Home.js
- * @returns jsx
+ * @exports HomeButton
  */
 
 /* === 引用 === */

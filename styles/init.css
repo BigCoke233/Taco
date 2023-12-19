@@ -8,4 +8,12 @@
     a {
         @apply hover:text-lime-700;
     }
+
+    body {
+        @apply bg-gray-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200
+    }
+
+    main#app {
+        @apply max-w-5xl mx-auto my-0 md:my-6 p-3 md:p-0
+    }
 }

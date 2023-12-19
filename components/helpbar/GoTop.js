@@ -3,8 +3,8 @@
 /**
  * 返回顶部按钮
  * 
- * @file helpbar/GoTop.js
- * @returns jsx
+ * @file helpbar/GoTop
+ * @exports GoTopButton
  */
 
 /* === 引入 === */

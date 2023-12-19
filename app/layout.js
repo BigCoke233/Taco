@@ -4,7 +4,7 @@
  * 根布局
  * 
  * @file layout.js
- * @returns jsx
+ * @exports RootLayout
  */
 
 /* === 引入 === */
@@ -18,36 +18,36 @@ import '@/styles/globals.scss'
 //页面组成部分
 import Footer from '@/components/Footer'
 import Helpbar from '@/components/Helpbar'
-import Transition from '@/components/Transition';
 
+//UI 和动画
+import Transition from '@/components/Transition';
 import { Providers } from './providers';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
-/* === 主函数 === */
+/* === 主要页面布局 === */
+
+function Page({children}) {
+  return (
+    <section id="page">
+      <Transition>
+        {children}
+        <Footer />
+      </Transition>
+      <ProgressBar color="#4d7c0f" options={{ showSpinner: false }} shallowRouting />
+    </section>
+  ) 
+}
+
+/* === 根布局 === */
 
 export default function RootLayout({ children }) {
-  const BodyClassName = 'bg-gray-50 dark:bg-zinc-900 ' +
-                        'text-zinc-800 dark:text-zinc-200'
-  const MainAppClassName = 'max-w-5xl mx-auto my-0 md:my-6 p-3 md:p-0'
-
+  //body, main#app 的 className 已被移动到 init.css 中
   return (
     <html lang="zh-cn">
-      <body className={BodyClassName}>
+      <body>
         <Providers>
-          <main id="app" className={MainAppClassName}>
-            <section id="page">
-              <Transition>
-                {children}
-                <Footer />
-              </Transition>
-              <ProgressBar
-                color="#4d7c0f"
-                options={{ showSpinner: false }}
-                shallowRouting
-              />
-            </section>
-            <Helpbar />
-          </main>
+          <Page>{children}</Page>
+          <Helpbar />
         </Providers>
       </body>
     </html>

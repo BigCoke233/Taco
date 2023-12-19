@@ -1,17 +1,11 @@
 /**
- * index.js - 首页
+ * 首页
  * 
- *  - 页面头部
- *  - 导航
- *  - 博客文章展示
- *  - 社交媒体
- *  - 自述
- * 
- * @authro Eltrac
- * @date 2023/11/6
+ * @file page
+ * @exports Home
  */
 
-/* Imports - 引用 */
+/* === 引用 === */
 
 //nextjs 内置
 import { promises as fs } from 'fs';
@@ -32,11 +26,7 @@ export const metadata = {
   favicon: "favicon.png"
 }
 
-/**
- * 页面主要内容
- * 
- * @returns page
- */
+/* === 主函数 === */
 
 export default async function Home() {
 
