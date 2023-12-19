@@ -18,9 +18,9 @@ import '@/styles/globals.scss'
 //页面组成部分
 import Footer from '@/components/Footer'
 import Helpbar from '@/components/Helpbar'
-
 import Transition from '@/components/Transition';
 
+import { Providers } from './providers';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 /* === 主函数 === */
@@ -32,21 +32,23 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="zh-cn">
-    <body className={BodyClassName}>
-      <main id="app" className={MainAppClassName}>
-        <section id="page">
-          <Transition>
-            {children}
-            <Footer />
-          </Transition>
-          <ProgressBar
-            color="#4d7c0f"
-            options={{ showSpinner: false }}
-            shallowRouting
-          />
-        </section>
-        <Helpbar />
-      </main>
+      <body className={BodyClassName}>
+        <Providers>
+          <main id="app" className={MainAppClassName}>
+            <section id="page">
+              <Transition>
+                {children}
+                <Footer />
+              </Transition>
+              <ProgressBar
+                color="#4d7c0f"
+                options={{ showSpinner: false }}
+                shallowRouting
+              />
+            </section>
+            <Helpbar />
+          </main>
+        </Providers>
       </body>
     </html>
   )

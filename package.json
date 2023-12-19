@@ -19,6 +19,7 @@
     "marked": "^11.1.0",
     "next": "14.0.1",
     "next-nprogress-bar": "^2.1.2",
+    "next-themes": "^0.2.1",
     "prismjs": "^1.29.0",
     "react": "^18",
     "react-dom": "^18",
