@@ -40,7 +40,7 @@ export default function TocButton({ className }) {
     }, [pathname])
 
     return (
-        <li key="tocButton">
+        <li key="tocButton" className="xl:hidden">
             <Tooltip content="文章目录" placement="left" offset={15}>
                 <button className={className} onClick={ToggleToc} id="tocButton">
                     <LuBookMarked />

@@ -180,8 +180,10 @@ html {
       padding-top: 30rem;
       transition: opacity .3s;
 
-      &:not(.folded) {
-        opacity: 0
+      &.folded {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+        z-index: 20;
       }
   }
 }
