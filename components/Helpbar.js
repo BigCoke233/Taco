@@ -39,7 +39,7 @@ function toggleBar() {
 export default function Helpbar() {
     return(
         <section id="helpbar" className="z-20 md:fixed 
-        md:top-auto md:top-3 md:right-3 
+        md:top-3 md:right-3 
         xl:right-7 xl:top-auto xl:bottom-7">
 
             <button className={`md:hidden bg-lime-700 pt-2 pr-2 p-5 text-white rounded-bl-full
