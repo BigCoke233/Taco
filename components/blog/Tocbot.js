@@ -40,7 +40,7 @@ export default function Tocbot() {
     return (
         <aside id="tocbot-container" 
         style={{left: 'calc(((100vw - 72rem) / 2) + 72rem - 6rem)', top: '32rem'}}
-            className="absolute h-full bottom-0">
+            className="absolute h-full bottom-0 hidden xl:block">
             <article id="tocbot" className="sticky top-12" />
         </aside>
     )
