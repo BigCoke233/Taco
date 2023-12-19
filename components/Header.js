@@ -8,6 +8,7 @@
 /* === 引用 === */
 
 import Link from "next/link"
+import Image from "next/image"
 import Line from "./utils/Line"
 
 /* === 主函数 === */
@@ -39,8 +40,8 @@ export default function Header({
           </section>
 
           <section id="banner">
-            <img src={banner} width={1200} height={400} alt="Banner of the page" loading="lazy"
-            className="object-cover object-bottom h-80 z-0" />
+            <Image src={banner} width={1200} height={400} alt="Banner of the page" loading="lazy"
+            className="object-cover object-bottom h-80 z-0" unoptimized />
           </section>
 
         </header>
