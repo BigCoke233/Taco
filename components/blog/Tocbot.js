@@ -59,7 +59,7 @@ export default function Tocbot() {
     })
     return (
         <aside id="tocbot-container" 
-            className={`folded xl:h-full shadow-md
+            className={`folded xl:h-full max-xl:shadow-md
             max-xl:bg-gray-100/[.85] dark:max-xl:bg-zinc-900/[.85] max-xl:backdrop-blur
             `}>
             <header className="border-b dark:border-zinc-700
