@@ -109,6 +109,7 @@ html {
 
 @media screen and (max-width: 767px) {
   #helpbar-content {
+    //折叠样式
     &:not(.folded) {
       transform: translateY(0);
       opacity: 1;
@@ -124,13 +125,6 @@ html {
 
 @media screen and (max-width: 1279px) {
   #tocbot-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 5.5rem;
-    transition: all .3s;
-
     a {
       display: block;
       padding: 0.25rem 1rem;
@@ -148,12 +142,12 @@ html {
       }
     } 
 
+    //折叠样式
     &.folded {
       transform: scale(0.85) translateY(20rem);
       opacity: 0;
       z-index: -1;
     }
-
     &:not(.folded) {
       transform: scale(1) translateY(0);
       opacity: 1;
@@ -162,24 +156,11 @@ html {
   }
 }
 
-@media screen and (min-width: 768px) {
-  #tocbot-container {
-    position: fixed;
-    bottom: 5rem;
-    left: 5rem;
-    right: 5rem;
-    border: 1px solid rgba(0,0,0,0.075);
-  }
-}
-
 @media screen and (min-width: 1280px) {
   #tocbot-container {
-      position: absolute;
       left: calc(((100vw - 72rem) / 2) + 72rem - 6rem);
-      bottom: 0;
-      padding-top: 30rem;
-      transition: opacity .3s;
 
+      //在大屏幕下取消折叠
       &.folded {
         transform: scale(1) translateY(0);
         opacity: 1;

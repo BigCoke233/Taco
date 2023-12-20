@@ -48,7 +48,8 @@ export default function Helpbar() {
         md:top-3 md:right-3 
         xl:right-7 xl:top-auto xl:bottom-7">
 
-            <button className={`md:hidden bg-lime-700 pt-2 pr-2 p-5 text-white rounded-bl-full
+            <button className={`md:hidden bg-lime-700 text-white
+            pt-2 pr-2 p-5 rounded-bl-full
             max-md:fixed max-md:top-0 max-md:right-0 z-20`}
             onClick={toggleBar}>
                 <LuMenu />
@@ -58,10 +59,11 @@ export default function Helpbar() {
 
             max-md:justify-center max-md:py-5
             max-md:fixed max-md:inset-x-0 max-md:top-0 max-md-10
-            max-md:bg-gray-100/[.85] dark:max-md:bg-zinc-900/[.85] max-md:backdrop-blur
+            max-md:bg-gray-100/[.85] dark:max-md:bg-zinc-900/[.85] 
+            max-md:backdrop-blur-md
             max-md:shadow
 
-            transition-transform duration-3000 folded
+            transition-all duration-3000 folded
             `}>  
                 <HomeButton className={buttonStyle} />
                 <ThemeSwitch className={buttonStyle} />

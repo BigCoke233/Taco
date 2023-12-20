@@ -59,14 +59,26 @@ export default function Tocbot() {
     })
     return (
         <aside id="tocbot-container" 
-            className={`folded xl:h-full max-xl:shadow-md
-            max-xl:bg-gray-100/[.85] dark:max-xl:bg-zinc-900/[.85] max-xl:backdrop-blur
-            `}>
+
+        className={`folded
+        max-xl:bg-gray-100/[.85] dark:max-xl:bg-zinc-900/[.85] 
+        max-xl:backdrop-blur-md max-xl:shadow
+        max-xl:fixed max-xl:bottom-0 max-xl:inset-x-0
+        max-xl:transition-all max-xl:duration-3000
+
+        md:fixed md:bottom-20 md:inset-x-20 md:top-[5.5rem]
+        md:border md:border-zinc-200 md:dark:border-zinc-800 md:shadow-lg
+        md:rounded
+
+        xl:absolute xl:bottom-0 xl:pt-[30rem]
+        xl:transition-opacity xl:border-0
+        xl:h-full xl:shadow-none xl:bg-transparent
+        `}>
             <header className="border-b dark:border-zinc-700
             max-xl:px-5 max-xl:py-2 xl:hidden">
                 <h2 className="text-center font-bold">文章目录</h2>
             </header>
-            <article id="tocbot" className="xl:sticky xl:top-12 xl:text-lg
+            <article id="tocbot" className="xl:sticky xl:top-12 md:text-lg
             max-xl:py-2" />
         </aside>
     )
