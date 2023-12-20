@@ -33,6 +33,11 @@ max-md:border-none`
 function toggleBar() {
     const helpbar = document.getElementById('helpbar-content')
     helpbar.classList.toggle('folded')
+
+    //如果文章目录存在且被打开，同时关闭文章目录
+    const Toc = document.getElementById('tocbot-container')
+    if (Toc && !Toc.classList.contains('folded')) 
+        Toc.classList.add('folded')
 }
 
 /* === 主函数 === */
