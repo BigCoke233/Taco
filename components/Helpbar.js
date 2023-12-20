@@ -44,7 +44,7 @@ function toggleBar() {
 
 export default function Helpbar() {
     return(
-        <section id="helpbar" className="z-30 md:fixed 
+        <section id="helpbar" className="z-20 md:fixed 
         md:top-3 md:right-3
         xl:right-7 xl:top-auto xl:bottom-7">
 
@@ -62,6 +62,7 @@ export default function Helpbar() {
             max-md:bg-gray-100/[.85] dark:max-md:bg-zinc-900/[.85] 
             max-md:backdrop-blur-md
             max-md:shadow
+            max-md:z-20
 
             transition-all duration-3000 folded
             `}>  
