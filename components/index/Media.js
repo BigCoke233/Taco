@@ -38,11 +38,11 @@ const media = [
   },
   {
     "link": "https://bento.me/eltrac",
-    "child": (<span><SiBento /></span>)
+    "child": (<span><SiBento /> Bento</span>)
   },
   {
     "link": "https://keybase.io/eltrac",
-    "child": (<span><SiKeybase /></span>)
+    "child": (<span><SiKeybase /> Keybase</span>)
   },
   {
     "link": "mailto:hi@guhub.cn",
