@@ -7,7 +7,7 @@
 /* === 引入 === */
 
 import { TbBrandGithubFilled, TbBrandBilibili, TbBrandDouban, TbBrandZhihu, TbBrandSteam, TbBrandTwitter, TbMail } from 'react-icons/tb'
-import { SiGitee } from "react-icons/si";
+import { SiGitee, SiBento, SiKeybase } from "react-icons/si";
 
 /* === 数据 === */
 
@@ -35,6 +35,14 @@ const media = [
   {
     "link": "https://gitee.com/Eltrac",
     "child": (<span><SiGitee /> Gitee</span>)
+  },
+  {
+    "link": "https://bento.me/eltrac",
+    "child": (<span><SiBento /></span>)
+  },
+  {
+    "link": "https://keybase.io/eltrac",
+    "child": (<span><SiKeybase /></span>)
   },
   {
     "link": "mailto:hi@guhub.cn",
