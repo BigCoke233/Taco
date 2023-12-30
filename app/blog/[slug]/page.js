@@ -17,10 +17,11 @@ import Heading from '@/components/utils/Heading.js'
 import Comment from '@/components/blog/Comment.js'
 import BlogContent from "@/components/blog/BlogContent";
 import Tocbot from "@/components/blog/Tocbot";
+import { comment } from "postcss";
 
 /* === 调用 API === */
 
-async function CallAPI(slug) {
+async function FetchPostData(slug) {
     const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999', { next: { revalidate: 3600 } })
     const posts = await res.json()
         
@@ -39,7 +40,7 @@ async function CallAPI(slug) {
 
 export async function generateMetadata({ params }) {
     const slug = params.slug
-    let post = await parseBlogPost(await CallAPI(slug))
+    let post = await parseBlogPost(await FetchPostData(slug))
    
     return {
       title: `${post.title} - Eltrac's`
@@ -51,7 +52,16 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
     //获取文章信息
     const slug = params.slug
-    let post = await CallAPI(slug)
+    let post = await FetchPostData(slug)
+
+    //获取评论数据
+    const res = await fetch(
+        'https://blog.guhub.cn/api/comments?slug='+slug+'&pageSize=9999', 
+        { next: { revalidate: 3600 } }
+    )
+    let commentData = await res.json()
+    if (commentData.data) commentData = commentData.data.dataSet
+    
   
     //如果获取成功
     if (post) {
@@ -82,7 +92,7 @@ export default async function Page({ params }) {
                     <Tocbot />
                     <BlogContent content={post.content} />
                 </article>
-                <Comment />
+                <Comment data={commentData} />
             </>
         )
     }

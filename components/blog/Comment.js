@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 /**
  * 评论
@@ -6,26 +6,28 @@
  * @returns jsx
  */
 
-import Giscus from '@giscus/react'
+import CommentList from "../comment/CommentList"
+import GiscusComment from "../comment/Giscus"
+import {Tabs, Tab} from "@nextui-org/tabs"
 
-export default function Comment() {
+export default function Comment({ data }) {
     return (
         <section id="comment" className={`px-5 md:px-16`}>
-            <Giscus
-                id="comments"
-                repo="BigCoke233/isla-giscus"
-                repoId="R_kgDOJ3CBvg"
-                category="Announcements"
-                categoryId="DIC_kwDOJ3CBvs4CXpL6"
-                mapping="pathname"
-                //term="Welcome to @giscus/react component!"
-                reactionsEnabled="1"
-                emitMetadata="0"
-                inputPosition="top"
-                theme="preferred_color_scheme"
-                lang="zh-CN"
-                loading="lazy"
-            />
+            <Tabs aria-label="Options"
+                classNames={{
+                    base: 'flex justify-center',
+                    tabList: 'bg-transparent rounded-sm',
+                    tab: 'bg-transparent',
+                    cursor: 'rounded-sm bg-zinc-50 dark:bg-zinc-800'
+                }}>
+                <Tab key="giscus" title="Giscus">
+                    <GiscusComment />
+                </Tab>
+                <Tab key="vanilla" title="原生评论（Alpha）">
+                    <p className="text-center">评论功能目前还在测试预览阶段，请使用 Giscus！</p>
+                    <CommentList data={data} />
+                </Tab>
+            </Tabs>
         </section>
     )
 }
