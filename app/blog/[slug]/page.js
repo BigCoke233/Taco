@@ -67,10 +67,8 @@ export default async function Page({ params }) {
     if (post) {
         //读取文章字段
         let fields = post.fields
-
         //获取文章头图
         let banner = (fields.thumbnail.value) ? fields.thumbnail.value : null
-
         //解析文章信息
         post = await parseBlogPost(post);
 
