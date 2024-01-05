@@ -103,7 +103,7 @@ export default async function Page({ params }) {
                     <Tocbot />
                     <BlogContent content={post.content} />
                 </article>
-                <Comment data={commentData} slug={slug} />
+                <Comment data={commentData} slug={slug} token={token} />
             </>
         )
     }
