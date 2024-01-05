@@ -10,7 +10,7 @@ import { Input } from "@nextui-org/input";
 
 /* === 主函数 表单部分 === */
 
-export default async function CommentForm({ slug, token }) {
+export default function CommentForm({ slug, token }) {
     return (
         <section id="comment-form">
             <Input type="name" label="*称呼" />
