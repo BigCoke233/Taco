@@ -72,7 +72,7 @@ export default async function Page({ params }) {
     let token = post.data.csrfToken;        // 获取文章 token
 
     // 获取评论数据
-    let commentData = FetchCommentData(slug)
+    let commentData = await FetchCommentData(slug)
   
     // 如果获取成功
     if (post) {
