@@ -27,6 +27,7 @@ export default function Comment({ data, slug }) {
                 </Tab>
                 <Tab key="vanilla" title="原生评论（Alpha）">
                     <p className="text-center">评论功能目前还在测试预览阶段，请使用 Giscus！</p>
+                    <CommentForm slug={slug} />
                     <CommentList data={data} />
                 </Tab>
             </Tabs>

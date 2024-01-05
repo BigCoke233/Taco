@@ -17,22 +17,13 @@ import Heading from '@/components/utils/Heading.js'
 import Comment from '@/components/blog/Comment.js'
 import BlogContent from "@/components/blog/BlogContent";
 import Tocbot from "@/components/blog/Tocbot";
-import { comment } from "postcss";
 
 /* === 调用 API === */
 
 async function FetchPostData(slug) {
-    const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999',
+    const res = await fetch(`https://blog.guhub.cn/api/post?slug=${slug}`, 
         { next: { tags: ['blog'] } })
-    const posts = await res.json()
-        
-    //遍历查找并获取对应文章
-    var post;
-    var data = (posts && posts.data.dataSet) ? posts.data.dataSet : false;
-
-    if (data) { //确保 data 读取到的是页面加载后的正确值，而不是页面加载完成前返回的 undefined
-        data.map((item) => { if (item.slug == slug) post = item })
-    }
+    const post = await res.json()
 
     return post
 }
@@ -51,27 +42,30 @@ export async function generateMetadata({ params }) {
 /* === 主函数 === */
 
 export default async function Page({ params }) {
-    //获取文章信息
-    const slug = params.slug
-    let post = await FetchPostData(slug)
+    // 获取文章数据
+    const slug = params.slug                // 获取文章别名（Slug）
+    let post = await FetchPostData(slug)    // 获取文章数据
+    let token = post.data.csrfToken;        // 获取文章 token
 
-    //获取评论数据
-    const res = await fetch(
+    // 获取评论数据
+    const res2 = await fetch(
         'https://blog.guhub.cn/api/comments?slug='+slug+'&pageSize=9999', 
         { next: { revalidate: 3600 } }
     )
-    let commentData = await res.json()
+    let commentData = await res2.json()
     if (commentData.data) commentData = commentData.data.dataSet
     
   
-    //如果获取成功
+    // 如果获取成功
     if (post) {
-        //读取文章字段
-        let fields = post.fields
-        //获取文章头图
-        let banner = (fields.thumbnail.value) ? fields.thumbnail.value : null
+        //读取文章字段，获取头图
+        let fields = post.data.fields
+        let banner = (fields.thumbnail.value) 
+                        ? fields.thumbnail.value 
+                        : null
+
         //解析文章信息
-        post = await parseBlogPost(post);
+        post = await parseBlogPost(post.data);
 
         return (
             <>
