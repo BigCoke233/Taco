@@ -7,10 +7,12 @@
  */
 
 import CommentList from "../comment/CommentList"
+import CommentForm from "../comment/CommentForm"
 import GiscusComment from "../comment/Giscus"
+
 import {Tabs, Tab} from "@nextui-org/tabs"
 
-export default function Comment({ data }) {
+export default function Comment({ data, slug }) {
     return (
         <section id="comment" className={`px-5 md:px-16`}>
             <Tabs aria-label="Options"
