@@ -16,7 +16,8 @@ import Heading from "@/components/utils/Heading"
 /* === 调用 API === */
 
 async function FetchCategoryInfo(slug) {
-    const res1 = await fetch('https://blog.guhub.cn/api/categories', { next: { revalidate: 3600 } });
+    const res1 = await fetch('https://blog.guhub.cn/api/categories',
+        { next: { tags: ['blog'] } });
     const categories = await res1.json()
 
     //遍历获取对应分类的名字和描述

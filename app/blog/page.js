@@ -24,10 +24,14 @@ export const metadata = {
 /* === 主函数 === */
 
 export default async function Blog() {
-    const res1 = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999', { next: { revalidate: 3600 } })
+    //获取文章列表
+    const res1 = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999',
+    { next: { tags: ['blog'] } })
     const posts = await res1.json()
 
-    const res2 = await fetch('https://blog.guhub.cn/api/categories', { next: { revalidate: 3600 } })
+    //获取分类
+    const res2 = await fetch('https://blog.guhub.cn/api/categories',
+    { next: { tags: ['blog'] } })
     const categories = await res2.json()
     
     return (
