@@ -16,14 +16,14 @@ import { useEffect } from "react";
 export default function Comment() {
     useEffect(() => {
         init({
-            el: document.getElementById('waline'),
+            el: document.getElementById('waline-container'),
             serverURL: "https://waline.guhub.cn",
             dark: '.dark'
         });
     })
     return (
         <section id="comment" className={`px-5 md:px-16`}>
-            <div id="waline" />
+            <div id="waline-container" />
             <Accordion>
                 <AccordionItem key="giscus" title="使用 Giscus">
                     <GiscusComment />
