@@ -15,7 +15,7 @@ import { useEffect } from "react"
 
 export default function Comment() {
     useEffect(()=>{
-        let __VUE_PROD_DEVTOOLS__ = false
+        var __VUE_PROD_DEVTOOLS__ = false
     })
     return (
         <section id="comment" className={`px-5 md:px-16`}>
