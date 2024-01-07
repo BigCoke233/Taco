@@ -9,11 +9,7 @@
             <link>https://www.guhub.cn</link>
         </image>
         <generator>RSS for Node</generator>
-<<<<<<< HEAD
-        <lastBuildDate>Sun, 07 Jan 2024 14:17:43 GMT</lastBuildDate>
-=======
-        <lastBuildDate>Sun, 07 Jan 2024 12:34:44 GMT</lastBuildDate>
->>>>>>> parent of 2ad1c46 (chore(troubleshooting): 暂时移除 Waline 查看问题)
+        <lastBuildDate>Sun, 07 Jan 2024 23:30:43 GMT</lastBuildDate>
         <atom:link href="https://www.guhub.cn/rss.xml" rel="self" type="application/rss+xml"/>
         <pubDate>Tue, 01 Aug 2023 13:52:00 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2024, Eltrac]]></copyright>
