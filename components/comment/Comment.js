@@ -7,6 +7,7 @@
  */
 
 import GiscusComment from "./Giscus"
+import { Waline } from "./Waline"
 
 import {Tabs, Tab} from "@nextui-org/tabs"
 
@@ -20,6 +21,9 @@ export default function Comment() {
                     tab: 'bg-transparent',
                     cursor: 'rounded-sm bg-zinc-50 dark:bg-zinc-800'
                 }}>
+                <Tab key="waline" title="Waline">
+                    <Waline serverURL="https://waline.guhub.cn/" dark=".dark" />
+                </Tab>
                 <Tab key="giscus" title="Giscus">
                     <GiscusComment />
                 </Tab>
