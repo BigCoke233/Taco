@@ -14,7 +14,7 @@ import Link from 'next/link';
 //页面组成部分
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
-import Comment from '@/components/blog/Comment.js'
+import Comment from '@/components/comment/Comment.js'
 import BlogContent from "@/components/blog/BlogContent";
 import Tocbot from "@/components/blog/Tocbot";
 
@@ -69,7 +69,6 @@ export default async function Page({ params }) {
     
     // 获取文章数据
     let post = await FetchPostData(slug)    // 获取文章数据
-    let token = post.data.csrfToken;        // 获取文章 token
 
     // 获取评论数据
     let commentData = await FetchCommentData(slug)
@@ -103,7 +102,7 @@ export default async function Page({ params }) {
                     <Tocbot />
                     <BlogContent content={post.content} />
                 </article>
-                <Comment data={commentData} slug={slug} token={token} />
+                <Comment />
             </>
         )
     }

@@ -6,13 +6,12 @@
  * @returns jsx
  */
 
-import CommentList from "../comment/CommentList"
-import CommentForm from "../comment/CommentForm"
-import GiscusComment from "../comment/Giscus"
+import GiscusComment from "./Giscus"
+import { Waline } from "./Waline"
 
 import {Tabs, Tab} from "@nextui-org/tabs"
 
-export default function Comment({ data, slug, token }) {
+export default function Comment() {
     return (
         <section id="comment" className={`px-5 md:px-16`}>
             <Tabs aria-label="Options"
@@ -22,13 +21,11 @@ export default function Comment({ data, slug, token }) {
                     tab: 'bg-transparent',
                     cursor: 'rounded-sm bg-zinc-50 dark:bg-zinc-800'
                 }}>
+                <Tab key="waline" title="Waline">
+                    <Waline serverURL="https://waline.guhub.cn/" />
+                </Tab>
                 <Tab key="giscus" title="Giscus">
                     <GiscusComment />
-                </Tab>
-                <Tab key="vanilla" title="原生评论（Alpha）">
-                    <p className="text-center">评论功能目前还在测试预览阶段，请使用 Giscus！</p>
-                    <CommentForm slug={slug} token={token} />
-                    <CommentList data={data} />
                 </Tab>
             </Tabs>
         </section>
