@@ -5,20 +5,27 @@
  * 
  * @returns jsx
  */
+import GiscusComment from "../comment/Giscus"
 
-import GiscusComment from "./Giscus"
+import { init } from '@waline/client';
+import '@waline/client/style';
 
-import ReactWalineClient from "@montagejs/react-waline-client"
-import '@montagejs/react-waline-client/dist/style/index.css'
-
-import {Accordion, AccordionItem} from "@nextui-org/accordion";
+import { Accordion, AccordionItem } from "@nextui-org/accordion";
+import { useEffect } from "react";
 
 export default function Comment() {
+    useEffect(() => {
+        init({
+            el: document.getElementById('waline'),
+            serverURL: "https://waline.guhub.cn",
+            dark: '.dark'
+        });
+    })
     return (
         <section id="comment" className={`px-5 md:px-16`}>
-            <ReactWalineClient serverURL="https://waline.guhub.cn/" dark=".dark" />
+            <div id="waline" />
             <Accordion>
-                <AccordionItem key="1" aria-label="Giscus" title="使用 Giscus">
+                <AccordionItem key="giscus" title="使用 Giscus">
                     <GiscusComment />
                 </AccordionItem>
             </Accordion>
