@@ -1,5 +1,8 @@
 /**
  * Waline 评论
+ * 
+ * @file components/comment/Waline
+ * @exports Waline
  */
 
 import React, { useEffect, useRef } from 'react';
