@@ -33,5 +33,5 @@ export const Waline = (props: WalineOptions) => {
       <script>var __VUE_PROD_DEVTOOLS__ = false;</script>
       <div ref={containerRef} />
     </>
-  };
+  );
 };
