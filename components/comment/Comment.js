@@ -7,7 +7,6 @@
  */
 
 import GiscusComment from "../comment/Giscus"
-import { Waline } from "./Waline"
 
 import { Tabs, Tab } from "@nextui-org/tabs"
 
