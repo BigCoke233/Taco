@@ -50,11 +50,11 @@ export default function BlogList({ posts, className }) {
     return (
       <div id="blog-list" className={`my-10 ${className}`}>
           <Title />
-          <ul className="text-xl font-semibold">
+          <ul className="text-lg md:text-xl font-semibold">
           {list.map((data) => {
             var post = data[1]
             return (
-              <li key={post.slug} className="list-square list-inside my-5 md:mx-5">
+              <li key={post.slug} className="list-square my-5 ml-5 md:mx-5 md:ml-10">
                 <Link href={"/blog/"+post.slug}
                 className="hover:text-lime-700 transition">{post.title}</Link>
               </li>
