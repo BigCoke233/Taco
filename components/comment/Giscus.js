@@ -19,7 +19,7 @@ export default function GiscusComment() {
             categoryId="DIC_kwDOJ3CBvs4CXpL6"
             mapping="pathname"
             //term="Welcome to @giscus/react component!"
-            reactionsEnabled="1"
+            reactionsEnabled="0"
             emitMetadata="0"
             inputPosition="top"
             theme="preferred_color_scheme"
