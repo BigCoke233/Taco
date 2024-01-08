@@ -7,7 +7,6 @@
  */
 
 import GiscusComment from "../comment/Giscus"
-import { Waline } from "./Waline"
 
 import { Tabs, Tab } from "@nextui-org/tabs"
 
@@ -19,7 +18,8 @@ export default function Comment() {
                     <GiscusComment />
                 </Tab>
                 <Tab key="waline" title="waline">
-                    <Waline serverURL="https://waline.guhub.cn" dark=".dark" />
+                    <p>暂时不可用</p>
+                    {/*<Waline serverURL="https://waline.guhub.cn" dark=".dark" />*/}
                 </Tab>
             </Tabs>
         </section>
