@@ -19,7 +19,6 @@ export default function Comment() {
                     <GiscusComment />
                 </Tab>
                 <Tab key="waline" title="waline">
-                    <script>var __VUE_PROD_DEVTOOLS__ = false;</script>
                     <Waline serverURL="https://waline.guhub.cn" dark=".dark" />
                 </Tab>
             </Tabs>

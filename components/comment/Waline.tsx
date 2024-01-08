@@ -16,7 +16,6 @@ export const Waline = (props: WalineOptions) => {
   const containerRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
-    var __VUE_PROD_DEVTOOLS__ = false
     walineInstanceRef.current = init({
       ...props,
       el: containerRef.current,
@@ -26,9 +25,13 @@ export const Waline = (props: WalineOptions) => {
   }, []);
 
   useEffect(() => {
-    var __VUE_PROD_DEVTOOLS__ = false
     walineInstanceRef.current?.update(props);
   }, [props]);
 
-  return <div ref={containerRef} />;
+  return (
+    <>
+      <script>var __VUE_PROD_DEVTOOLS__ = false;</script>
+      <div ref={containerRef} />
+    </>
+  };
 };
