@@ -20,6 +20,7 @@ export default function Comment() {
                         serverURL="https://waline.guhub.cn" 
                         dark=".dark" 
                         imageUploader={false}
+                        lang="zh-CN"
                     />
                 </Tab>
                 <Tab key="giscus" title="Giscus">
