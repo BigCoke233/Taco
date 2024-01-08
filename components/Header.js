@@ -14,9 +14,9 @@ import Line from "./utils/Line"
 /* === 主函数 === */
 
 export default function Header({ 
-  title = "烟云树海。", 
-  subtitle = "C'est la vie, mon ami.", 
-  banner = "https://image.guhub.cn/banner.jpg" 
+  title = "青空飞鸟。", 
+  subtitle = "Flock without a shepard.", 
+  banner = "https://image.guhub.cn//blog-banner/20240108.jpg" 
 }) {
 
   if (banner===null) banner = "https://image.guhub.cn/banner.jpg"
