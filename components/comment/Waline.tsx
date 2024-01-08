@@ -28,10 +28,5 @@ export const Waline = (props: WalineOptions) => {
     walineInstanceRef.current?.update(props);
   }, [props]);
 
-  return (
-    <>
-      <script>var __VUE_PROD_DEVTOOLS__ = false;</script>
-      <div ref={containerRef} />
-    </>
-  );
+  return <div ref={containerRef} />;
 };
