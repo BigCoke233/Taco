@@ -16,7 +16,7 @@ export default function Comment() {
         <section id="comment" className={`px-5 md:px-16`}>
             <Tabs aria-label="Options">
                 <Tab key="waline" title="waline">
-                    <Waline serverURL="https://waline.guhub.c" dark=".dark" />
+                    <Waline serverURL="https://waline.guhub.cn" dark=".dark" />
                 </Tab>
                 <Tab key="giscus" title="Giscus">
                     <GiscusComment />
