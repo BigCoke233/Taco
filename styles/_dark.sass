@@ -1,0 +1,43 @@
+/* === 深色模式相关 === */
+
+@use 'var' as *
+    
+#themeSwitch-icon-sun 
+  display: block
+
+#themeSwitch-icon-moon 
+  display: none
+
+.dark 
+  --general-bg: rgb(24, 24, 27)
+
+  body 
+    background-image: $dark-bg-pattern
+  
+    /* 图片亮度调低 */
+    img:not(#about img) 
+      filter: brightness(0.75)
+      transition: filter 0.3s
+      &:hover 
+        filter: brightness(0.9)
+  
+    /* 行内代码块的颜色 */
+    :not(pre) code 
+      background-color: rgba(255,255,255,0.075)
+      color: #999
+    
+
+    /* 强调色背景颜色调低 */
+    @media screen and (min-width: 768px) 
+      [class*=bg-lime] 
+        filter: brightness(0.75)
+  
+  /* 滚动条的颜色 */
+  ::-webkit-scrollbar-thumb 
+    background: #4e4e4e
+
+  #themeSwitch-icon-sun 
+    display: none
+
+  #themeSwitch-icon-moon 
+    display: block

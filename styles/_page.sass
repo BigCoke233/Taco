@@ -1,0 +1,79 @@
+@use 'var' as *
+@use 'lib/yue'
+@use 'lib/prism'
+    
+/* yue.css */
+
+.yue img 
+  display: block
+  box-shadow: 0 0.3rem .6rem rgba(0,0,0,0.25)
+  margin: 0 auto
+  max-width: 95%
+
+.yue h2 
+  font-weight: 800
+
+@media screen and (min-width: 786px) 
+  .yue h2 
+    position: relative
+    left: -1.25em
+  
+  .yue h2::before 
+    content: "#"
+    display: inline-block
+    width: 1.25em
+    color: $accent
+
+.yue h3 
+  font-weight: 700
+
+.yue a 
+  color: $lighter-accent
+  opacity: 0.9
+  word-wrap: break-word
+  transition: opacity .3s
+  text-decoration: underline
+  text-underline-offset: 0.325rem
+  text-decoration-thickness: 1px
+
+.yue a:hover 
+  opacity: 0.75
+
+
+.yue blockquote 
+  padding: 1em 1.75em
+  color:#888
+  position: relative
+
+.yue blockquote::before 
+  content: "“"
+  position: absolute
+  top: -.25em
+  left: -.5em
+  font-size: 300%
+  color: $accent
+
+/* prism.css */
+
+pre[class*="language-"] 
+  padding: 1em 1.25em
+  border-radius: 0.215rem
+  box-shadow: 0 0.1rem .2rem rgba(0,0,0,0.25)
+  margin: 0 0 1.5em 0
+  background-color: rgb(37, 37, 37)
+
+  code 
+    background: transparent!important
+  
+pre[class*="language-"],
+code[class*="language-"] 
+  font-size: 0.875em
+
+
+pre[class*="language-"]::-webkit-scrollbar 
+  height: 0.25rem
+  width: 0.25rem
+  background-color: rgba(255,255,255,.025)
+
+pre, code 
+  font-family: 'Courier Prime', monospace!important

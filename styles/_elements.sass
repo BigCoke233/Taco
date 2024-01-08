@@ -1,0 +1,59 @@
+@use 'var' as *
+    
+html 
+  //设置背景色
+  --general-bg: rgb(249, 250, 251)
+  --nextui-background: unset!important
+
+  //使用思源宋体
+  font-family: 'Noto Serif SC', serif
+
+  //自定义滚动条
+  ::-webkit-scrollbar 
+    width: 0.45rem
+  
+  ::-webkit-scrollbar-thumb 
+    background: #bbb
+    border-radius: 1rem
+  
+
+  //设置背景纹理
+  body 
+    background-image: $light-bg-pattern
+
+:not(pre) code 
+  background-color: rgba(0,0,0,0.075)
+  color: #444
+
+  vertical-align: middle
+  padding: 0.1rem 0.35rem
+  border-radius: 0.15rem
+  text-shadow: 0.05rem 0.05rem 0 rgba(0,0,0,0.075)
+  font-size: 85%
+
+//隐藏，同 hidden
+.hide  
+  display: none 
+
+//使用等宽字体
+.font-mono  
+  font-family: 'Courier Prime', monospace 
+//使用无衬线字体
+.font-sans  
+  font-family: 'Noto Sans SC', sans-serif 
+
+//使用 React Icons
+.react-icons 
+  vertical-align: middle
+  display: inline
+
+//Helpbar 的折叠
+@media screen and (max-width: 767px) 
+  #helpbar-content 
+    &:not(.folded) 
+      transform: translateY(0)
+      opacity: 1
+    
+    &.folded 
+      transform: translateY(-10rem)
+      opacity: 0

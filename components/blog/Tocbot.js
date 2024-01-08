@@ -9,10 +9,8 @@
 
 /* === 引入 === */
 
-import { doTocbot, refreshTocbot, destroyTocbot } from "@/lib/useTocbot"
+import { doTocbot } from "@/lib/useTocbot"
 import { useEffect } from "react"
-
-import '@/styles/tocbot.scss'
 
 /* === 工具函数 === */
 

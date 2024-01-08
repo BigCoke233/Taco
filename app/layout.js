@@ -11,9 +11,7 @@
 
 //全局 CSS
 import '@/styles/init.css'
-import '@/styles/yue.css'
-import '@/styles/prism.css'
-import '@/styles/globals.scss'
+import '@/styles/globals.sass'
 
 //页面组成部分
 import Footer from '@/components/Footer'

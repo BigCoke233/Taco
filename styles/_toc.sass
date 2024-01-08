@@ -1,0 +1,53 @@
+@use 'var' as *
+@use 'lib/tocbot'
+  
+//Tocbot 的折叠
+@media screen and (max-width: 1279px) 
+  #tocbot-container 
+    &.folded 
+      transform: scale(0.85) translateY(20rem)
+      opacity: 0
+      z-index: -1
+    
+    &:not(.folded) 
+      transform: scale(1) translateY(0)
+      opacity: 1
+      z-index: 20
+
+@media screen and (min-width: 1280px) 
+  #tocbot-container 
+      //在大屏幕下取消折叠
+      &.folded 
+        transform: scale(1) translateY(0)
+        opacity: 1
+        z-index: 20
+  
+/* === TocBot === */
+
+@media screen and (max-width: 1279px) 
+  #tocbot-container 
+    .toc-list:not(.toc-list *) 
+      padding: 0
+      overflow-y: scroll
+      padding: 0 1.5rem
+      font-size: 1.15rem
+    
+@mixin toc-counter 
+  font-family: 'Courier Prime', monospace
+  color: $gray-text-color
+  margin-right: 0.5rem
+
+#tocbot > .toc-list 
+  counter-reset: toc
+  & > li 
+    counter-reset: tocSub
+    counter-increment: toc
+    &::before 
+      content: counter(toc)
+      @include toc-counter
+    
+    & > ol > li 
+      counter-increment: tocSub
+      &::before 
+        content: counter(toc) '.' counter(tocSub)
+        @include toc-counter
