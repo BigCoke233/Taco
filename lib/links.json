@@ -123,5 +123,10 @@
         "name": "FSpark",
         "link": "https://fspark.me",
         "img": "https://cn.gravatar.com/avatar/c917530cb70a2a7ec12b57f523d2ca0c?s=200&r=G"
+    },
+    {
+        "name": "Young Lee",
+        "link": "https://younglee.cn/",
+        "img": "https://younglee-1258667063.cos.ap-chengdu.myqcloud.com/%E5%96%9D%E5%A5%B6%E8%8C%B6%E5%A4%B4%E5%83%8F.svg"
     }
 ]
