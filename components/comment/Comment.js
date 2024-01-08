@@ -13,10 +13,14 @@ import { Tabs, Tab } from "@nextui-org/tabs"
 
 export default function Comment() {
     return (
-        <section id="comment" className={`px-5 md:px-16`}>
+        <section id="comment" className={`md:px-12`}>
             <Tabs aria-label="Options">
                 <Tab key="waline" title="waline">
-                    <Waline serverURL="https://waline.guhub.cn" dark=".dark" />
+                    <Waline 
+                        serverURL="https://waline.guhub.cn" 
+                        dark=".dark" 
+                        imageUploader={false}
+                    />
                 </Tab>
                 <Tab key="giscus" title="Giscus">
                     <GiscusComment />

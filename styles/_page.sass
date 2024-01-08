@@ -77,3 +77,17 @@ pre[class*="language-"]::-webkit-scrollbar
 
 pre, code 
   font-family: 'Courier Prime', monospace!important
+
+/* waline */
+
+#comment
+  --waline-theme-color: #3f6212
+  --waline-active-color: #54732c 
+  &:not(.dark *)
+    --waline-bg-color: #fafafa
+    --waline-border-color: #e9e9eb
+  .wl-panel
+    border-radius: 0.25rem
+
+  .wl-header-item
+    border: none
