@@ -13,16 +13,13 @@ import Heading from '@/components/utils/Heading.js'
 import BlogContent from '@/components/blog/BlogContent'
 import { marked } from 'marked'
 
-/* === 元信息 === */
+/* === 数据 === */
 
 import aboutData from '@/data/about.data'
 
 export const metadata = {
     title: `${aboutData.title} - Eltrac's`
 }
-
-/* === 数据 === */
-
 
 /* === 主函数 === */
 
