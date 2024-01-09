@@ -7,18 +7,19 @@
 
 /* === 引入 === */
 
+//页面组成部分
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
-
 import Padding from '@/components/utils/Padding'
 
-import { promises as fs } from 'fs'
+//工具
 import shuffle from '@/lib/utils/shuffle'
-
 import BlogContent from '@/components/blog/BlogContent'
 import { marked } from 'marked'
 
-/* === 元信息 === */
+/* === 数据 === */
+
+import linksData from '@/data/links.data'
 
 export const metadata = {
     title: "友人 - Eltrac's"
@@ -30,9 +31,9 @@ const content = `链接随机排序，排名不分先后。
 /* === 主函数 === */
 
 export default async function Links() {
-    const config_data = await fs.readFile(process.cwd() + '/data/links.json', 'utf8');
-    const data = JSON.parse(config_data)
-    shuffle(data)
+    //获取友情链接数据
+    const links = linksData.list;
+    shuffle(links);
 
     return (
         <>
@@ -42,7 +43,7 @@ export default async function Links() {
                 <Heading sub="我的互联网交际圈之一。">友情链接</Heading>
                 <Padding className="mt-5 md:mt-10">
                     <ul className="flex flex-wrap gap-5">
-                        {data.map((item) => {
+                        {links.map((item) => {
                             return (
                                 <li key={item.name}>
                                     <a href={item.link} target="_blank"

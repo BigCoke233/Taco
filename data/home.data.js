@@ -1,15 +1,15 @@
-{
-    "about": {
+const config = {
+    about: {
         "names": "Eltrac / Lychnus / 以歌 / 帆迹",
         "des": "不尊重文字的独立博主，胡言乱语的小说家，兴趣使然的神秘学研究者，爱走弯路的半吊子程序员，不务正业的学生，品味小众的游戏爱好者，需要靠早晨一杯咖啡维持生命体征的废物。",
         "character": "太阳双子月升处女、生命灵数 9、INFP"
     },
-    "media": {
+    media: {
         "title": "我的踪迹",
         "text": "尝试在其他地方找到我。"
     },
-    "nav": {
-        "list": [
+    nav: {
+        list: [
             {
                 "link": "/feed",
                 "title": "订阅",
@@ -31,3 +31,5 @@
         ]
     }
 } 
+
+module.exports = config;

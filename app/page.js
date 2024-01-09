@@ -7,8 +7,7 @@
 
 /* === 引用 === */
 
-//nextjs 内置
-import { promises as fs } from 'fs';
+import config from '@/data/home.data'
 
 //页面组成部分
 import Header from '@/components/Header'
@@ -34,10 +33,6 @@ export default async function Home() {
   const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999',
     { next: { tags: ['blog'] } })
   const posts = await res.json()
-
-  //获取页面设置
-  const config_data = await fs.readFile(process.cwd() + '/data/config.json', 'utf8');
-  const config = JSON.parse(config_data)
 
   //生成 rss 订阅源
   await generateRssFeed({ posts: posts.data.dataSet });
