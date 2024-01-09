@@ -27,12 +27,12 @@ export default async function About() {
     return (
         <>
             <Header 
-                banner={linksData.banner.img} 
-                title={linksData.banner.title} 
-                subtitle={linksData.banner.subtitle} 
+                banner={aboutData.banner.img} 
+                title={aboutData.banner.title} 
+                subtitle={aboutData.banner.subtitle} 
             />
             <article>
-                <Heading sub={linksData.heading.description}>{linksData.heading.title}</Heading>
+                <Heading sub={aboutData.heading.description}>{aboutData.heading.title}</Heading>
                 <BlogContent content={marked.parse(aboutData.content)} />
             </article>
         </>
