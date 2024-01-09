@@ -36,7 +36,7 @@ export default async function Home() {
   const posts = await res.json()
 
   //获取页面设置
-  const config_data = await fs.readFile(process.cwd() + '/lib/config.json', 'utf8');
+  const config_data = await fs.readFile(process.cwd() + '/data/config.json', 'utf8');
   const config = JSON.parse(config_data)
 
   //生成 rss 订阅源

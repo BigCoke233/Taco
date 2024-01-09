@@ -30,7 +30,7 @@ const content = `链接随机排序，排名不分先后。
 /* === 主函数 === */
 
 export default async function Links() {
-    const config_data = await fs.readFile(process.cwd() + '/lib/links.json', 'utf8');
+    const config_data = await fs.readFile(process.cwd() + '/data/links.json', 'utf8');
     const data = JSON.parse(config_data)
     shuffle(data)
 
