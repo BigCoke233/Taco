@@ -17,6 +17,8 @@ import shuffle from '@/lib/utils/shuffle'
 import BlogContent from '@/components/blog/BlogContent'
 import { marked } from 'marked'
 
+import Image from 'next/image'
+
 /* === 数据 === */
 
 import linksData from '@/data/links.data'
@@ -48,7 +50,14 @@ export default async function Links() {
                                 <li key={item.name}>
                                     <a href={item.link} target="_blank"
                                     className="block flex items-center gap-3">
-                                        <img src={item.img} className="inline-block w-8 rounded-full" />
+                                        <Image
+                                            src={item.img} 
+                                            className="inline-block w-8 rounded-full" 
+                                            width={100}
+                                            height={100}
+                                            alt={`avatar of ${item.name}`}
+                                            unoptimized
+                                        />
                                         <span className="font-bold">{item.name}</span>    
                                     </a>
                                 </li>
