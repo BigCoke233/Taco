@@ -1,32 +1,40 @@
+/**
+ * 首页 页面数据
+ * 
+ * @route /
+ * @file /data/home.data.js
+ * @exports object
+ */
+
 const config = {
     about: {
-        "names": "Eltrac / Lychnus / 以歌 / 帆迹",
-        "des": "不尊重文字的独立博主，胡言乱语的小说家，兴趣使然的神秘学研究者，爱走弯路的半吊子程序员，不务正业的学生，品味小众的游戏爱好者，需要靠早晨一杯咖啡维持生命体征的废物。",
-        "character": "太阳双子月升处女、生命灵数 9、INFP"
+        names: "Eltrac / Lychnus / 以歌 / 帆迹",
+        des: "不尊重文字的独立博主，胡言乱语的小说家，兴趣使然的神秘学研究者，爱走弯路的半吊子程序员，不务正业的学生，品味小众的游戏爱好者，需要靠早晨一杯咖啡维持生命体征的废物。",
+        character: "太阳双子月升处女、生命灵数 9、INFP"
     },
     media: {
-        "title": "我的踪迹",
-        "text": "尝试在其他地方找到我。"
+        title: "我的踪迹",
+        text: "尝试在其他地方找到我。"
     },
     nav: {
         list: [
             {
-                "link": "/feed",
-                "title": "订阅",
-                "des": "使用 RSS 订阅我的博客。",
-                "target": "_blank"
+                link: "/feed",
+                title: "订阅",
+                des: "使用 RSS 订阅我的博客。",
+                target: "_blank"
             },
             {
-                "link": "https://bi.guhub.cn/",
-                "title": "怪奇灵感生成器",
-                "des": "基于「无色的绿色想法愤怒地睡觉」原理的词组生成器",
-                "target": "_blank"
+                link: "https://bi.guhub.cn/",
+                title: "怪奇灵感生成器",
+                des: "基于「无色的绿色想法愤怒地睡觉」原理的词组生成器",
+                target: "_blank"
             },
             {
-                "link": "/links",
-                "title": "友情链接",
-                "des": "我的互联网交际圈",
-                "target": "_self"
+                link: "/links",
+                title: "友情链接",
+                des: "我的互联网交际圈",
+                target: "_self"
             }
         ]
     }

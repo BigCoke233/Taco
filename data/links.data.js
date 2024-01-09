@@ -1,6 +1,24 @@
-/* === 友情链接数据 === */
+/**
+ * 友情链接 页面数据
+ * 
+ * @route /links
+ * @file /data/links.data.js
+ * @exports object
+ */
 
 const linksData = {
+    title: "友人",
+    content: `链接随机排序，排名不分先后。
+    不再开放申请，若需修改信息请联系 \`hi@guhub.cn\``,
+    banner: {
+        title: "赛博友谊。",
+        subtitle: "Back and forth.",
+        img: "https://image.guhub.cn/page-banner/about-banner.jpg",
+    },
+    heading: {
+        title: "友情链接",
+        description: "我的互联网交际圈之一。",
+    },
     list: [
         {
             "name": "酚酞 / 白洛嘉",

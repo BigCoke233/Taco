@@ -22,11 +22,8 @@ import { marked } from 'marked'
 import linksData from '@/data/links.data'
 
 export const metadata = {
-    title: "友人 - Eltrac's"
+    title: `${linksData.title} - Eltrac's`
 }
-
-const content = `链接随机排序，排名不分先后。
-不再开放申请，若需修改信息请联系 \`hi@guhub.cn\``
 
 /* === 主函数 === */
 
@@ -37,10 +34,13 @@ export default async function Links() {
 
     return (
         <>
-            <Header banner="https://image.guhub.cn/page-banner/about-banner.jpg" 
-            title="赛博友谊。" subtitle="Back and forth." />
+            <Header 
+                banner={linksData.banner.img} 
+                title={linksData.banner.title} 
+                subtitle={linksData.banner.subtitle} 
+            />
             <article>
-                <Heading sub="我的互联网交际圈之一。">友情链接</Heading>
+                <Heading sub={linksData.heading.description}>{linksData.heading.title}</Heading>
                 <Padding className="mt-5 md:mt-10">
                     <ul className="flex flex-wrap gap-5">
                         {links.map((item) => {
@@ -56,7 +56,7 @@ export default async function Links() {
                         })}
                     </ul>
                 </Padding>
-                <BlogContent content={marked.parse(content)} />
+                <BlogContent content={marked.parse(linksData.content)} />
             </article>
         </>
     )
