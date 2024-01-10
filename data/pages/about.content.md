@@ -1,15 +1,4 @@
-/**
- * 关于 页面数据
- * 
- * @route /about
- * @file /data/about.data.js
- * @exports object
- */
-
-const aboutData = {
-    title: "关于",
-    content: `
-这里没有名字，不过既然是一个名叫 Eltrac 的人做出来的东西，你大可将它称为 \`Eltrac's\`
+这里没有名字，不过既然是一个名叫 Eltrac 的人做出来的东西，你大可将它称为 `Eltrac's`
 
 ## 关于目的
 
@@ -44,16 +33,3 @@ const aboutData = {
 内容管理：Typecho
 
 云服务：Vercel、腾讯云、又拍云
-`,
-    banner: {
-        title: "夜晚的云。",
-        subtitle: "Often evade notice.",
-        img: "https://image.guhub.cn/page-banner/links-banner.jpg",
-    },
-    heading: {
-        title: "关于小站",
-        description: "以防你不知道这里存在的意义。",
-    },
-}
-
-module.exports = aboutData
