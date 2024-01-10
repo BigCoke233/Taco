@@ -10,10 +10,8 @@
   },
   "dependencies": {
     "@giscus/react": "^2.3.0",
-    "@montagejs/react-waline-client": "^0.1.10",
-    "@nextui-org/accordion": "^2.0.28",
-    "@nextui-org/button": "^2.0.26",
-    "@nextui-org/input": "^2.1.16",
+    "@mdx-js/loader": "^3.0.0",
+    "@next/mdx": "^14.0.4",
     "@nextui-org/system": "^2.0.15",
     "@nextui-org/tabs": "^2.0.26",
     "@nextui-org/theme": "^2.1.17",
@@ -29,9 +27,10 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
+    "react-markdown": "^9.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
     "rss": "^1.2.2",
-    "toastify": "^2.0.1",
-    "toastify-js": "^1.12.0",
     "tocbot": "^4.23.0"
   },
   "devDependencies": {
