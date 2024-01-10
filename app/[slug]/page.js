@@ -1,7 +1,8 @@
 /**
- * 关于页面
+ * 所有独立页面
  * 
- * @file about/page.js
+ * @pathname /[slug]
+ * @file /app/[slug]/page.js
  * @returns jsx
  */
 
@@ -15,7 +16,7 @@ import BlogContent from '@/components/blog/BlogContent'
 
 export async function generateMetadata({ params }) {
     try {
-        return import(`data/pages/${params.slug}.page.md`).then((module)=>{
+        return await import(`data/pages/${params.slug}.page.md`).then((module)=>{
             const matter = module.attributes;
             return {
                 title: `${matter.title} - Eltrac's`
@@ -36,7 +37,7 @@ export default async function About({ params }) {
 
     try {
         //动态引入页面数据
-        const Page = import(`data/pages/${slug}.page.md`).then((module)=>{
+        const Page = await import(`data/pages/${slug}.page.md`).then((module)=>{
             const matter = module.attributes;
             return (
                 <>
