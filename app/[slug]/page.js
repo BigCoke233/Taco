@@ -9,25 +9,22 @@
 
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
-
 import BlogContent from '@/components/blog/BlogContent'
-import { marked } from 'marked'
-
-const fs = require('fs')
 
 /* === 数据 === */
 
 export async function generateMetadata({ params }) {
     try {
-        const title = await import(`data/pages/${params.slug}.data.js`).then((module) => {
-            return module.pageData.title
-        });
-        return {
-          title: `${title} - Eltrac's`,
-        }
+        return import(`data/pages/${params.slug}.content.md`).then((module)=>{
+            const matter = module.attributes;
+            return {
+                title: `${matter.title} - Eltrac's`
+            }
+        })
+
     } catch(error) {
         return {
-            title: `页面走丢了 - Eltrac's`,
+            title: "虚无 - Eltrac's"
         }
     }
 }
@@ -39,27 +36,20 @@ export default async function About({ params }) {
 
     try {
         //动态引入页面数据
-        const Page = await import(`data/pages/${slug}.data.js`).then((module)=>{
-            const pageData = module.pageData
-
-            //获取页面内容
-            let pageContent;
-            if (pageData.content) pageContent = pageData.content
-            else {
-                const markdown = fs.readFileSync(`data/pages/${slug}.content.md`, 'utf-8')
-                pageContent = marked.parse(markdown)
-            }
-
+        const Page = import(`data/pages/${slug}.content.md`).then((module)=>{
+            const matter = module.attributes;
             return (
                 <>
                     <Header 
-                        banner={pageData.banner.img} 
-                        title={pageData.banner.title} 
-                        subtitle={pageData.banner.subtitle} 
+                        banner={matter.banner.img} 
+                        title={matter.banner.title} 
+                        subtitle={matter.banner.subtitle} 
                     />
                     <article>
-                        <Heading sub={pageData.heading.description}>{pageData.heading.title}</Heading>
-                        <BlogContent content={pageContent} />
+                        <Heading sub={matter.heading.description}>
+                            {matter.heading.title}
+                        </Heading>
+                        <BlogContent content={module.html} />
                     </article>
                 </>
             )

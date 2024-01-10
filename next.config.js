@@ -8,6 +8,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  /* === 允许的外部图片源 === */
   images: {
     remotePatterns: [
       {
@@ -30,27 +31,23 @@ const nextConfig = {
       }
     ],
   },
+  /* === Webpack 设置 === */
   webpack: (config) => {
+    // 修复 Waline 导致的客户端问题
     config.plugins.push(new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: 'true',
       __VUE_PROD_DEVTOOLS__: 'false',
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
     }));
+    //添加 Markdown Frontmatter 加载器
+    config.module.rules.push(
+      {
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader'
+      }
+    )
     return config;
   },
 }
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-    providerImportSource: '@mdx-js/react',
-  },
-});
-
 module.exports = nextConfig;
-
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-});
