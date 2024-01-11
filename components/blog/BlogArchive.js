@@ -36,19 +36,25 @@ export default function BlogArchive({ posts, className }) {
         <section id="blogArchiveList">
             <ul className={className}>
                 {posts.map((post) => {
-                    post = parseBlogPost(post);
+                    const matter = post.attributes
+
+                    const dateArray = matter.date.split('-')
+                    const year = dateArray[0]
+                    const month = (dateArray[1].length<2) ? `0${dateArray[1]}` : dateArray[1]
+                    const day = (dateArray[2].length<2) ? `0${dateArray[2]}` : dateArray[2]
+
                     return (
                         <>
                             <li className="year-title font-mono md:text-right
-                            text-gray-500 text-xl md:text-2xl -my-2" key={`${post.year}-${post.slug}`}>
-                                <Highlighter>{post.year}</Highlighter>
+                            text-gray-500 text-xl md:text-2xl -my-2" key={`${year}-${post.slug}`}>
+                                <Highlighter>{year}</Highlighter>
                             </li>
 
                             <li className="md:text-xl my-5 mx-2 md:mx-0" key={post.slug}>
                                 <Link href={`/blog/${post.slug}`} className="flex gap-3 md:gap-8">
-                                    <span className="text-gray-600 font-mono">{post.month}.{post.day}</span> 
+                                    <span className="text-gray-600 font-mono">{month}.{day}</span> 
                                     <span className="font-bold transition hover:text-lime-700">
-                                        {post.title}
+                                        {matter.title}
                                     </span>
                                 </Link>
                             </li>

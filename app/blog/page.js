@@ -15,6 +15,9 @@ import BlogCategories from '@/components/blog/BlogCategories'
 
 import Padding from '@/components/utils/Padding'
 
+//数据
+import categories from '@/data/categories.data'
+
 /* === 元信息 === */
 
 export const metadata = {
@@ -25,8 +28,8 @@ export const metadata = {
 
 export default async function Blog() {
     //获取文章列表
-    const res1 = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999',
-    { next: { tags: ['blog'] } })
+    const res1 = await fetch(`${process.env.SITE_BASE_URL}api/posts/`,
+        { next: { tags: ['blog'] } })
     const posts = await res1.json()
 
     //获取分类
@@ -42,7 +45,7 @@ export default async function Blog() {
                 <Heading sub="就这样存在于此。">被陈列的想法</Heading>
                 <Padding>
                     <BlogCategories data={categories.data} />
-                    <BlogArchive posts={posts.data.dataSet} />
+                    <BlogArchive posts={posts} />
                 </Padding>
             </article>
         </>
