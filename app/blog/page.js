@@ -15,6 +15,8 @@ import BlogCategories from '@/components/blog/BlogCategories'
 
 import Padding from '@/components/utils/Padding'
 
+import { FetchPosts } from '@/lib/fetchPosts'
+
 /* === 元信息 === */
 
 export const metadata = {
@@ -24,10 +26,7 @@ export const metadata = {
 /* === 主函数 === */
 
 export default async function Blog() {
-    //获取文章列表
-    const res1 = await fetch(`${process.env.VERCEL_URL}/api/posts/`,
-        { method: 'GET', next: { tags: ['blog'] } })
-    const posts = await res1.json()
+    const posts = await FetchPosts();
     
     return (
         <>

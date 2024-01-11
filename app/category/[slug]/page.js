@@ -15,6 +15,7 @@ import Heading from "@/components/utils/Heading"
 
 //数据
 import categories from "@/data/categories.data";
+import { FetchPosts } from "@/lib/fetchPosts";
 
 /* === 元信息 === */
 
@@ -28,9 +29,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     //获取文章列表
-    const res = await fetchI(`${process.env.VERCEL_URL}/api/posts/`,
-        { method: 'GET', next: { tags: ['blog'] } })
-    const posts = await res.json()
+    const posts = await FetchPosts();
 
     //截取当前分类下的文章
     let data = [];
