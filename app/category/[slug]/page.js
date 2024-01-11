@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     //获取文章列表
-    const res = await fetch(`${process.env.VERCEL_URL}api/posts/`,
+    const res = await fetch(`${process.env.VERCEL_URL}/api/posts/`,
         { next: { tags: ['blog'] } })
     const posts = await res.json()
 
