@@ -57,6 +57,8 @@ export default async function About({ params }) {
 
     } catch(error) {
         //如果找不到对应的页面，则报出 404 错误
-        return <NotFound />
+        if (error.code === 'MODULE_NOT_FOUND') 
+            return <NotFound />
+        else throw error;
     }
 }
