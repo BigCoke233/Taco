@@ -11,7 +11,6 @@
 
 import Link from 'next/link'
 import { useEffect } from 'react'
-import { parseBlogPost } from '@/lib/parseBlogPost'
 
 import Highlighter from '../utils/Highlighter';
 
