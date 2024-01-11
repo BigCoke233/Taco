@@ -7,6 +7,7 @@
 
 import Link from 'next/link'
 import Highlighter from './utils/Highlighter'
+import Image from 'next/image';
 
 import { Tooltip } from '@nextui-org/tooltip'
 
@@ -70,13 +71,13 @@ export default function Footer() {
           <section id="license" className="flex justify-center md:justify-end my-2 gap-2">
             <Tooltip showArrow={true} content="若无特别说明，本站内容均为真人撰写，非 AI 生成。">
               <Link href="https://notbyai.fyi/" target="_blank">
-                <img src="/not-by-ai.svg" style={{width: '5rem'}} 
+                <Image src="/not-by-ai.svg" style={{width: '5rem'}} unoptimized
                   alt="The site's content is written by human, not by AI." />
               </Link>
             </Tooltip>
             <Tooltip showArrow={true} content="未经特别声明，本站内容以 CC BY-NC-SA 4.0 协议授权">
               <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-                <img src="/by-nc-sa.svg" style={{width: '5rem'}} 
+                <Image src="/by-nc-sa.svg" style={{width: '5rem'}} unoptimized
                   alt="Under CC BY NC-SA License." />
               </Link>
             </Tooltip>
@@ -85,7 +86,9 @@ export default function Footer() {
           <section id="icp">
             <p><Link href="https://beian.miit.gov.cn/" target="_blank">渝 ICP 备 2023014837 号</Link></p>
             <p className="align-middle">
-              <img src="https://image.guhub.cn/beian.png" alt="备案图标" width={14} height={14} className="inline mr-1" /> 
+              <Image 
+                src="https://image.guhub.cn/beian.png" unoptimized
+                alt="备案图标" width={14} height={14} className="inline mr-1" /> 
               <a href="https://beian.mps.gov.cn/#/query/webSearch?code=50011702500934" rel="noreferrer" target="_blank">渝公网安备 50011702500934</a>
             </p>
           </section>
