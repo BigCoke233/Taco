@@ -28,8 +28,20 @@ export async function GET(request) {
                 (async () => {
                     await import(`data/posts/${filename}`)
                         .then((post) => { 
-                            if (putContent == 'no') resolve({"attributes": post.attributes})
-                            else resolve(post)
+                            //截取文章的别名（slug）
+                            const slug = filename.substring(filename.indexOf('.'), 0)
+                            if (putContent == 'no') 
+                                resolve({
+                                    "slug": slug,
+                                    "attributes": post.attributes
+                                })
+                            else {
+                                resolve({
+                                    "slug": slug,
+                                    "attributes": post.attributes,
+                                    "html": post.html
+                                })
+                            }
                         }
                     )
                 })();  
