@@ -11,6 +11,7 @@
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
 import BlogContent from '@/components/blog/BlogContent'
+import NotFound from '@/components/404'
 
 /* === 数据 === */
 
@@ -38,13 +39,13 @@ export default async function About({ params }) {
             return (
                 <>
                     <Header 
-                        banner={matter.banner.img} 
-                        title={matter.banner.title} 
-                        subtitle={matter.banner.subtitle} 
+                        banner={matter.banner?.img} 
+                        title={matter.banner?.title} 
+                        subtitle={matter.banner?.subtitle} 
                     />
                     <article>
-                        <Heading sub={matter.heading.description}>
-                            {matter.heading.title}
+                        <Heading sub={matter.heading?.description}>
+                            {matter.heading?.title}
                         </Heading>
                         <BlogContent content={module.html} />
                     </article>
@@ -56,14 +57,6 @@ export default async function About({ params }) {
 
     } catch(error) {
         //如果找不到对应的页面，则报出 404 错误
-        return (
-            <div className="h-[100dvh] flex flex-col justify-center items-center">
-                <h1 className="text-lime-700 font-bold font-mono text-[6rem] md:text-[10rem] 
-                    leading-none my-0">
-                    404
-                </h1>
-                <p className="text-lg">此地无银三百两</p>
-            </div>
-        )
+        return <NotFound />
     }
 }
