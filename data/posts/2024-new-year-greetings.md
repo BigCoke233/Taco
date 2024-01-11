@@ -2,6 +2,10 @@
 title: "写在 2024 的开头"
 date: '2024-1-1'
 category: 'essays'
+banner:
+  img: 'https://image.guhub.cn/blog/2024/1/banner-2024-new-year-greetings.jpg'
+  title: "新年快乐。"
+  subtitle: "Bonne année!"
 ---
 
 *去年过的实在不算精彩，整个 2023 似乎有一半的时间都完全不在我的掌控内，以至于我在重新阅读我在 2022 年写下的总结时，我几乎找不出太多不同。一个令我有些担忧的想法涌上心头——2023，我留给自己的时间实在太少。*

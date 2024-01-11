@@ -2,6 +2,10 @@
 title: "新时代独立博客走弯路式搭建的最佳实践"
 date: '2023-12-8'
 category: 'logs'
+banner:
+    img: "https://image.guhub.cn/blog/2023/12/banner-worst-practice-of-indie-blog.jpg"
+    title: "重获新生。"
+    subtitle: "Born again."
 ---
 
 我已经不记得这是自己第几次重写博客的代码，但我很确定这是（短时间内）最后一次了。无论如何，是时候给我这在自定义性、易维护性和成本三者之间找不到任何平衡点的完美主义画上一个暂时的句号了。<!-- more -->
