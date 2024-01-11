@@ -21,8 +21,7 @@ import Nav from '@/components/index/Nav';
 import generateRssFeed from '@/lib/rssGenerator';
 
 export const metadata = {
-  title: "Eltrac's",
-  favicon: "favicon.png"
+  title: "Eltrac's"
 }
 
 /* === 主函数 === */
