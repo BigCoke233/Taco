@@ -11,15 +11,20 @@ import Link from "next/link"
 import Image from "next/image"
 import Line from "./utils/Line"
 
+import config from "@/data/home.data"
+
 /* === 主函数 === */
 
 export default function Header({ 
-  title = "青空飞鸟。", 
-  subtitle = "Flock without a shepard.", 
-  banner = "https://image.guhub.cn//blog-banner/20240108.jpg" 
+  title = config.banner.title, 
+  subtitle = config.banner.subtitle, 
+  banner = config.banner.img
 }) {
 
-  if (banner===null) banner = "https://image.guhub.cn/banner.jpg"
+  //防止传入空值
+  if (title===null) title = config.banner.title
+  if (subtitle===null) subtitle = config.banner.subtitle
+  if (banner===null) banner = config.banner.img
 
   return (
         <header className="relative py-6 md:py-12 px-2 md:px-16">
