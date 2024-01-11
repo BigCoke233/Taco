@@ -35,22 +35,6 @@ async function FetchPostData(slug) {
     return post
 }
 
-/**
- * 获取文章对应的评论列表
- * @param {string} slug 文章别名
- */
-
-async function FetchCommentData(slug) {
-    const res2 = await fetch(
-        'https://blog.guhub.cn/api/comments?slug='+slug+'&pageSize=9999', 
-        { next: { tags: ['blog', 'comment'] } }
-    )
-    let commentData = await res2.json()
-    if (commentData.data) commentData = commentData.data.dataSet
-
-    return commentData
-}
-
 /* === 元信息 === */
 
 export async function generateMetadata({ params }) {
@@ -68,10 +52,7 @@ export default async function Page({ params }) {
     const slug = params.slug
     
     // 获取文章数据
-    let post = await FetchPostData(slug)    // 获取文章数据
-
-    // 获取评论数据
-    let commentData = await FetchCommentData(slug)
+    let post = await FetchPostData(slug)
   
     // 如果获取成功
     if (post) {
