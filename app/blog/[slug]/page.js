@@ -17,6 +17,9 @@ import BlogContent from "@/components/blog/BlogContent";
 import Tocbot from "@/components/blog/Tocbot";
 import NotFound from "@/components/404";
 
+//数据
+import categories from '@/data/categories.data';
+
 /* === 元信息 === */
 
 export async function generateMetadata({ params }) {
@@ -55,7 +58,7 @@ export default async function Page({ params }) {
                                 <span> · </span>
                                 <Link href={`/category/${matter.category}`}
                                 className="hover:text-lime-700 transition">
-                                    {matter.category}
+                                    {categories[matter.category].name}
                                 </Link>
                             </p>
                         </header>

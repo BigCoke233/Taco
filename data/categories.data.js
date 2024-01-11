@@ -32,3 +32,5 @@ const categories = {
         description: "前言不接后语的流动文字。"
     }
 }
+
+module.exports = categories
