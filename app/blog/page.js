@@ -25,7 +25,7 @@ export const metadata = {
 
 export default async function Blog() {
     //获取文章列表
-    const res1 = await fetch(`${process.env.SITE_BASE_URL}api/posts/`,
+    const res1 = await fetch(`${process.env.VERCEL_URL}api/posts/`,
         { next: { tags: ['blog'] } })
     const posts = await res1.json()
     
