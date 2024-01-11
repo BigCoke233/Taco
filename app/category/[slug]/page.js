@@ -33,7 +33,7 @@ export default async function Page({ params }) {
 
     //截取当前分类下的文章
     let data = [];
-    posts.map((post) => {
+    posts?.map((post) => {
         if (post.attributes.category == params.slug)
             data.push(post)
     })
