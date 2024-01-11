@@ -28,8 +28,8 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     //获取文章列表
-    const res = await fetch(`${process.env.VERCEL_URL}/api/posts/`,
-        { next: { tags: ['blog'] } })
+    const res = await fetchI(`${process.env.VERCEL_URL}/api/posts/`,
+        { method: 'GET', next: { tags: ['blog'] } })
     const posts = await res.json()
 
     //截取当前分类下的文章
