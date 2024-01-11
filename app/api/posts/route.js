@@ -6,7 +6,12 @@
 
 const fs = require('fs');
 
-export async function GET() {
+export async function GET(request) {
+    // 获取 query
+    // 用于确定是否完整输出文章内容
+    const searchParams = request.nextUrl.searchParams
+    const putContent = searchParams.get('putContent')
+
     // 读取所有文章
     // 得到由文件名组成的数组
     let posts = fs.readdirSync('data/posts');
@@ -23,7 +28,8 @@ export async function GET() {
                 (async () => {
                     await import(`data/posts/${filename}`)
                         .then((post) => { 
-                            resolve(post)
+                            if (putContent == 'no') resolve({"attributes": post.attributes})
+                            else resolve(post)
                         }
                     )
                 })();  
