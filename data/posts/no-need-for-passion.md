@@ -3,7 +3,7 @@ title: "毫无必要的热情"
 date: '2024-1-7'
 category: 'pieces'
 banner:
-    img: "https://image.guhub.cn/blog/2023/12/banner-worst-practice-of-indie-blog.jpg"
+    img: "https://image.guhub.cn/blog/2023/12/banner-no-need-for-passion.jpg"
 ---
 
 今天从床上爬起来，寝室里很暗，没人开灯，因为还有其他人没醒。每个周末的早晨都是如此，我慢慢地抓住扶手从上铺下来，尽量不发出声音，然后打开书桌上的小灯，橙色的，我总觉得它比寝室的白色日光灯更舒适。
