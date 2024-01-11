@@ -17,15 +17,13 @@ import BlogContent from '@/components/blog/BlogContent'
 export async function generateMetadata({ params }) {
     try {
         return await import(`data/pages/${params.slug}.page.md`).then((module)=>{
-            const matter = module.attributes;
             return {
-                title: `${matter.title} - Eltrac's`
+                title: `${module.attributes.title} - Eltrac's`
             }
         })
-
     } catch(error) {
         return {
-            title: "虚无 - Eltrac's"
+            title: "404 - Eltrac's"
         }
     }
 }
@@ -33,11 +31,9 @@ export async function generateMetadata({ params }) {
 /* === 主函数 === */
 
 export default async function About({ params }) {
-    const slug = params.slug;
-
     try {
         //动态引入页面数据
-        const Page = await import(`data/pages/${slug}.page.md`).then((module)=>{
+        const Page = await import(`data/pages/${params.slug}.page.md`).then((module)=>{
             const matter = module.attributes;
             return (
                 <>
