@@ -29,7 +29,6 @@ export const metadata = {
 /* === 主函数 === */
 
 export default async function Home() {
-
   //获取博客文章列表
   const posts = await FetchPosts();
 
