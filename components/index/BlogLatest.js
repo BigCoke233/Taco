@@ -6,27 +6,27 @@
 
 import Link from 'next/link'
 import Heading from '@/components/utils/Heading.js'
-import { parseBlogPost } from '@/lib/parseBlogPost.js'
 
-export default function BlogLatest({ posts, className }) {
-    var post = parseBlogPost(posts.data.dataSet[0])
-  
+import digestHTML from '@/lib/utils/digest'
+import categories from '@/data/categories.data'
+
+export default function BlogLatest({ post, className }) {
     return (
       <article id="blog-latest" className={className}>
 
         <Heading>
           <Link href={"/blog/"+post.slug}
-          className="hover:text-lime-700 transition">{post.title}</Link>
+          className="hover:text-lime-700 transition">{post.attributes.title}</Link>
         </Heading>
 
         <section id="blog-latest-meta" className='px-2'>
-        <p className="text-lg my-5">{post.digest}</p>
+        <p className="text-lg my-5">{digestHTML(post.html)}</p>
           <div className="text-gray-500 flex justify-between text-justify">
-            <p>{post.date}</p>
+            <p>{post.attributes.date}</p>
             <p>
-              <Link href={`/category/${post.categorySlug}`} 
+              <Link href={`/category/${post.attributes.category}`} 
                     className="hover:text-lime-700 transition">
-                {post.category}
+                {categories[post.attributes.category].name}
               </Link>
             </p>
           </div>

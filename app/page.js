@@ -39,7 +39,7 @@ export default async function Home() {
     <>
       <Header />
       <section id="blog" className="md:flex md:gap-14 px-2">
-        <BlogLatest posts={posts} className="md:w-2/3" />
+        <BlogLatest post={posts[0]} className="md:w-2/3" />
         <BlogList posts={posts} className="md:w-1/3" />
       </section>
       <Nav links={config.nav} />

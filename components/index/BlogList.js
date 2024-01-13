@@ -44,19 +44,18 @@ function More() {
  */
 export default function BlogList({ posts, className }) {
     //将文章列表信息转为数组，并切割，取除去最新文章之后的前三篇
-    var list = Object.entries(posts.data.dataSet)
-    var list = list.slice(1,4)
+    //var list = Object.entries(posts)
+    var list = posts.slice(1,4)
   
     return (
       <div id="blog-list" className={`my-10 ${className}`}>
           <Title />
           <ul className="text-lg md:text-xl font-semibold">
-          {list.map((data) => {
-            var post = data[1]
+          {list.map((post) => {
             return (
               <li key={post.slug} className="list-square my-5 ml-5 md:mx-5 md:ml-10">
                 <Link href={"/blog/"+post.slug}
-                className="hover:text-lime-700 transition">{post.title}</Link>
+                className="hover:text-lime-700 transition">{post.attributes.title}</Link>
               </li>
           )})}
           </ul>
