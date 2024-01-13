@@ -7,6 +7,7 @@
  */
 
 import Padding from '../utils/Padding';
+import { Interweave } from 'interweave';
 
 import { useEffect } from 'react'
 import Prism from 'prismjs'
@@ -23,7 +24,8 @@ export default function BlogContent({ content }) {
     }, [])
 
     return (
-        <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16"
-        dangerouslySetInnerHTML={{__html: content}} />
+        <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16">
+            <Interweave content={content} />
+        </Padding>
     )
 }
