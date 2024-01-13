@@ -37,7 +37,6 @@ export default function Content({ children, md = false }) {
             htmlExtensions: [gfmHtml()]
         })
     }
-      
 
     return (
         <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16">
