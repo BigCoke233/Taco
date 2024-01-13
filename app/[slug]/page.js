@@ -10,7 +10,7 @@
 
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
-import BlogContent from '@/components/blog/BlogContent'
+import Content from '@/components/blog/Content'
 import NotFound from '@/components/404'
 
 /* === 数据 === */
@@ -47,7 +47,7 @@ export default async function About({ params }) {
                         <Heading sub={matter.heading?.description}>
                             {matter.heading?.title}
                         </Heading>
-                        <BlogContent content={module.html} />
+                        <Content>{module.html}</Content>
                     </article>
                 </>
             )

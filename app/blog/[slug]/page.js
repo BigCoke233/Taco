@@ -13,7 +13,7 @@ import Link from 'next/link';
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
 import Comment from '@/components/comment/Comment.js'
-import BlogContent from "@/components/blog/BlogContent";
+import Content from "@/components/blog/Content";
 import Tocbot from "@/components/blog/Tocbot";
 import NotFound from "@/components/404";
 
@@ -63,7 +63,7 @@ export default async function Page({ params }) {
                             </p>
                         </header>
                         <Tocbot />
-                        <BlogContent content={module.html} />
+                        <Content>{module.html}</Content>
                     </article>
                     <Comment />
                 </>

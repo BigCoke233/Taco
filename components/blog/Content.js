@@ -1,9 +1,7 @@
 "use client";
 
 /**
- * BlogContent.js
- * 
- * 处理博客文章内容
+ * 文字内容容器
  */
 
 import Padding from '../utils/Padding';
@@ -16,7 +14,7 @@ require('prismjs/components/prism-javascript')
 require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
 
-export default function BlogContent({ content }) {
+export default function Content({ children }) {
     //use prism
     useEffect(() => {
         const timeout = setTimeout(() => Prism.highlightAll(), 1000);
@@ -25,7 +23,7 @@ export default function BlogContent({ content }) {
 
     return (
         <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16">
-            <Interweave content={content} />
+            <Interweave content={children} />
         </Padding>
     )
 }
