@@ -15,7 +15,6 @@ import Padding from '@/components/utils/Padding'
 //工具
 import shuffle from '@/lib/utils/shuffle'
 import Content from '@/components/blog/Content'
-import { marked } from 'marked'
 
 import Image from 'next/image'
 
@@ -65,7 +64,7 @@ export default async function Links() {
                         })}
                     </ul>
                 </Padding>
-                <Content>{marked.parse(linksData.content)}</Content>
+                <Content md={true}>{linksData.content}</Content>
             </article>
         </>
     )
