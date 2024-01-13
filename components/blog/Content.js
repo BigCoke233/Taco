@@ -8,6 +8,7 @@ import Padding from '../utils/Padding';
 
 import { Interweave } from 'interweave';
 import { polyfill } from 'interweave-ssr';
+import { UrlMatcher, HashtagMatcher } from 'interweave-autolink';
 
 import { useEffect } from 'react'
 import Prism from 'prismjs'
@@ -29,6 +30,7 @@ export default function Content({ children }) {
         <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16">
             <Interweave 
                 content={children} 
+                matchers={[new UrlMatcher('url'), new HashtagMatcher('hashtag')]}
                 tagName="div"
             />
         </Padding>
