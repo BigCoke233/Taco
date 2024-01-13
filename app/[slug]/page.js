@@ -47,7 +47,7 @@ export default async function About({ params }) {
                         <Heading sub={matter.heading?.description}>
                             {matter.heading?.title}
                         </Heading>
-                        <Content>{module.html}</Content>
+                        <Content md={true}>{module.body}</Content>
                     </article>
                 </>
             )

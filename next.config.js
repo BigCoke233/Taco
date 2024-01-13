@@ -2,6 +2,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const fmMode = require('frontmatter-markdown-loader/mode')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -43,7 +44,10 @@ const nextConfig = {
     config.module.rules.push(
       {
         test: /\.md$/,
-        loader: 'frontmatter-markdown-loader'
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          mode: [fmMode.BODY, fmMode.HTML]
+        }
       }
     )
     return config;

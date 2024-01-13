@@ -8,7 +8,9 @@ import Padding from '../utils/Padding';
 
 import { Interweave } from 'interweave';
 import { polyfill } from 'interweave-ssr';
-import { UrlMatcher, HashtagMatcher } from 'interweave-autolink';
+
+import { micromark } from 'micromark'
+import { gfm, gfmHtml } from 'micromark-extension-gfm'
 
 import { useEffect } from 'react'
 import Prism from 'prismjs'
@@ -17,20 +19,30 @@ require('prismjs/components/prism-javascript')
 require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
 
-export default function Content({ children }) {
+export default function Content({ children, md = false }) {
     // 服务端渲染垫片
     polyfill();
+
     // use prism
     useEffect(() => {
         const timeout = setTimeout(() => Prism.highlightAll(), 1000);
         return () => clearTimeout(timeout);
     }, [])
 
+    // 解析 Markdown
+    let content = children
+    if (md) {
+        content = micromark(content, {
+            extensions: [gfm()],
+            htmlExtensions: [gfmHtml()]
+        })
+    }
+      
+
     return (
         <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16">
             <Interweave 
-                content={children} 
-                matchers={[new UrlMatcher('url'), new HashtagMatcher('hashtag')]}
+                content={content} 
                 tagName="div"
             />
         </Padding>

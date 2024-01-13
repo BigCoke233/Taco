@@ -63,7 +63,7 @@ export default async function Page({ params }) {
                             </p>
                         </header>
                         <Tocbot />
-                        <Content>{module.html}</Content>
+                        <Content md={true}>{module.body}</Content>
                     </article>
                     <Comment />
                 </>
