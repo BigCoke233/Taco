@@ -5,7 +5,9 @@
  */
 
 import Padding from '../utils/Padding';
+
 import { Interweave } from 'interweave';
+import { polyfill } from 'interweave-ssr';
 
 import { useEffect } from 'react'
 import Prism from 'prismjs'
@@ -15,7 +17,9 @@ require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
 
 export default function Content({ children }) {
-    //use prism
+    // 服务端渲染垫片
+    polyfill();
+    // use prism
     useEffect(() => {
         const timeout = setTimeout(() => Prism.highlightAll(), 1000);
         return () => clearTimeout(timeout);
