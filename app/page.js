@@ -7,8 +7,6 @@
 
 /* === 引用 === */
 
-import config from '@/data/home.data'
-
 //页面组成部分
 import Header from '@/components/Header'
 import AboutMe from '@/components/index/AboutMe'
@@ -16,6 +14,10 @@ import BlogLatest from '@/components/index/BlogLatest'
 import BlogList from '@/components/index/BlogList'
 import Media from '@/components/index/Media'
 import Nav from '@/components/index/Nav';
+
+//数据
+import { FetchPosts } from '@/lib/fetchPosts'
+import config from '@/data/home.data'
 
 //RSS
 import generateRssFeed from '@/lib/rssGenerator';
@@ -29,12 +31,10 @@ export const metadata = {
 export default async function Home() {
 
   //获取博客文章列表
-  const res = await fetch('https://blog.guhub.cn/api/posts?pageSize=9999',
-    { next: { tags: ['blog'] } })
-  const posts = await res.json()
+  const posts = await FetchPosts();
 
   //生成 rss 订阅源
-  await generateRssFeed({ posts: posts.data.dataSet });
+  await generateRssFeed({ posts: posts });
 
   return (
     <>
