@@ -23,7 +23,10 @@ export default function Content({ children }) {
 
     return (
         <Padding id="post-content" className="md:text-xl yue py-5 px-2 md:px-16">
-            <Interweave content={children} />
+            <Interweave 
+                content={children} 
+                tagName="div"
+            />
         </Padding>
     )
 }
