@@ -60,11 +60,24 @@ export default function Footer() {
 
         <div id="footer-right" className='w-full md:text-right'>
 
-          <section id="built-with">
+          <section id="built-with" className="-my-1">
             <p className='hidden md:inline-flex justify-end text-xl gap-1 text-zinc-600'>
-              <span className="text-xs">built with </span>
+              <span className="text-xs">用</span>
               <Link href="https://nextjs.org/" target='_blank'><TbBrandNextjs /></Link>
               <Link href="https://tailwindcss.com/" target="_blank"><TbBrandTailwind /></Link>
+              <span className="text-xs">等技术打造</span>
+            </p>
+          </section>
+
+          <section id="upyun" className="text-xs">
+            <p className="inline-flex gap-1 items-center">由 
+              <Link href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">
+                <Image src="/upyun.png" height={20} width={40} 
+                  unoptimized alt="upyun logo" 
+                  style={{height: '1.5rem', width: '3rem'}}
+                />
+              </Link>
+              提供 CDN/云储存
             </p>
           </section>
 
@@ -85,7 +98,7 @@ export default function Footer() {
             </Tooltip>
           </section>
 
-          <section id="icp">
+          <section id="icp" className="text-xs">
             <p><Link href="https://beian.miit.gov.cn/" target="_blank">渝 ICP 备 2023014837 号</Link></p>
             <p className="align-middle">
               <Image 
