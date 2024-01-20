@@ -19,7 +19,7 @@ export default function BlogCategories({ className }) {
 
     return (
         <section id="blogCategoryList" className={`${className} mb-8 md:mb-0 md:mt-8 md:flex md:gap-4`}>
-            <h2 className="text-gray-500">Categories: </h2>
+            <h2 className="text-gray-500 hidden md:block">Categories: </h2>
             <ul className="flex-grow flex gap-2">
                 {slugs.map((slug)=>{
                     return (
