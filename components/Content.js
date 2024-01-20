@@ -2,19 +2,25 @@
 
 /**
  * 文字内容容器
+ * 
+ * @file components/Content.js
+ * @exports Content
  */
 
+// 页面组成部分
 import Padding from './utils/Padding';
 
+// HTML 渲染
 import { Interweave } from 'interweave';
 import { polyfill } from 'interweave-ssr';
 
+// Markdown 解析
 import { micromark } from 'micromark'
 import { gfm, gfmHtml } from 'micromark-extension-gfm'
 
+//代码高亮
 import { useEffect } from 'react'
 import Prism from 'prismjs'
-
 require('prismjs/components/prism-javascript')
 require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
