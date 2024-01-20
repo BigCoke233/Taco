@@ -11,8 +11,8 @@ const linksData = {
     content: `链接随机排序，排名不分先后。
     不再开放申请，若需修改信息请联系 \`hi@guhub.cn\``,
     banner: {
-        title: "赛博友谊。",
-        subtitle: "Back and forth.",
+        title: "网络孤岛。",
+        subtitle: "Internet Islands.",
         img: "https://image.guhub.cn/page-banner/about-banner.jpg",
     },
     heading: {
