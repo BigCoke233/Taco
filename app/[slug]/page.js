@@ -13,8 +13,6 @@ import Heading from '@/components/utils/Heading.js'
 import Content from '@/components/Content'
 import NotFound from '@/components/404'
 
-import Links from './Links'
-
 /* === 数据 === */
 
 export async function generateMetadata({ params }) {
@@ -38,7 +36,6 @@ export default async function About({ params }) {
         //动态引入页面数据
         const Page = await import(`data/pages/${params.slug}.page.md`).then((module)=>{
             const matter = module.attributes;
-            console.log(params.slug)
             return (
                 <>
                     <Header 
@@ -50,7 +47,6 @@ export default async function About({ params }) {
                         <Heading sub={matter.heading?.description}>
                             {matter.heading?.title}
                         </Heading>
-                        <Links isLinksPage={params.slug=='links'} />
                         <Content md={true}>{module.body}</Content>
                     </article>
                 </>
