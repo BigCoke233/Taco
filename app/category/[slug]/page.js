@@ -8,7 +8,7 @@
 /* === 引入 === */
 
 import Padding from "@/components/utils/Padding";
-import BlogArchive from "@/components/blog/BlogArchive";
+import BlogArchive from "@/app/blog/components/BlogArchive";
 
 import Header from "@/components/Header"
 import Heading from "@/components/utils/Heading"

@@ -12,7 +12,7 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
 
-import Highlighter from '../utils/Highlighter';
+import Highlighter from '../../../components/utils/Highlighter';
 
 /* === 工具函数 === */
 

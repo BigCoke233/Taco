@@ -4,7 +4,7 @@
  * 文字内容容器
  */
 
-import Padding from '../utils/Padding';
+import Padding from './utils/Padding';
 
 import { Interweave } from 'interweave';
 import { polyfill } from 'interweave-ssr';

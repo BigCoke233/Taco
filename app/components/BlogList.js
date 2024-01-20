@@ -5,7 +5,7 @@
 */
 
 import Link from 'next/link'
-import Line from '../utils/Line'
+import Line from '../../components/utils/Line'
 
 /**
  * 列表标题

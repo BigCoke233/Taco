@@ -14,7 +14,7 @@ import Padding from '@/components/utils/Padding'
 
 //工具
 import shuffle from '@/lib/utils/shuffle'
-import Content from '@/components/blog/Content'
+import Content from '@/components/Content'
 
 import Image from 'next/image'
 

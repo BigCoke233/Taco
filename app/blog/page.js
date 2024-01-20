@@ -10,8 +10,8 @@
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
 
-import BlogArchive from '@/components/blog/BlogArchive'
-import BlogCategories from '@/components/blog/BlogCategories'
+import BlogArchive from './components/BlogArchive'
+import BlogCategories from './components/BlogCategories'
 
 import Padding from '@/components/utils/Padding'
 

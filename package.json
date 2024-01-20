@@ -32,6 +32,8 @@
     "tocbot": "^4.23.0"
   },
   "devDependencies": {
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
     "@waline/client": "^3.0.0-alpha.10",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",

@@ -10,7 +10,7 @@
 
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
-import Content from '@/components/blog/Content'
+import Content from '@/components/Content'
 import NotFound from '@/components/404'
 
 /* === 数据 === */

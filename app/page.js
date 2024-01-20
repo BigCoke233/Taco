@@ -9,11 +9,11 @@
 
 //页面组成部分
 import Header from '@/components/Header'
-import AboutMe from '@/components/index/AboutMe'
-import BlogLatest from '@/components/index/BlogLatest'
-import BlogList from '@/components/index/BlogList'
-import Media from '@/components/index/Media'
-import Nav from '@/components/index/Nav';
+import AboutMe from '@/app/components/AboutMe'
+import BlogLatest from '@/app/components/BlogLatest'
+import BlogList from '@/app/components/BlogList'
+import Media from '@/app/components/Media'
+import Nav from '@/app/components/Nav';
 
 //数据
 import { FetchPosts } from '@/lib/fetchPosts'
