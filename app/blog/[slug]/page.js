@@ -12,7 +12,7 @@ import Link from 'next/link';
 //页面组成部分
 import Header from '@/components/Header.js'
 import Heading from '@/components/utils/Heading.js'
-import Comment from '@/app/blog/[slug]/components/Comment.js'
+import Comment from '@/app/blog/[slug]/Comment.js'
 import Content from "@/components/Content";
 import Tocbot from "@/app/blog/components/Tocbot";
 import NotFound from "@/components/404";
