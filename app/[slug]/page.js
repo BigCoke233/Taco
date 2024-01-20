@@ -16,16 +16,14 @@ import NotFound from '@/components/404'
 /* === 数据 === */
 
 export async function generateMetadata({ params }) {
+    let title;
     try {
-        return await import(`data/pages/${params.slug}.page.md`).then((module)=>{
-            return {
-                title: `${module.attributes.title} - Eltrac's`
-            }
-        })
-    } catch(error) {
-        return {
-            title: "404 - Eltrac's"
-        }
+        title = await import(`data/pages/${params.slug}.page.md`)
+            .then(module => module.attributes.title)
+    } catch(error) { title = '404' }
+
+    return {
+        title: `${title} - Eltrac's`
     }
 }
 

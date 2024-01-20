@@ -23,16 +23,14 @@ import categories from '@/data/categories.data';
 /* === 元信息 === */
 
 export async function generateMetadata({ params }) {
+    let title;
     try {
-        return await import(`data/posts/${params.slug}.md`).then((module)=>{
-            return {
-                title: `${module.attributes.title} - Eltrac's`
-            }
-        })
-    } catch(error) {
-        return {
-            title: "404 - Eltrac's"
-        }
+        title = await import(`data/posts/${params.slug}.md`)
+            .then(module => module.attributes.title)
+    } catch(error) { title = '404' }
+
+    return {
+        title: `${title} - Eltrac's`
     }
 }
 
