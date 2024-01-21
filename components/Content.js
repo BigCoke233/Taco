@@ -37,9 +37,6 @@ export default function Content({ children, md = false }) {
 
     // 解析 Markdown
     let content = children
-        //移除 more 标签
-        .replace(/\<!-- more --\>/,'')
-        .replace(/\<!--more--\>/,'')
         
     if (md) {
         content = micromark(content, {
