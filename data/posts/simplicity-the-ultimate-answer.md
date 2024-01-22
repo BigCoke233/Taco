@@ -2,6 +2,10 @@
 title: "剔除每一寸多余的杂质"
 date: '2024-1-23'
 category: 'essays'
+banner:
+  img: 'https://image.guhub.cn/blog/2024/1/banner-simplicity-the-ultimate-answer.png'	
+  title: '绿野小屋'
+  subtitle: 'Devoid of complicacy.'
 ---
 
 我发觉最近总是在做减法——我删掉了 Chrome 书签里不常用的网站，舍弃了好多之前用过的互联网产品，移除了博客的后端，甚至还从用了十几年的全拼输入法转到了冷门的双拼输入。我意识到自己或许有某种奇怪的「洁癖」，不过这没什么好抱怨的，因为一切都在向让我感到舒服的方向发展。
