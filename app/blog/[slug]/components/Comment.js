@@ -21,6 +21,7 @@ export default function Comment() {
                         dark=".dark" 
                         imageUploader={false}
                         lang="zh-CN"
+                        pageview={true}
                     />
                 </Tab>
                 <Tab key="giscus" title="Giscus">
