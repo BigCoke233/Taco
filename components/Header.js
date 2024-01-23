@@ -1,3 +1,5 @@
+'use client'
+
 /**
  * 页眉
  * 
@@ -13,6 +15,9 @@ import Line from "./utils/Line"
 
 import config from "@/data/home.data"
 
+import { useEffect } from "react"
+import initLightBox from "@/lib/useLightBox"
+
 /* === 主函数 === */
 
 export default function Header({ 
@@ -21,10 +26,16 @@ export default function Header({
   banner = config.banner.img
 }) {
 
-  //防止传入空值
+  // 防止传入空值
   if (title===null) title = config.banner.title
   if (subtitle===null) subtitle = config.banner.subtitle
   if (banner===null) banner = config.banner.img
+
+  // 使用图片灯箱
+  useEffect(() => {
+    const timeout = setTimeout(() => initLightBox('#banner img'), 500);
+    return () => clearTimeout(timeout);
+  })
 
   return (
         <header className="relative py-6 md:py-12 px-2 md:px-16">

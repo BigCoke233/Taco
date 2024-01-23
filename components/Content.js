@@ -18,26 +18,31 @@ import { polyfill } from 'interweave-ssr';
 import { micromark } from 'micromark'
 import { gfm, gfmHtml } from 'micromark-extension-gfm'
 
-//代码高亮
+// 代码高亮
 import { useEffect } from 'react'
 import Prism from 'prismjs'
 require('prismjs/components/prism-javascript')
 require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
 
+// 图片灯箱
+import initLightBox from '@/lib/useLightBox';
+
 export default function Content({ children, md = false }) {
-    // 服务端渲染垫片
+    // Interweave 服务端渲染垫片
     polyfill();
 
-    // use prism
+    // 浏览器处理
     useEffect(() => {
-        const timeout = setTimeout(() => Prism.highlightAll(), 1000);
+        const timeout = setTimeout(() => {
+            Prism.highlightAll()    // Prism 代码高亮
+            initLightBox('#post-content img')          // 使用灯箱
+        }, 1000);
         return () => clearTimeout(timeout);
     }, [])
 
     // 解析 Markdown
     let content = children
-        
     if (md) {
         content = micromark(content, {
             extensions: [gfm()],
