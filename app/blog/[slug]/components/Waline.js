@@ -7,7 +7,6 @@ export const Waline = (props) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // Check if containerRef.current is a valid DOM element
     if (containerRef.current instanceof Element) {
       walineInstanceRef.current = init({
         el: containerRef.current,
