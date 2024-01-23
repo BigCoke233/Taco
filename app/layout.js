@@ -18,19 +18,21 @@ import Footer from '@/components/Footer'
 import Helpbar from '@/components/Helpbar'
 
 //UI 和动画
-import Transition from '@/components/Transition';
 import { Providers } from './providers';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+
+import { Suspense } from 'react';
+import Loading from './loading';
 
 /* === 主要页面布局 === */
 
 function Page({children}) {
   return (
     <section id="page">
-      <Transition>
+      <Suspense fallback={<Loading />}>
         {children}
-        <Footer />
-      </Transition>
+      </Suspense>
+      <Footer />
       <ProgressBar color="#4d7c0f" options={{ showSpinner: false }} shallowRouting />
     </section>
   ) 
