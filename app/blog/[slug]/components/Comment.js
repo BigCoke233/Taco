@@ -7,10 +7,7 @@
  */
 
 import Giscus from '@giscus/react'
-
-import ReactWalineClient from "@montagejs/react-waline-client"
-import '@montagejs/react-waline-client/dist/style/index.css'
-import '@waline/client/style'
+import { Waline } from '../components/Waline'
 
 import { Tabs, Tab } from "@nextui-org/tabs"
 
@@ -19,7 +16,7 @@ export default function Comment() {
         <section id="comment" className={`md:px-12`}>
             <Tabs aria-label="Options">
                 <Tab key="waline" title="waline">
-                    <ReactWalineClient 
+                    <Waline 
                         serverURL="https://waline.guhub.cn" 
                         dark=".dark" 
                         imageUploader={false}
