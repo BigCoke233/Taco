@@ -4,20 +4,23 @@ import '@waline/client/style';
 
 export const Waline = (props) => {
   const walineInstanceRef = useRef(null);
-  const containerRef = React.createRef();
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    walineInstanceRef.current = init({
-      ...props,
-      el: containerRef.current,
-    });
+    // Check if containerRef.current is a valid DOM element
+    if (containerRef.current instanceof Element) {
+      walineInstanceRef.current = init({
+        el: containerRef.current,
+        ...props,
+      });
+    }
 
     return () => walineInstanceRef.current?.destroy();
-  }, []);
+  }, [props]);
 
   useEffect(() => {
     walineInstanceRef.current?.update(props);
   }, [props]);
 
-  return React.createElement('div', { ref: containerRef });
+  return <div ref={containerRef} />;
 };
