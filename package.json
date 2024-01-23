@@ -21,7 +21,6 @@
     "micromark": "^4.0.0",
     "micromark-extension-gfm": "^3.0.0",
     "next": "14.0.1",
-    "next-nprogress-bar": "^2.1.2",
     "next-themes": "^0.2.1",
     "prismjs": "^1.29.0",
     "react": "^18",

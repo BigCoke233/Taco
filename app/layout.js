@@ -18,8 +18,7 @@ import Footer from '@/components/Footer'
 import Helpbar from '@/components/Helpbar'
 
 //UI 和动画
-import { Providers } from './providers';
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+import { Providers } from './providers'
 
 import { Suspense } from 'react';
 import Loading from './loading';
@@ -33,7 +32,6 @@ function Page({children}) {
         {children}
       </Suspense>
       <Footer />
-      <ProgressBar color="#4d7c0f" options={{ showSpinner: false }} shallowRouting />
     </section>
   ) 
 }
