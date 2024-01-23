@@ -45,8 +45,8 @@ export default function Header({
           </section>
 
           <section id="banner">
-            <Image src={banner} width={1200} height={400} alt="Banner of the page" loading="lazy"
-            className="object-cover object-bottom h-80 z-0" unoptimized />
+            <Image src={banner} width={1200} height={400} alt="Banner of the page"
+            className="object-cover object-bottom h-80 z-0" unoptimized priority />
           </section>
 
         </header>
