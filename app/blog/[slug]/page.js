@@ -54,7 +54,7 @@ export default async function Page({ params }) {
                     <article>
                         <header className="px-2">
                             <Heading className="md:w-3/4">{matter.title}</Heading>
-                            <p className="flex gap-2 px-2 my-3 text-lg text-gray-600 dark:text-zinc-500">
+                            <div className="flex gap-2 px-2 my-3 text-lg text-gray-600 dark:text-zinc-500">
                                 <span>{matter.date}</span>
                                 <span>·</span>
                                 <Link href={`/category/${matter.category}`}
@@ -63,11 +63,11 @@ export default async function Page({ params }) {
                                 </Link>
                                 <Chip size="sm" variant="bordered" 
                                     className="ml-auto lg:mr-10 hidden md:inline-block">
-                                    <span class="waline-pageview-count" data-path={`/blog/${params.slug}`}>...</span>
+                                    <span className="waline-pageview-count" data-path={`/blog/${params.slug}`}>...</span>
                                     <span> </span>
                                     <span>次阅读</span>
                                 </Chip>
-                            </p>
+                            </div>
                         </header>
                         <Tocbot />
                         <Content md={true}>{module.body}</Content>
