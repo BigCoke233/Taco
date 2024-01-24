@@ -41,7 +41,7 @@ function Page({children}) {
 export default function RootLayout({ children }) {
   //body, main#app 的 className 已被移动到 init.css 中
   return (
-    <html lang="zh-cn">
+    <html lang="zh-cn" suppressHydrationWarning={true}>
       <body>
         <Providers>
           <Page>{children}</Page>
