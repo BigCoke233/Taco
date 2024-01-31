@@ -32,9 +32,9 @@ export default function Footer() {
           <section className="mt-1">
             <p className="inline-flex gap-1 text-xs">
               <strong>站内链接：</strong>
-              <Link href="/links">友情链接</Link>
-              <Link href="/blog">博客归档</Link>
-              <Link href="/about">关于页面</Link>
+              <Link href="/links">友情链接</Link> |
+              <Link href="/blog">博客归档</Link> |
+              <Link href="/about">关于页面</Link> |
               <Link href="/feed">RSS</Link>
             </p>
           </section>
