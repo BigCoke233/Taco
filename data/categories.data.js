@@ -23,12 +23,12 @@ const categories = {
     },
     "fictions": {
         slug: "fictions",
-        name: "小说",
+        name: "算是小说",
         description: "于另一个世界的文字旅行。"
     },
     "poetry": {
         slug: "poetry",
-        name: "诗歌",
+        name: "像是诗歌",
         description: "前言不接后语的流动文字。"
     }
 }
