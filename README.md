@@ -5,16 +5,16 @@ Originally *Front-end/Backend Separate Plan for Typecho*, now a independent Next
 ## Development
 
 ```
-npm install
-npm run dev
+pnpm install
+bun run dev
 ```
 
 ## Technology Stack
 
 * **Major Library:** React
 * **Framework:** Next.js
-* **Bundler:** Webpack
-* **Markdown Parser:** Micromark, frontmatter-markdown-loader
+* **Bundler:** ~~Webpack~~ Turbopack
+* **Markdown Parser:** Markson
 * **HTML Loader:** Interweave
 * **Comment System:** Waline, Giscus
 * **User Interface:** NextUI, TailwindCSS, Framer Motion
