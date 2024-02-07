@@ -7,15 +7,15 @@
 
 /* === 引入 === */
 
-import Padding from "@/components/utils/Padding";
-import BlogArchive from "@/app/blog/components/BlogArchive";
+import Padding from "@/src/components/utils/Padding";
+import BlogArchive from "@/src/app/blog/components/BlogArchive";
 
-import Header from "@/components/Header"
-import Heading from "@/components/utils/Heading"
+import Header from "@/src/components/Header"
+import Heading from "@/src/components/utils/Heading"
 
 //数据
 import categories from "@/data/categories.data";
-import { FetchPosts } from "@/lib/fetchPosts";
+import { FetchPosts } from "@/src/lib/fetchPosts";
 
 /* === 元信息 === */
 

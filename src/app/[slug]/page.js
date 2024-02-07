@@ -8,10 +8,10 @@
 
 /* === 引入 === */
 
-import Header from '@/components/Header.js'
-import Heading from '@/components/utils/Heading.js'
-import Content from '@/components/Content'
-import NotFound from '@/components/404'
+import Header from '@/src/components/Header.js'
+import Heading from '@/src/components/utils/Heading.js'
+import Content from '@/src/components/Content'
+import NotFound from '@/src/components/404'
 
 import { markson } from 'marksonjs';
 import path from 'path'

@@ -9,7 +9,7 @@
 
 /* === 引入 === */
 
-import { doTocbot } from "@/lib/useTocbot"
+import { doTocbot } from "@/src/lib/useTocbot"
 import { useEffect } from "react"
 
 /* === 工具函数 === */

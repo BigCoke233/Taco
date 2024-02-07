@@ -16,7 +16,7 @@ import Line from "./utils/Line"
 import config from "@/data/home.data"
 
 import { useEffect } from "react"
-import initLightBox from "@/lib/useLightBox"
+import initLightBox from "@/src/lib/useLightBox"
 
 /* === 主函数 === */
 

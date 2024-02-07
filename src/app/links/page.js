@@ -8,13 +8,13 @@
 /* === 引入 === */
 
 //页面组成部分
-import Header from '@/components/Header.js'
-import Heading from '@/components/utils/Heading.js'
-import Padding from '@/components/utils/Padding'
+import Header from '@/src/components/Header.js'
+import Heading from '@/src/components/utils/Heading.js'
+import Padding from '@/src/components/utils/Padding'
 
 //工具
-import shuffle from '@/lib/utils/shuffle'
-import Content from '@/components/Content'
+import shuffle from '@/src/lib/utils/shuffle'
+import Content from '@/src/components/Content'
 
 import Image from 'next/image'
 

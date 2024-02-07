@@ -26,7 +26,7 @@ require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
 
 // 图片灯箱
-import initLightBox from '@/lib/useLightBox';
+import initLightBox from '@/src/lib/useLightBox';
 
 export default function Content({ children, md = false }) {
     // Interweave 服务端渲染垫片

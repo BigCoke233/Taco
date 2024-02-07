@@ -10,13 +10,13 @@
 import Link from 'next/link';
 
 //页面组成部分
-import Header from '@/components/Header.js'
-import Heading from '@/components/utils/Heading.js'
-import NotFound from "@/components/404";
+import Header from '@/src/components/Header.js'
+import Heading from '@/src/components/utils/Heading.js'
+import NotFound from "@/src/components/404";
 
-import Comment from '@/app/blog/[slug]/components/Comment.js'
-import Content from "@/components/Content";
-import Tocbot from "@/app/blog/components/Tocbot";
+import Comment from '@/src/app/blog/[slug]/components/Comment.js'
+import Content from "@/src/components/Content";
+import Tocbot from "@/src/app/blog/components/Tocbot";
 
 import {Chip} from "@nextui-org/chip";
 

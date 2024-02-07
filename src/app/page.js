@@ -8,19 +8,19 @@
 /* === 引用 === */
 
 //页面组成部分
-import Header from '@/components/Header'
-import AboutMe from '@/app/components/AboutMe'
-import BlogLatest from '@/app/components/BlogLatest'
-import BlogList from '@/app/components/BlogList'
-import Media from '@/app/components/Media'
-import Nav from '@/app/components/Nav';
+import Header from '@/src/components/Header'
+import AboutMe from '@/src/app/components/AboutMe'
+import BlogLatest from '@/src/app/components/BlogLatest'
+import BlogList from '@/src/app/components/BlogList'
+import Media from '@/src/app/components/Media'
+import Nav from '@/src/app/components/Nav';
 
 //数据
-import { FetchPosts } from '@/lib/fetchPosts'
+import { FetchPosts } from '@/src/lib/fetchPosts'
 import config from '@/data/home.data'
 
 //RSS
-import generateRssFeed from '@/lib/rssGenerator';
+import generateRssFeed from '@/src/lib/rssGenerator';
 
 export const metadata = {
   title: "Eltrac's"
