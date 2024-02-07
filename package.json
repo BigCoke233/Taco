@@ -38,7 +38,6 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
-    "frontmatter-markdown-loader": "^3.7.0",
     "interweave-ssr": "^2.0.0",
     "postcss": "^8",
     "sass": "^1.69.5",

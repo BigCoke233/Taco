@@ -29,14 +29,9 @@ import path from 'path'
 /* === 元信息 === */
 
 export async function generateMetadata({ params }) {
-    let title;
-    try {
-        title = await import(`data/posts/${params.slug}.md`)
-            .then(module => module.attributes.title)
-    } catch(error) { title = '404' }
-
+    const data = markson.read(path.join(process.cwd(), `./data/posts/${params.slug}.md`)); 
     return {
-        title: `${title} - Eltrac's`
+        title: `${data.title} - Eltrac's`
     }
 }
 
