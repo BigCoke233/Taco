@@ -36,8 +36,8 @@ dependencies:
     specifier: ^13.1.0
     version: 13.1.0(react@18.2.0)
   marksonjs:
-    specifier: ^1.2.2
-    version: 1.2.2
+    specifier: ^1.3.0
+    version: 1.3.0
   micromark:
     specifier: ^4.0.0
     version: 4.0.0
@@ -2785,8 +2785,8 @@ packages:
     hasBin: true
     dev: true
 
-  /marksonjs@1.2.2:
-    resolution: {integrity: sha512-7XQ5Cun7G52QoRenEeNrXBob7ApAJStvZqir9450fUV7VO8wKldp93AItL7XcDoQ3/sWtQa19Pv2I/cUVrmxjQ==}
+  /marksonjs@1.3.0:
+    resolution: {integrity: sha512-ci9axMoNKqmt+GcHK7+u6gQST1bErKy2DSm33wVmrOL3+KWqFCKRm9o22NeUm5pXRMp3ta8UpD3I8KQbyhS0bg==}
     dependencies:
       js-yaml: 4.1.0
       micromark: 4.0.0
