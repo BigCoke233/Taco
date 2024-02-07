@@ -90,8 +90,7 @@ export default function Tocbot() {
                 <header className="border-b border-zinc-300 dark:border-zinc-700 max-xl:px-5 max-xl:py-3 xl:hidden">
                     <h2 className="text-center font-bold">文章目录</h2>
                 </header>
-                <article id="tocbot" className="xl:sticky xl:top-12 md:text-lg
-                max-xl:py-2" />
+                <article id="tocbot" className="xl:sticky xl:top-12 md:text-lg max-xl:py-2" />
             </div>
         </aside>
     )
