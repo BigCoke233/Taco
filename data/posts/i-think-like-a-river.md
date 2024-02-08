@@ -1,10 +1,10 @@
 ---
-title: 我的思绪像河流
-date: 2024-01-09
-category: essays
+title: '我的思绪像河流'
+date: '2024-01-09'
+category: 'essays'
 banner:
-  img: https://image.guhub.cn/blog/2024/2/i-think-like-river-banner.png
-slug: i-think-like-a-river
+  img: 'https://image.guhub.cn/blog/2024/2/i-think-like-river-banner.png'
+slug: 'i-think-like-a-river'
 
 ---
 
