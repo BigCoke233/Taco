@@ -177,6 +177,8 @@ Obsidian 还帮我完成了一件我一直想做但是没能实现的事情—�
 - [Excalidraw](https://github.com/zsviczian/obsidian-excalidraw-plugin)：在 Obsidian 中绘图
 - [Markmind](https://github.com/MarkMindCkm/obsidian-markmind)：思维导图
 
+最后，祝各位新春快乐！
+
 ## TL;DR
 
 1. **建立信息滤网**：选择正确的信息源，专用化，使用 [uBlacklist](https://github.com/iorate/ublacklist) 过滤搜索结果
