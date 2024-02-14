@@ -8,9 +8,9 @@
 
 const config = {
     banner: {
-        title: "青空飞鸟。", 
-        subtitle: "Flock without a shepard.", 
-        img: "https://image.guhub.cn//blog-banner/20240108.jpg" 
+        title: "人类绿洲。", 
+        subtitle: "For shame and pride.", 
+        img: "https://image.guhub.cn/blog-banner/20240214.png" 
     },
     about: {
         names: "Eltrac / Lychnus / 以歌 / 帆迹",
