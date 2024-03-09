@@ -10,12 +10,12 @@
 /* === 引入 === */
 
 //全局 CSS
-import '@/styles/init.css'
-import '@/styles/globals.sass'
+import '@/src/styles/init.css'
+import '@/src/styles/globals.sass'
 
 //页面组成部分
-import Footer from '@/components/Footer'
-import Helpbar from '@/components/Helpbar'
+import Footer from '@/src/components/Footer'
+import Helpbar from '@/src/components/Helpbar'
 
 //UI 和动画
 import { Providers } from './providers'

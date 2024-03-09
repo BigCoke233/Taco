@@ -1,15 +1,16 @@
-/**
- * rssGenerator.js
- * 
- * 生成 RSS 订阅源
- */
-
 import fs from 'fs';
+import path from 'path';
 import RSS from 'rss';
 
-export default async function generateRssFeed({ posts }) {
-    const site_url = 'https://www.guhub.cn';
+/**
+ * 生成 RSS 订阅源
+ * @param {{ array }} { 包含文章信息的数组 }  
+ */
 
+export default async function generateRssFeed({ posts }) {
+    // configure feed options
+    const feedFilePath = './public/feed/index.xml';
+    const site_url = 'https://www.guhub.cn';
     const feedOptions = {
         title: 'Eltrac\'s',
         description: 'Digitial island of Eltrac\'s',
@@ -20,8 +21,8 @@ export default async function generateRssFeed({ posts }) {
         copyright: `All rights reserved ${new Date().getFullYear()}, Eltrac`,
     }
 
+    // create feed
     const feed = new RSS(feedOptions);
-
     posts.slice(0,8).map((post) => {
         feed.item({
             title: post.attributes.title,
@@ -30,6 +31,11 @@ export default async function generateRssFeed({ posts }) {
             date: post.attributes.date,
         });
     });
+    const output = feed.xml({ indent: true });
 
-    fs.writeFileSync('./public/feed/index.xml', feed.xml({ indent: true }));
+    // write feed file
+    const directory = path.dirname(feedFilePath);
+    if (!fs.existsSync(directory))  // make sure dir exists, if not then create
+        fs.mkdirSync(directory, { recursive: true });
+    fs.writeFileSync(feedFilePath, output);
 }

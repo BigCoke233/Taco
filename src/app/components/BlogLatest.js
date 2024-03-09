@@ -5,9 +5,9 @@
  */
 
 import Link from 'next/link'
-import Heading from '@/components/utils/Heading.js'
+import Heading from '@/src/components/utils/Heading.js'
 
-import digestHTML from '@/lib/utils/digest'
+import digestHTML from '@/src/lib/utils/digest'
 import categories from '@/data/categories.data'
 
 export default function BlogLatest({ post, className }) {

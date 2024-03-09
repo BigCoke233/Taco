@@ -8,27 +8,27 @@
 const categories = {
     "pieces": {
         slug: "pieces",
-        name: "随笔",
+        name: "无心文字",
         description: "无处安放的有感而发。"
     },
     "essays": {
         slug: "essays",
-        name: "杂谈",
+        name: "话题深潜",
         description: "整齐排列的想法，和时不时的长篇大论。"
     },
     "logs": {
         slug: "logs",
-        name: "记录",
-        description: "有时候做了什么就会想要写下来。"
+        name: "非我他物",
+        description: "没有多少独特想法的记实性文字。"
     },
     "fictions": {
         slug: "fictions",
-        name: "小说",
+        name: "算是小说",
         description: "于另一个世界的文字旅行。"
     },
     "poetry": {
         slug: "poetry",
-        name: "诗歌",
+        name: "像是诗歌",
         description: "前言不接后语的流动文字。"
     }
 }

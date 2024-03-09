@@ -2,7 +2,6 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const fmMode = require('frontmatter-markdown-loader/mode')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -41,16 +40,6 @@ const nextConfig = {
       __VUE_PROD_DEVTOOLS__: 'false',
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
     }));
-    //添加 Markdown Frontmatter 加载器
-    config.module.rules.push(
-      {
-        test: /\.md$/,
-        loader: 'frontmatter-markdown-loader',
-        options: {
-          mode: [fmMode.BODY, fmMode.HTML]
-        }
-      }
-    )
     return config;
   },
 }

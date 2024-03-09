@@ -7,15 +7,15 @@
 
 /* === 引入 === */
 
-import Header from '@/components/Header.js'
-import Heading from '@/components/utils/Heading.js'
+import Header from '@/src/components/Header.js'
+import Heading from '@/src/components/utils/Heading.js'
 
 import BlogArchive from './components/BlogArchive'
 import BlogCategories from './components/BlogCategories'
 
-import Padding from '@/components/utils/Padding'
+import Padding from '@/src/components/utils/Padding'
 
-import { FetchPosts } from '@/lib/fetchPosts'
+import { FetchPosts } from '@/src/lib/fetchPosts'
 
 /* === 元信息 === */
 

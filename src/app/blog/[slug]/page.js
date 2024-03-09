@@ -10,30 +10,28 @@
 import Link from 'next/link';
 
 //页面组成部分
-import Header from '@/components/Header.js'
-import Heading from '@/components/utils/Heading.js'
-import NotFound from "@/components/404";
+import Header from '@/src/components/Header.js'
+import Heading from '@/src/components/utils/Heading.js'
+import NotFound from "@/src/components/404";
 
-import Comment from '@/app/blog/[slug]/components/Comment.js'
-import Content from "@/components/Content";
-import Tocbot from "@/app/blog/components/Tocbot";
+import Comment from '@/src/app/blog/[slug]/components/Comment.js'
+import Content from "@/src/components/Content";
+import Tocbot from "@/src/app/blog/components/Tocbot";
 
 import {Chip} from "@nextui-org/chip";
 
 //数据
+import { markson } from 'marksonjs';
 import categories from '@/data/categories.data';
+
+import path from 'path'
 
 /* === 元信息 === */
 
 export async function generateMetadata({ params }) {
-    let title;
-    try {
-        title = await import(`data/posts/${params.slug}.md`)
-            .then(module => module.attributes.title)
-    } catch(error) { title = '404' }
-
+    const data = markson.read(path.join(process.cwd(), `./data/posts/${params.slug}.md`)); 
     return {
-        title: `${title} - Eltrac's`
+        title: `${data.title} - Eltrac's`
     }
 }
 
@@ -42,9 +40,9 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
     try {
         //动态引入页面数据
-        const Page = await import(`data/posts/${params.slug}.md`).then((module)=>{
-            const matter = module.attributes;
-            return (
+          const data = markson.read(path.join(process.cwd(), `./data/posts/${params.slug}.md`)); 
+          const matter = data.attributes;
+          return (
                 <>
                     <Header 
                         banner={matter.banner?.img} 
@@ -70,15 +68,11 @@ export default async function Page({ params }) {
                             </div>
                         </header>
                         <Tocbot />
-                        <Content md={true}>{module.body}</Content>
+                        <Content>{data.html}</Content>
                     </article>
                     <Comment />
                 </>
             )
-        })
-
-        return Page;
-
     } catch(error) {
         //如果找不到对应的页面，则报出 404 错误
         if (error.code === 'MODULE_NOT_FOUND') 
