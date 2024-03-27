@@ -3,7 +3,7 @@ title: "关于"
 banner: 
     title: "夜晚的云。"
     subtitle: "Often evade notice."
-    img: "https://image.guhub.cn/page-banner/links-banner.jpg"
+    img: "https://image.guhub.cn/blog/banners/pages/links-banner.jpg"
 heading: 
     title: "关于小站"
     description: "以防你不知道这里存在的意义。"

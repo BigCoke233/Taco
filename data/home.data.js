@@ -10,7 +10,7 @@ const config = {
     banner: {
         title: "人类绿洲。", 
         subtitle: "For shame and pride.", 
-        img: "https://image.guhub.cn/blog-banner/20240214.png" 
+        img: "https://image.guhub.cn/blog/banners/index/20240214.png" 
     },
     about: {
         names: "Eltrac / Lychnus / 以歌 / 帆迹",

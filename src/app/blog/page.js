@@ -30,7 +30,7 @@ export default async function Blog() {
     
     return (
         <>
-            <Header banner="https://image.guhub.cn/page-banner/blog-banner.jpg"
+            <Header banner="https://image.guhub.cn/blog/banners/pages/blog-banner.jpg"
             title="清楚洞悉。" subtitle="The opportune moment" />
             <article>
                 <Heading sub="就这样存在于此。">被陈列的想法</Heading>

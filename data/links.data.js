@@ -13,7 +13,7 @@ const linksData = {
     banner: {
         title: "网络孤岛。",
         subtitle: "Internet Islands.",
-        img: "https://image.guhub.cn/page-banner/about-banner.jpg",
+        img: "https://image.guhub.cn/blog/banners/pages/about-banner.jpg",
     },
     heading: {
         title: "友情链接",

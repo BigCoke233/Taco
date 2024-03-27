@@ -77,7 +77,7 @@ export default function Footer() {
                   style={{height: '1.5rem', width: '3rem'}}
                 />
               </Link>
-              提供 CDN/云储存
+              提供云储存
             </p>
           </section>
 

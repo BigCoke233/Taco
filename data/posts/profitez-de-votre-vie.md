@@ -4,7 +4,7 @@ date: "2024-03-20"
 category: pieces
 slug: "profitez-de-votre-vie"
 banner:
-  img: "https://image.guhub.cn/download.png"
+  img: "https://image.guhub.cn/blog/2024/03/profitez-de-votre-vie.png"
   title: "漫步巴黎。"
   subtitle: "Somewhere in Paris."
 ---
