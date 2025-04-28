@@ -1,3 +1,5 @@
+![](screenshot.png)
+
 # Taco
 
 A Next.js bloging program.
