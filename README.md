@@ -1,6 +1,6 @@
 # Taco
 
-Originally *Front-end/Backend Separate Plan for Typecho*, now a independent Next.js blog program.
+A Next.js bloging program.
 
 ## Development
 
